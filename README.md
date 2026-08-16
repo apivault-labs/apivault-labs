@@ -1,16 +1,47 @@
-## Hi there 👋
+# ⚡ ApiVault Labs
 
-<!--
-**apivault-labs/apivault-labs** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+### Production-ready web scrapers, data extraction APIs, and automation tools
 
-Here are some ideas to get you started:
+[![Apify Actors](https://img.shields.io/badge/Apify-50%2B%20Actors-00c46a?style=for-the-badge&logo=apify)](https://apify.com/apivault_labs)
+[![Run success](https://img.shields.io/badge/Run%20success-98%25%2B-2563eb?style=for-the-badge)](https://apify.com/apivault_labs)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ApiVault%20Labs-0a66c2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/apivault-labs-a2755742a)
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+We build reliable **Apify Actors, web scrapers, data extraction APIs, and automation tools** for businesses, developers, agencies, and AI workflows.
+
+Our tools turn public web data into structured, automation-ready datasets for lead generation, market research, competitive intelligence, and operational workflows.
+
+## 🗂 What we build
+
+| Category | Solutions |
+|---|---|
+| 🎯 Lead generation | Local businesses, company intelligence, domains, contacts, and hiring signals |
+| 💼 Jobs | Job postings, salaries, skills, companies, and recruitment intelligence |
+| 🛒 E-commerce | Products, prices, sellers, catalogs, availability, and reviews |
+| 📱 Social media | Public profiles, content analytics, monitoring, and research |
+| ⭐ Reviews | Ratings, customer feedback, reputation, and sentiment datasets |
+| 🏠 Real estate | Property listings, prices, locations, and market research |
+| 🖼️ AI image tools | Background removal, enhancement, upscaling, restoration, and editing |
+
+## ✅ Built for real workflows
+
+- Clear inputs and structured JSON or CSV-friendly outputs
+- Reliable bulk processing and transparent usage-based pricing
+- API, n8n, MCP, CRM, spreadsheet, and AI-agent friendly
+- Active maintenance, worldwide coverage, and fast issue response
+- Custom Actors, integrations, and bulk-data solutions available
+
+## 🛠️ Custom development
+
+Need data from a specific website, marketplace, directory, or API?
+
+We build custom **web scrapers, Apify Actors, lead generation tools, monitoring pipelines, data extraction APIs, and automation integrations**.
+
+When contacting us, include the data source, required fields, example input, expected output, approximate volume, and run frequency.
+
+## 📬 Contact
+
+- **Apify Store:** [apify.com/apivault_labs](https://apify.com/apivault_labs)
+- **Email:** [apivault.labs@gmail.com](mailto:apivault.labs@gmail.com)
+- **LinkedIn:** [ApiVault Labs](https://www.linkedin.com/in/apivault-labs-a2755742a)
+
+⭐ Follow us on Apify and GitHub for new Actors, scrapers, and automation tools.
