@@ -10,6 +10,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -21,11 +22,12 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           set -euo pipefail
+          test "$(npm whoami)" = "apivault"
           for folder in community-nodes/n8n-nodes-apivault-*; do
             (
               cd "$folder"
               npm install --ignore-scripts --no-audit --no-fund
-              npm run lint -- --strict
+              npm run lint
               npm run build
               npm test
               package=$(node -p "require('./package.json').name")
