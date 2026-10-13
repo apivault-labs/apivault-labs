@@ -1,0 +1,57 @@
+{
+  "parameters": {
+    "emails": "john.doe@gmail.com\ninfo@apify.com\ntest@gmial.con\nuser@mailinator.com\nbad email@@example",
+    "emailsText": "example@example.com",
+    "emailsFile": "example@example.com",
+    "findEmails": "Elon Musk, tesla.com\nBill Gates @ microsoft.com",
+    "checkMx": true,
+    "smtpVerification": false,
+    "proxyUrl": "https://example.com/example",
+    "proxySessions": 8,
+    "smtpTimeout": 10,
+    "freshDisposableList": true,
+    "deduplicate": true,
+    "onlyValid": false,
+    "onlyDeliverable": false,
+    "dropDisposable": false,
+    "dropRoleBased": false,
+    "exportFormat": "default",
+    "additionalInput": "{}"
+  },
+  "body": {
+    "emails": [
+      "john.doe@gmail.com",
+      "info@apify.com",
+      "test@gmial.con",
+      "user@mailinator.com",
+      "bad email@@example"
+    ],
+    "emailsText": "example@example.com",
+    "emailsFile": "example@example.com",
+    "findEmails": [
+      "Elon Musk",
+      "tesla.com",
+      "Bill Gates @ microsoft.com"
+    ],
+    "checkMx": true,
+    "smtpVerification": false,
+    "proxyUrl": "https://example.com/example",
+    "proxySessions": 8,
+    "smtpTimeout": 10,
+    "freshDisposableList": true,
+    "deduplicate": true,
+    "onlyValid": false,
+    "onlyDeliverable": false,
+    "dropDisposable": false,
+    "dropRoleBased": false,
+    "exportFormat": "default"
+  },
+  "nodeName": "emailValidator",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "dyhXl9P3lmQfVN1VA"
+}

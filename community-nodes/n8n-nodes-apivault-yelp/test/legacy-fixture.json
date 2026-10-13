@@ -1,0 +1,44 @@
+{
+  "parameters": {
+    "businessUrls": "https://example.com/example",
+    "exportFormat": "default",
+    "enrichment": {},
+    "reliability": {},
+    "advancedOptions": {}
+  },
+  "body": {
+    "businessUrls": [
+      "https://example.com/example"
+    ],
+    "exportFormat": "default",
+    "extractCore": true,
+    "extractHoursIntel": true,
+    "extractWebsite": true,
+    "websiteDiscoveryFallback": true,
+    "extractContactEnrichment": true,
+    "extractAmenities": true,
+    "extractAge": true,
+    "extractAddressParts": true,
+    "guessEmailPatterns": true,
+    "extractDerivedSignals": true,
+    "extractLeadScore": true,
+    "extractOutreachPitch": true,
+    "extractOutreachLinks": true,
+    "extractDomainAge": false,
+    "extractGeocoding": false,
+    "slugFallbackOnFail": true,
+    "maxRetries": 2,
+    "excludeChains": false,
+    "writeSummary": true,
+    "maxConcurrency": 2,
+    "timeout": 180
+  },
+  "nodeName": "yelp",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "dsdyoR3HYzqzKgw0l"
+}

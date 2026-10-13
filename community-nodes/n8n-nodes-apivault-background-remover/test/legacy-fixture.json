@@ -1,0 +1,22 @@
+{
+  "parameters": {
+    "imageUrls": "https://example.com/example",
+    "maxConcurrency": 3,
+    "timeout": 120
+  },
+  "body": {
+    "imageUrls": [
+      "https://example.com/example"
+    ],
+    "maxConcurrency": 3,
+    "timeout": 120
+  },
+  "nodeName": "backgroundRemover",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "zreJuKUahfSMh51sh"
+}

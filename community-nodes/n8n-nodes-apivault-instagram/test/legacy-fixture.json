@@ -1,0 +1,44 @@
+{
+  "parameters": {
+    "profileUrls": "https://example.com/example",
+    "extractUsername": true,
+    "extractFullName": true,
+    "extractBio": true,
+    "extractLocation": true,
+    "extractFollowers": true,
+    "extractFollowing": true,
+    "extractPosts": true,
+    "extractProfileUrl": true,
+    "extractWebsite": false,
+    "extractCategory": false,
+    "extractMetadata": false,
+    "maxConcurrency": 5,
+    "timeout": 90
+  },
+  "body": {
+    "profileUrls": [
+      "https://example.com/example"
+    ],
+    "extractUsername": true,
+    "extractFullName": true,
+    "extractBio": true,
+    "extractLocation": true,
+    "extractFollowers": true,
+    "extractFollowing": true,
+    "extractPosts": true,
+    "extractProfileUrl": true,
+    "extractWebsite": false,
+    "extractCategory": false,
+    "extractMetadata": false,
+    "maxConcurrency": 5,
+    "timeout": 90
+  },
+  "nodeName": "instagram",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "f9OGxYgmjdY9gtEbm"
+}

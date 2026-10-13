@@ -1,0 +1,26 @@
+{
+  "parameters": {
+    "domains": "https://example.com/example",
+    "lookups": {}
+  },
+  "body": {
+    "domains": [
+      "https://example.com/example"
+    ],
+    "extractWhois": true,
+    "extractDns": true,
+    "extractSsl": true,
+    "extractSubdomains": true,
+    "extractHttp": true,
+    "maxConcurrency": 5,
+    "timeout": 15
+  },
+  "nodeName": "domainIntelligence",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "ruSZXZxIolTyGCeqQ"
+}

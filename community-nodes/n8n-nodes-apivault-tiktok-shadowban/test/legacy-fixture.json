@@ -1,0 +1,26 @@
+{
+  "parameters": {
+    "urls": "https://example.com/example",
+    "proxyCountry": "US",
+    "includeRecommendations": true,
+    "includeSummary": false,
+    "maxRetries": 5
+  },
+  "body": {
+    "urls": [
+      "https://example.com/example"
+    ],
+    "includeSummary": false,
+    "includeRecommendations": true,
+    "maxRetries": 5,
+    "proxyCountry": "US"
+  },
+  "nodeName": "tikTokShadowBan",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "vZk3HQH4gPVykC9dC"
+}

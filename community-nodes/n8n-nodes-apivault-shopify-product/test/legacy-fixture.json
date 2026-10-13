@@ -1,0 +1,56 @@
+{
+  "parameters": {
+    "storeUrls": "https://example.com/example",
+    "maxProducts": 250,
+    "perPage": 250,
+    "flattenVariants": false,
+    "onlyAvailable": false,
+    "extractTitle": true,
+    "extractVendor": true,
+    "extractProductType": true,
+    "extractPrice": true,
+    "extractComparePrice": true,
+    "extractSku": true,
+    "extractDescription": true,
+    "extractTags": true,
+    "extractImages": true,
+    "extractVariants": true,
+    "extractOptions": true,
+    "extractDates": true,
+    "extractHandle": true,
+    "maxConcurrency": 3,
+    "timeout": 30
+  },
+  "body": {
+    "storeUrls": [
+      "https://example.com/example"
+    ],
+    "maxProducts": 250,
+    "perPage": 250,
+    "flattenVariants": false,
+    "onlyAvailable": false,
+    "extractTitle": true,
+    "extractVendor": true,
+    "extractProductType": true,
+    "extractPrice": true,
+    "extractComparePrice": true,
+    "extractSku": true,
+    "extractDescription": true,
+    "extractTags": true,
+    "extractImages": true,
+    "extractVariants": true,
+    "extractOptions": true,
+    "extractDates": true,
+    "extractHandle": true,
+    "maxConcurrency": 3,
+    "timeout": 30
+  },
+  "nodeName": "shopifyProduct",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "JNpCUgDcPwRUrVdZj"
+}

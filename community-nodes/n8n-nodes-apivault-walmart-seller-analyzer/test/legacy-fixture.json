@@ -1,0 +1,58 @@
+{
+  "parameters": {
+    "mode": "niche",
+    "sellerUrls": "https://example.com/example",
+    "productUrls": "https://example.com/example",
+    "productIds": "example",
+    "searchQueries": "example",
+    "maxProductsPerSeller": 25,
+    "maxResultsPerQuery": 40,
+    "includeProductDetails": true,
+    "maxDetailedProducts": 20,
+    "postalCode": "95829",
+    "storeId": "example",
+    "costOfGoodsPercent": 30,
+    "shippingCostPerOrderUsd": 0,
+    "wfsFeePerOrderUsd": 0,
+    "advertisingRatePercent": 0,
+    "refundRatePercent": 2,
+    "maxConcurrency": 4,
+    "proxyConfiguration": "{}"
+  },
+  "body": {
+    "mode": "niche",
+    "sellerUrls": [
+      "https://example.com/example"
+    ],
+    "productUrls": [
+      "https://example.com/example"
+    ],
+    "productIds": [
+      "example"
+    ],
+    "searchQueries": [
+      "example"
+    ],
+    "maxProductsPerSeller": 25,
+    "maxResultsPerQuery": 40,
+    "includeProductDetails": true,
+    "maxDetailedProducts": 20,
+    "postalCode": "95829",
+    "storeId": "example",
+    "costOfGoodsPercent": 30,
+    "shippingCostPerOrderUsd": 0,
+    "wfsFeePerOrderUsd": 0,
+    "advertisingRatePercent": 0,
+    "refundRatePercent": 2,
+    "maxConcurrency": 4,
+    "proxyConfiguration": {}
+  },
+  "nodeName": "walmartSellerAnalyzer",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "wdaL1W6hgXsOrQegm"
+}

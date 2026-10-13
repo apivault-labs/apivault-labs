@@ -1,0 +1,42 @@
+{
+  "parameters": {
+    "mode": "urls",
+    "productUrls": "https://example.com/example",
+    "date": "example",
+    "searchQuery": "example",
+    "makerUsername": "example",
+    "topicSlug": "example",
+    "topicOrder": "VOTES",
+    "limit": 50,
+    "includeCompetitorAnalysis": false,
+    "phClientId": "example",
+    "phClientSecret": "example",
+    "maxConcurrency": 3,
+    "timeout": 120
+  },
+  "body": {
+    "mode": "urls",
+    "productUrls": [
+      "https://example.com/example"
+    ],
+    "date": "example",
+    "searchQuery": "example",
+    "makerUsername": "example",
+    "topicSlug": "example",
+    "topicOrder": "VOTES",
+    "limit": 50,
+    "includeCompetitorAnalysis": false,
+    "phClientId": "example",
+    "phClientSecret": "example",
+    "maxConcurrency": 3,
+    "timeout": 120
+  },
+  "nodeName": "producthunt",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "jUWLvgRimoRidnJCK"
+}

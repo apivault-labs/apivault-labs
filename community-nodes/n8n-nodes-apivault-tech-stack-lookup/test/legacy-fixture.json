@@ -1,0 +1,70 @@
+{
+  "parameters": {
+    "mode": "find",
+    "domains": "https://example.com/example",
+    "technologyPreset": "Shopify",
+    "opportunityPreset": "shopify_without_klaviyo",
+    "technologies": "example",
+    "matchMode": "any",
+    "excludeTechnologies": "example",
+    "category": "any",
+    "country": "example",
+    "vertical": "example",
+    "hasEmail": false,
+    "hasPhone": false,
+    "newWithinDays": 0,
+    "lastIndexedWithinDays": 0,
+    "lastFoundWithinDays": 0,
+    "sortBy": "Overall Score",
+    "sortDesc": true,
+    "dedupeByDomain": true,
+    "outputPreset": "essential",
+    "countOnly": false,
+    "maxItems": 50,
+    "offset": 0,
+    "columns": "example"
+  },
+  "body": {
+    "mode": "find",
+    "domains": [
+      "https://example.com/example"
+    ],
+    "technologyPreset": "Shopify",
+    "opportunityPreset": "shopify_without_klaviyo",
+    "technologies": [
+      "example"
+    ],
+    "matchMode": "any",
+    "excludeTechnologies": [
+      "example"
+    ],
+    "category": "any",
+    "country": [
+      "example"
+    ],
+    "vertical": "example",
+    "hasEmail": false,
+    "hasPhone": false,
+    "newWithinDays": 0,
+    "lastIndexedWithinDays": 0,
+    "lastFoundWithinDays": 0,
+    "sortBy": "Overall Score",
+    "sortDesc": true,
+    "dedupeByDomain": true,
+    "outputPreset": "essential",
+    "countOnly": false,
+    "maxItems": 50,
+    "offset": 0,
+    "columns": [
+      "example"
+    ]
+  },
+  "nodeName": "techStackLookup",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "GgG3Xran5X3zZxpRZ"
+}

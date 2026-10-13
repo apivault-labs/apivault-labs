@@ -1,0 +1,76 @@
+{
+  "parameters": {
+    "profileUrls": "https://example.com/example",
+    "repoUrls": "https://example.com/example",
+    "repoLeadsSource": "stargazers",
+    "maxLeadsPerRepo": 50,
+    "extractRepos": true,
+    "includeRepoList": false,
+    "maxRepos": 100,
+    "includeLanguageStats": false,
+    "includeSocialAccounts": true,
+    "includeOrganizations": false,
+    "includeStarred": false,
+    "maxStarred": 30,
+    "includeReadme": false,
+    "includeAchievements": false,
+    "includePinnedRepos": false,
+    "includeContributions": false,
+    "exportFormat": "default",
+    "includeLeadScore": true,
+    "includeOutreach": true,
+    "minLeadScore": 0,
+    "minFollowers": 0,
+    "minRepos": 0,
+    "minStars": 0,
+    "hireableOnly": false,
+    "withEmailOnly": false,
+    "githubToken": "example",
+    "maxConcurrency": 5,
+    "timeout": 30,
+    "maxRetries": 2
+  },
+  "body": {
+    "profileUrls": [
+      "https://example.com/example"
+    ],
+    "repoUrls": [
+      "https://example.com/example"
+    ],
+    "repoLeadsSource": "stargazers",
+    "maxLeadsPerRepo": 50,
+    "extractRepos": true,
+    "includeRepoList": false,
+    "maxRepos": 100,
+    "includeLanguageStats": false,
+    "includeSocialAccounts": true,
+    "includeOrganizations": false,
+    "includeStarred": false,
+    "maxStarred": 30,
+    "includeReadme": false,
+    "includeAchievements": false,
+    "includePinnedRepos": false,
+    "includeContributions": false,
+    "exportFormat": "default",
+    "includeLeadScore": true,
+    "includeOutreach": true,
+    "minLeadScore": 0,
+    "minFollowers": 0,
+    "minRepos": 0,
+    "minStars": 0,
+    "hireableOnly": false,
+    "withEmailOnly": false,
+    "githubToken": "example",
+    "maxConcurrency": 5,
+    "timeout": 30,
+    "maxRetries": 2
+  },
+  "nodeName": "github",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "HCPOl6k3LqnOVdFns"
+}

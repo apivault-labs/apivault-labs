@@ -1,0 +1,44 @@
+import type {
+	IAuthenticateGeneric,
+	ICredentialTestRequest,
+	ICredentialType,
+	INodeProperties,
+} from 'n8n-workflow';
+
+export class ApifyApi implements ICredentialType {
+	name = 'apifyApi';
+
+	icon = { light: 'file:apivault.svg', dark: 'file:apivault.svg' } as const;
+	displayName = 'Apify API';
+
+	documentationUrl = 'https://docs.apify.com/platform/integrations/api';
+
+	properties: INodeProperties[] = [
+		{
+			displayName: 'API Token',
+			name: 'apiToken',
+			type: 'string',
+			typeOptions: { password: true },
+			default: '',
+			required: true,
+			description:
+				'Your personal Apify API token. Find it in Apify Console → Settings → Integrations → API token. A free account includes monthly usage credits.',
+		},
+	];
+
+	authenticate: IAuthenticateGeneric = {
+		type: 'generic',
+		properties: {
+			headers: {
+				Authorization: '=Bearer {{$credentials.apiToken}}',
+			},
+		},
+	};
+
+	test: ICredentialTestRequest = {
+		request: {
+			baseURL: 'https://api.apify.com/v2',
+			url: '/users/me',
+		},
+	};
+}

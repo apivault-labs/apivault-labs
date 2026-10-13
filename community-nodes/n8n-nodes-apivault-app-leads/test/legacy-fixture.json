@@ -1,0 +1,40 @@
+{
+  "parameters": {
+    "store": "googleplay",
+    "keywords": "example",
+    "maxAppsPerQuery": 50,
+    "tier": "basic",
+    "filters": {},
+    "additionalOptions": {}
+  },
+  "body": {
+    "store": "googleplay",
+    "keywords": [
+      "example"
+    ],
+    "maxAppsPerQuery": 50,
+    "tier": "basic",
+    "country": "us",
+    "minInstalls": 0,
+    "minRating": 0,
+    "companySize": "any",
+    "requireEmail": false,
+    "onlyWithoutWebsite": false,
+    "onlyActiveApps": false,
+    "dedupeByCompany": true,
+    "addIcebreaker": false,
+    "verifyEmail": false,
+    "includeWebsiteEmails": false,
+    "detectTech": false,
+    "maxConcurrency": 8,
+    "runBudgetSecs": 600
+  },
+  "nodeName": "appDeveloperLeads",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "qNLn4Fof28aCF0R9K"
+}

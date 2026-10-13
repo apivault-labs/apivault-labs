@@ -1,0 +1,24 @@
+{
+  "parameters": {
+    "searchUrls": "https://example.com/example",
+    "maxPages": 3,
+    "maxConcurrency": 2,
+    "timeout": 120
+  },
+  "body": {
+    "searchUrls": [
+      "https://example.com/example"
+    ],
+    "maxPages": 3,
+    "maxConcurrency": 2,
+    "timeout": 120
+  },
+  "nodeName": "clutchSearch",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "p9t7G8dyx8MqeX5ZY"
+}

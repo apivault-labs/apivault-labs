@@ -1,0 +1,44 @@
+{
+  "parameters": {
+    "profileUrls": "https://example.com/example",
+    "extractUsername": true,
+    "extractFullName": true,
+    "extractBio": true,
+    "extractFollowers": true,
+    "extractFollowing": true,
+    "extractPosts": true,
+    "extractProfileUrl": true,
+    "extractWebsite": true,
+    "extractCategory": true,
+    "extractMetadata": true,
+    "maxConcurrency": 5,
+    "timeout": 90,
+    "maxRetries": 3
+  },
+  "body": {
+    "profileUrls": [
+      "https://example.com/example"
+    ],
+    "extractUsername": true,
+    "extractFullName": true,
+    "extractBio": true,
+    "extractFollowers": true,
+    "extractFollowing": true,
+    "extractPosts": true,
+    "extractProfileUrl": true,
+    "extractWebsite": true,
+    "extractCategory": true,
+    "extractMetadata": true,
+    "maxConcurrency": 5,
+    "timeout": 90,
+    "maxRetries": 3
+  },
+  "nodeName": "reddit",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "R5Q6it8o8af1c4gzn"
+}

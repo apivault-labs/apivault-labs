@@ -1,0 +1,27 @@
+{
+  "parameters": {
+    "searchBy": "name",
+    "query": "example",
+    "outputPreset": "contacts",
+    "maxResults": 3,
+    "verifyEmails": true
+  },
+  "body": {
+    "workflow": "name",
+    "max_results": 3,
+    "outputPreset": "contacts",
+    "verifyEmails": true,
+    "useDemoOnEmpty": false,
+    "name": [
+      "example"
+    ]
+  },
+  "nodeName": "skipTrace",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "gSv8lJykdzOrYycAq"
+}

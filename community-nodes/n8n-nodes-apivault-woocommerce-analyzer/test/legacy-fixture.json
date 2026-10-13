@@ -1,0 +1,70 @@
+{
+  "parameters": {
+    "storeUrls": "https://example.com/example",
+    "conversionRate": 1.8,
+    "productSampleSize": 200,
+    "extractProducts": true,
+    "extractVelocity": true,
+    "extractCategories": true,
+    "extractSitemap": true,
+    "extractTraffic": true,
+    "extractRevenueEstimate": true,
+    "extractTechStack": true,
+    "extractPlugins": true,
+    "extractWpNamespaces": true,
+    "extractSocials": true,
+    "extractContact": true,
+    "extractWpMeta": true,
+    "extractInternational": true,
+    "extractBrandAge": true,
+    "extractDerivedSignals": true,
+    "extractCollectionData": true,
+    "extractAuthors": true,
+    "extractBlog": true,
+    "extractRobots": true,
+    "extractSecurityHeaders": true,
+    "extractDns": true,
+    "extractSchemaOrg": true,
+    "maxConcurrency": 3,
+    "timeout": 30
+  },
+  "body": {
+    "storeUrls": [
+      "https://example.com/example"
+    ],
+    "conversionRate": 1.8,
+    "productSampleSize": 200,
+    "extractProducts": true,
+    "extractVelocity": true,
+    "extractCategories": true,
+    "extractSitemap": true,
+    "extractTraffic": true,
+    "extractRevenueEstimate": true,
+    "extractTechStack": true,
+    "extractPlugins": true,
+    "extractWpNamespaces": true,
+    "extractSocials": true,
+    "extractContact": true,
+    "extractWpMeta": true,
+    "extractInternational": true,
+    "extractBrandAge": true,
+    "extractDerivedSignals": true,
+    "extractCollectionData": true,
+    "extractAuthors": true,
+    "extractBlog": true,
+    "extractRobots": true,
+    "extractSecurityHeaders": true,
+    "extractDns": true,
+    "extractSchemaOrg": true,
+    "maxConcurrency": 3,
+    "timeout": 30
+  },
+  "nodeName": "woocommerceAnalyzer",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "ZNpmbM1MPLrFNUJaH"
+}

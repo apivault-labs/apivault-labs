@@ -1,0 +1,57 @@
+{
+  "parameters": {
+    "category": "plumbers",
+    "location": "New York NY",
+    "startUrls": "https://example.com/example",
+    "pages": 1,
+    "onlyWithoutWebsite": false,
+    "maxConcurrency": 3,
+    "timeout": 120,
+    "enrichWebsites": true,
+    "crawlSubpages": true,
+    "verifyEmails": true,
+    "extractOwnerName": true,
+    "enrichEmailGuesses": true,
+    "enrichSocialUrls": true,
+    "includeOutreachPitch": true,
+    "enrichBrandAge": true,
+    "enrichGeocode": false,
+    "excludeChains": false,
+    "minLeadScore": 0,
+    "maxResults": 0,
+    "exportFormat": "default",
+    "additionalInput": "{}"
+  },
+  "body": {
+    "category": "plumbers",
+    "location": "New York NY",
+    "startUrls": [
+      "https://example.com/example"
+    ],
+    "pages": 1,
+    "onlyWithoutWebsite": false,
+    "maxConcurrency": 3,
+    "timeout": 120,
+    "enrichWebsites": true,
+    "crawlSubpages": true,
+    "verifyEmails": true,
+    "extractOwnerName": true,
+    "enrichEmailGuesses": true,
+    "enrichSocialUrls": true,
+    "includeOutreachPitch": true,
+    "enrichBrandAge": true,
+    "enrichGeocode": false,
+    "excludeChains": false,
+    "minLeadScore": 0,
+    "maxResults": 0,
+    "exportFormat": "default"
+  },
+  "nodeName": "localLeadFinderPro",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "NTugGARLmEpshWq7A"
+}

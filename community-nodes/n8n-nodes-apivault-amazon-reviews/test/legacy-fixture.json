@@ -1,0 +1,50 @@
+{
+  "parameters": {
+    "asins": "example",
+    "domain": "amazon.com",
+    "maxPages": 1,
+    "sortBy": "recent",
+    "filterByStar": "all_stars",
+    "extractReviewer": true,
+    "extractRating": true,
+    "extractTitle": true,
+    "extractDate": true,
+    "extractText": true,
+    "extractVerified": true,
+    "extractHelpfulCount": true,
+    "extractCountry": true,
+    "extractVariant": true,
+    "extractAsinField": true,
+    "maxConcurrency": 2,
+    "timeout": 120
+  },
+  "body": {
+    "asins": [
+      "example"
+    ],
+    "domain": "amazon.com",
+    "maxPages": 1,
+    "sortBy": "recent",
+    "filterByStar": "all_stars",
+    "extractReviewer": true,
+    "extractRating": true,
+    "extractTitle": true,
+    "extractDate": true,
+    "extractText": true,
+    "extractVerified": true,
+    "extractHelpfulCount": true,
+    "extractCountry": true,
+    "extractVariant": true,
+    "extractAsinField": true,
+    "maxConcurrency": 2,
+    "timeout": 120
+  },
+  "nodeName": "amazonReviews",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "KXlDi1LT7eCGlCmRs"
+}

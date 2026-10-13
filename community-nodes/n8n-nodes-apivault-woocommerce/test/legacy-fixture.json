@@ -1,0 +1,51 @@
+{
+  "parameters": {
+    "storeUrls": "https://example.com/example",
+    "exportFormat": "default",
+    "customColumns": "example",
+    "limits": {},
+    "variantsReviews": {},
+    "fields": {},
+    "advancedOptions": {}
+  },
+  "body": {
+    "storeUrls": [
+      "https://example.com/example"
+    ],
+    "exportFormat": "default",
+    "customColumns": "example",
+    "maxProducts": 250,
+    "perPage": 100,
+    "onlyInStock": false,
+    "category": "",
+    "convertToCurrency": "",
+    "flattenVariants": false,
+    "enrichVariants": false,
+    "extractReviewsText": false,
+    "reviewsPerProduct": 5,
+    "extractTitle": true,
+    "extractPrice": true,
+    "extractRegularPrice": true,
+    "extractSalePrice": true,
+    "extractSku": true,
+    "extractDescription": true,
+    "extractShortDescription": true,
+    "extractImages": true,
+    "extractCategories": true,
+    "extractTags": true,
+    "extractAttributes": true,
+    "extractStock": true,
+    "extractRating": true,
+    "extractVariations": true,
+    "maxConcurrency": 3,
+    "timeout": 30
+  },
+  "nodeName": "wooCommerce",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "kGVnDXUL5UFMQY8QQ"
+}

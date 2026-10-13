@@ -1,0 +1,60 @@
+{
+  "parameters": {
+    "workflow": "auto",
+    "minVisits": 1000,
+    "maxVisits": 0,
+    "topGlobalRank": 0,
+    "category": "example",
+    "country": "example",
+    "minSearchShare": 0,
+    "hasAiTraffic": false,
+    "onlyGrowing": false,
+    "minGrowthPercent": 0,
+    "keyword": "example",
+    "trafficSource": "search",
+    "minSourceShare": 0,
+    "maxBounce": 0,
+    "minPagesPerVisit": 0,
+    "minTimeOnSite": 0,
+    "maxResults": 25,
+    "sortBy": "visits",
+    "sortOrder": "desc",
+    "outputPreset": "outreach",
+    "domains": "https://example.com/example",
+    "similarTo": "example"
+  },
+  "body": {
+    "workflow": "auto",
+    "minVisits": 1000,
+    "maxVisits": 0,
+    "topGlobalRank": 0,
+    "category": "example",
+    "country": "example",
+    "minSearchShare": 0,
+    "hasAiTraffic": false,
+    "onlyGrowing": false,
+    "minGrowthPercent": 0,
+    "keyword": "example",
+    "trafficSource": "search",
+    "minSourceShare": 0,
+    "maxBounce": 0,
+    "minPagesPerVisit": 0,
+    "minTimeOnSite": 0,
+    "maxResults": 25,
+    "sortBy": "visits",
+    "sortOrder": "desc",
+    "outputPreset": "outreach",
+    "domains": [
+      "https://example.com/example"
+    ],
+    "similarTo": "example"
+  },
+  "nodeName": "websiteTrafficDatabase",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "2ahDVr2hK6unhydIJ"
+}

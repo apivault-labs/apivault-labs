@@ -100,3 +100,6 @@ n8n Cloud verification is a separate Creator Portal review and is not claimed he
 | [youtube-channel-stats](https://apify.com/apivault_labs/youtube-channel-stats) | [apivault-youtube-channel-stats](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-youtube-channel-stats) | Existing package |
 | [zillow-property-scraper](https://apify.com/apivault_labs/zillow-property-scraper) | [apivault-zillow-property-scraper](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-zillow-property-scraper) | Existing package |
 | [zillow-scraper](https://apify.com/apivault_labs/zillow-scraper) | [apivault-zillow-scraper](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-zillow-scraper) | Existing package |
+
+
+[Legacy n8n updates](legacy-n8n-updates.md): compatibility-preserving source releases for existing community packages.

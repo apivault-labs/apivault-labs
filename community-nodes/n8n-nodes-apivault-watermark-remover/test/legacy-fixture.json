@@ -1,0 +1,24 @@
+{
+  "parameters": {
+    "imageUrls": "https://example.com/example",
+    "timeout": 120,
+    "maxConcurrency": 2,
+    "customProxyUrl": "https://example.com/example"
+  },
+  "body": {
+    "imageUrls": [
+      "https://example.com/example"
+    ],
+    "timeout": 120,
+    "maxConcurrency": 2,
+    "customProxyUrl": "https://example.com/example"
+  },
+  "nodeName": "watermarkRemover",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "4fIOUrPVR5B8w8bhu"
+}

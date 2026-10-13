@@ -1,0 +1,22 @@
+{
+  "parameters": {
+    "imageUrls": "https://example.com/example",
+    "scale": 2,
+    "maxWait": 120
+  },
+  "body": {
+    "imageUrls": [
+      "https://example.com/example"
+    ],
+    "scale": 2,
+    "maxWait": 120
+  },
+  "nodeName": "imageUpscaler",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "chCeRZRYfsIKJ2Um6"
+}

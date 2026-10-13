@@ -1,0 +1,28 @@
+{
+  "parameters": {
+    "feedUrls": "https://example.com/example",
+    "maxItems": 100,
+    "stripHtml": true,
+    "extractFeedMetadata": true,
+    "maxConcurrency": 5,
+    "timeout": 20
+  },
+  "body": {
+    "feedUrls": [
+      "https://example.com/example"
+    ],
+    "maxItems": 100,
+    "stripHtml": true,
+    "extractFeedMetadata": true,
+    "maxConcurrency": 5,
+    "timeout": 20
+  },
+  "nodeName": "rss",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "XItoeDsQ5yixVaMKI"
+}

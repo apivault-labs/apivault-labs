@@ -1,0 +1,30 @@
+{
+  "parameters": {
+    "mode": "profiles",
+    "profileUrls": "https://example.com/example",
+    "searchKeywords": "example",
+    "searchLocation": "example",
+    "postOptions": {},
+    "contactOptions": {}
+  },
+  "body": {
+    "mode": "profiles",
+    "enrichEmailViaGoogle": true,
+    "scrapePosts": false,
+    "profileUrls": [
+      "https://example.com/example"
+    ],
+    "searchKeywords": [
+      "example"
+    ],
+    "searchLocation": "example"
+  },
+  "nodeName": "facebook",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "NZ2v1fqLfaN2UBYIx"
+}

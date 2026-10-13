@@ -1,0 +1,35 @@
+{
+  "parameters": {
+    "productUrls": "https://example.com/example",
+    "exportFormat": "default",
+    "retailMarkup": 3,
+    "filters": {},
+    "additionalOptions": {}
+  },
+  "body": {
+    "productUrls": [
+      "https://example.com/example"
+    ],
+    "exportFormat": "default",
+    "retailMarkup": "3",
+    "minDemandScore": 0,
+    "minHotProductScore": 0,
+    "onlyTrending": false,
+    "onlyFreeShipping": false,
+    "writeSummary": true,
+    "extractVariants": true,
+    "extractImages": true,
+    "extractOutreachLinks": true,
+    "maxConcurrency": 3,
+    "maxRetries": 1,
+    "timeout": 180
+  },
+  "nodeName": "temu",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "4kqabNhJmz8CRgV5z"
+}

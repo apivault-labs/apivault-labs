@@ -1,0 +1,34 @@
+{
+  "parameters": {
+    "sellerUrls": "https://example.com/example",
+    "sellerIds": "example",
+    "marketplace": "us",
+    "maxProductsPerSeller": 10,
+    "includeOffers": true,
+    "trackStrategy": true,
+    "maxConcurrency": 4,
+    "proxyConfiguration": "{}"
+  },
+  "body": {
+    "sellerUrls": [
+      "https://example.com/example"
+    ],
+    "sellerIds": [
+      "example"
+    ],
+    "marketplace": "us",
+    "maxProductsPerSeller": 10,
+    "includeOffers": true,
+    "trackStrategy": true,
+    "maxConcurrency": 4,
+    "proxyConfiguration": {}
+  },
+  "nodeName": "amazonSellerAnalyzer",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "NFIKGWdTAHRznHrUZ"
+}

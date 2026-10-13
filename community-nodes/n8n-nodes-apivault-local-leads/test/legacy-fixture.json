@@ -1,0 +1,41 @@
+{
+  "parameters": {
+    "inputMode": "search",
+    "category": "example",
+    "location": "example",
+    "startUrls": "https://example.com/example",
+    "pages": 1,
+    "onlyWithoutWebsite": false,
+    "exportFormat": "default",
+    "enrichment": {},
+    "filters": {}
+  },
+  "body": {
+    "category": "example",
+    "location": "example",
+    "startUrls": [],
+    "pages": 1,
+    "onlyWithoutWebsite": false,
+    "exportFormat": "default",
+    "enrichWebsites": true,
+    "enrichEmailGuesses": true,
+    "enrichSocialUrls": true,
+    "includeOutreachPitch": true,
+    "enrichBrandAge": true,
+    "enrichGeocode": false,
+    "crawlSubpages": true,
+    "verifyEmails": true,
+    "extractOwnerName": true,
+    "excludeChains": false,
+    "minLeadScore": 0,
+    "maxResults": 0
+  },
+  "nodeName": "localLeads",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "liRuJHh5OxQH3r64Z"
+}

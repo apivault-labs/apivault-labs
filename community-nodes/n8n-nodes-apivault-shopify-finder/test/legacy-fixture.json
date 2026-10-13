@@ -1,0 +1,62 @@
+{
+  "parameters": {
+    "workflow": "auto",
+    "platforms": "example",
+    "outputPreset": "custom",
+    "columns": "example",
+    "sortBy": "Overall Score",
+    "country": "example",
+    "keyword": "example",
+    "phoneCode": "+12025550182",
+    "filters": "[]",
+    "hasEmail": false,
+    "includeTrafficData": false,
+    "onlyWithTrafficData": false,
+    "minMonthlyVisits": 0,
+    "maxMonthlyVisits": 0,
+    "trafficSortOrder": "none",
+    "hasPhone": false,
+    "sortDesc": true,
+    "dedupeByDomain": true,
+    "countOnly": false,
+    "maxItems": 50,
+    "offset": 0
+  },
+  "body": {
+    "workflow": "auto",
+    "platforms": [
+      "example"
+    ],
+    "outputPreset": "custom",
+    "columns": [
+      "example"
+    ],
+    "sortBy": "Overall Score",
+    "country": [
+      "example"
+    ],
+    "keyword": "example",
+    "phoneCode": "+12025550182",
+    "filters": [],
+    "hasEmail": false,
+    "includeTrafficData": false,
+    "onlyWithTrafficData": false,
+    "minMonthlyVisits": 0,
+    "maxMonthlyVisits": 0,
+    "trafficSortOrder": "none",
+    "hasPhone": false,
+    "sortDesc": true,
+    "dedupeByDomain": true,
+    "countOnly": false,
+    "maxItems": 50,
+    "offset": 0
+  },
+  "nodeName": "shopifyFinder",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "InYi5NI4KMb8xo5u9"
+}

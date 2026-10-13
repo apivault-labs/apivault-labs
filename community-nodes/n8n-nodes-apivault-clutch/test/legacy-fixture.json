@@ -1,0 +1,48 @@
+{
+  "parameters": {
+    "companyUrls": "https://example.com/example",
+    "extractName": true,
+    "extractRating": true,
+    "extractReviews": true,
+    "extractTagline": true,
+    "extractLocation": true,
+    "extractEmployees": true,
+    "extractHourlyRate": true,
+    "extractMinProject": true,
+    "extractServices": true,
+    "extractIndustries": true,
+    "extractWebsite": true,
+    "extractPhone": true,
+    "extractImage": true,
+    "maxConcurrency": 3,
+    "timeout": 120
+  },
+  "body": {
+    "companyUrls": [
+      "https://example.com/example"
+    ],
+    "extractName": true,
+    "extractRating": true,
+    "extractReviews": true,
+    "extractTagline": true,
+    "extractLocation": true,
+    "extractEmployees": true,
+    "extractHourlyRate": true,
+    "extractMinProject": true,
+    "extractServices": true,
+    "extractIndustries": true,
+    "extractWebsite": true,
+    "extractPhone": true,
+    "extractImage": true,
+    "maxConcurrency": 3,
+    "timeout": 120
+  },
+  "nodeName": "clutch",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "DQjBjw0oZNmXmxztZ"
+}

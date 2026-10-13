@@ -1,0 +1,69 @@
+{
+  "parameters": {
+    "runMode": "export",
+    "returnMode": "rows",
+    "opportunityPreset": "balanced",
+    "overallScoreMax": 0,
+    "overallScoreMin": 0,
+    "seoScoreMax": 0,
+    "performanceScoreMax": 0,
+    "securityScoreMax": 0,
+    "accessibilityScoreMax": 0,
+    "auditScopes": "example",
+    "auditIssues": "example",
+    "issueMatchMode": "any",
+    "auditConfidence": "example",
+    "contactRequirement": "email",
+    "country": "example",
+    "vertical": "example",
+    "technologies": "example",
+    "hasAiTechnology": false,
+    "checkedWithinDays": 0,
+    "sortBy": "Overall Score",
+    "sortDesc": false,
+    "maxItems": 50,
+    "offset": 0,
+    "dedupeByDomain": true,
+    "columns": "example"
+  },
+  "body": {
+    "runMode": "export",
+    "opportunityPreset": "balanced",
+    "auditScopes": [
+      "example"
+    ],
+    "auditIssues": [
+      "example"
+    ],
+    "issueMatchMode": "any",
+    "auditConfidence": [
+      "example"
+    ],
+    "contactRequirement": "email",
+    "country": [
+      "example"
+    ],
+    "vertical": "example",
+    "technologies": [
+      "example"
+    ],
+    "hasAiTechnology": false,
+    "checkedWithinDays": 0,
+    "sortBy": "Overall Score",
+    "sortDesc": false,
+    "maxItems": 50,
+    "offset": 0,
+    "dedupeByDomain": true,
+    "columns": [
+      "example"
+    ]
+  },
+  "nodeName": "websiteAuditLeads",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "4tbFN8UyTf5qVmnLT"
+}

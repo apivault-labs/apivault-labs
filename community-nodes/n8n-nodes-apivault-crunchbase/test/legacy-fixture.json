@@ -1,0 +1,40 @@
+{
+  "parameters": {
+    "profileUrls": "https://example.com/example",
+    "maxConcurrency": 5,
+    "timeout": 120,
+    "extractCompanyName": true,
+    "extractDescription": true,
+    "extractLocation": true,
+    "extractIndustry": true,
+    "extractEmail": true,
+    "extractPhone": true,
+    "extractWebsite": true,
+    "extractProfileUrl": true,
+    "extractMetadata": true
+  },
+  "body": {
+    "profileUrls": [
+      "https://example.com/example"
+    ],
+    "maxConcurrency": 5,
+    "timeout": 120,
+    "extractCompanyName": true,
+    "extractDescription": true,
+    "extractLocation": true,
+    "extractIndustry": true,
+    "extractEmail": true,
+    "extractPhone": true,
+    "extractWebsite": true,
+    "extractProfileUrl": true,
+    "extractMetadata": true
+  },
+  "nodeName": "crunchbase",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "keyno2C1MyBBCBTOe"
+}

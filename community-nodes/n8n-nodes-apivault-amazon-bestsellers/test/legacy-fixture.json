@@ -1,0 +1,44 @@
+{
+  "parameters": {
+    "categoryUrls": "https://example.com/example",
+    "domain": "amazon.com",
+    "maxPages": 2,
+    "extractRank": true,
+    "extractTitle": true,
+    "extractPrice": true,
+    "extractRating": true,
+    "extractReviewsCount": true,
+    "extractAsin": true,
+    "extractProductUrl": true,
+    "extractImage": true,
+    "extractCategoryName": true,
+    "maxConcurrency": 2,
+    "timeout": 180
+  },
+  "body": {
+    "categoryUrls": [
+      "https://example.com/example"
+    ],
+    "domain": "amazon.com",
+    "maxPages": 2,
+    "extractRank": true,
+    "extractTitle": true,
+    "extractPrice": true,
+    "extractRating": true,
+    "extractReviewsCount": true,
+    "extractAsin": true,
+    "extractProductUrl": true,
+    "extractImage": true,
+    "extractCategoryName": true,
+    "maxConcurrency": 2,
+    "timeout": 180
+  },
+  "nodeName": "amazonBestsellers",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "AhU85DNr5MagE9Bib"
+}

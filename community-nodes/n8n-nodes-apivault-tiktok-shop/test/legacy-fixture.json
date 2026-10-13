@@ -1,0 +1,24 @@
+{
+  "parameters": {
+    "productUrls": "https://example.com/example",
+    "maxConcurrency": 5,
+    "timeout": 60,
+    "maxRetries": 3
+  },
+  "body": {
+    "productUrls": [
+      "https://example.com/example"
+    ],
+    "maxConcurrency": 5,
+    "timeout": 60,
+    "maxRetries": 3
+  },
+  "nodeName": "tiktokShop",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "8P8U3FujvIksue4ka"
+}

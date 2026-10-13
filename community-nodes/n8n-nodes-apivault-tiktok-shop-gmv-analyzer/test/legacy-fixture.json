@@ -1,0 +1,54 @@
+{
+  "parameters": {
+    "mode": "keyword",
+    "searchQueries": "example",
+    "sellerUrls": "https://example.com/example",
+    "productUrls": "https://example.com/example",
+    "productIds": "example",
+    "creatorIds": "example",
+    "maxItems": 30,
+    "maxConcurrency": 4,
+    "timeoutSeconds": 35,
+    "costOfGoodsPercent": 30,
+    "platformFeePercent": 6,
+    "creatorCommissionPercent": 10,
+    "advertisingPercent": 10,
+    "refundRatePercent": 2,
+    "shippingCostPerOrder": 0
+  },
+  "body": {
+    "mode": "keyword",
+    "searchQueries": [
+      "example"
+    ],
+    "sellerUrls": [
+      "https://example.com/example"
+    ],
+    "productUrls": [
+      "https://example.com/example"
+    ],
+    "productIds": [
+      "example"
+    ],
+    "creatorIds": [
+      "example"
+    ],
+    "maxItems": 30,
+    "maxConcurrency": 4,
+    "timeoutSeconds": 35,
+    "costOfGoodsPercent": 30,
+    "platformFeePercent": 6,
+    "creatorCommissionPercent": 10,
+    "advertisingPercent": 10,
+    "refundRatePercent": 2,
+    "shippingCostPerOrder": 0
+  },
+  "nodeName": "tiktokShopGmvAnalyzer",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "lyjpLaqU9YhzwDZNy"
+}

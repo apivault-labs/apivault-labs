@@ -1,0 +1,39 @@
+{
+  "parameters": {
+    "keywords": "example",
+    "location": "example",
+    "sources": [
+      "indeed",
+      "linkedin"
+    ],
+    "deduplicateCompanies": true,
+    "exportFormat": "default",
+    "filters": {},
+    "additionalOptions": {}
+  },
+  "body": {
+    "keywords": "example",
+    "location": "example",
+    "sources": [
+      "indeed",
+      "linkedin"
+    ],
+    "deduplicateCompanies": true,
+    "exportFormat": "default",
+    "minLeadScore": 0,
+    "onlyWithSalary": false,
+    "onlyRemote": false,
+    "onlyFreshThisWeek": false,
+    "onlyPayTransparencyCompliant": false,
+    "writeSummary": true,
+    "topN": 20
+  },
+  "nodeName": "jobLeads",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "Dye6dvqAhddD0yzbr"
+}

@@ -1,0 +1,26 @@
+{
+  "parameters": {
+    "targets": "example",
+    "historyDays": "28",
+    "fastMode": false,
+    "maxConcurrency": 10,
+    "proxyConfiguration": "{}"
+  },
+  "body": {
+    "targets": [
+      "example"
+    ],
+    "historyDays": "28",
+    "fastMode": false,
+    "maxConcurrency": 10,
+    "proxyConfiguration": {}
+  },
+  "nodeName": "youtubeChannelAnalyzer",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "K09OrGifukaMjqDSH"
+}

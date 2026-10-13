@@ -1,0 +1,42 @@
+{
+  "parameters": {
+    "storeUrls": "https://example.com/example",
+    "generateComparison": true,
+    "trackChanges": true,
+    "revenueSettings": {},
+    "extraction": {}
+  },
+  "body": {
+    "storeUrls": [
+      "https://example.com/example"
+    ],
+    "generateComparison": true,
+    "trackChanges": true,
+    "conversionRate": 2.5,
+    "productSampleSize": 250,
+    "extractProducts": true,
+    "extractVelocity": true,
+    "extractCollections": true,
+    "extractSitemap": true,
+    "extractTraffic": true,
+    "extractRevenueEstimate": true,
+    "extractTechStack": true,
+    "extractSocials": true,
+    "extractContact": true,
+    "deepContactCrawl": true,
+    "extractShopifyMeta": true,
+    "extractInternational": true,
+    "extractReviewsAggregate": true,
+    "extractPromo": true,
+    "extractDerivedSignals": true,
+    "extractBrandAge": false
+  },
+  "nodeName": "shopifyAnalyzer",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "9twVh4isboNg2w6bg"
+}

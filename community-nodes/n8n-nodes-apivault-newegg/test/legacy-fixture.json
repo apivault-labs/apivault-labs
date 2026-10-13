@@ -1,0 +1,48 @@
+{
+  "parameters": {
+    "productUrls": "https://example.com/example",
+    "extractTitle": true,
+    "extractPrice": true,
+    "extractOriginalPrice": true,
+    "extractRating": true,
+    "extractReviewsCount": true,
+    "extractBrand": true,
+    "extractModel": true,
+    "extractCategory": true,
+    "extractAvailability": true,
+    "extractSeller": true,
+    "extractShipping": true,
+    "extractDescription": true,
+    "extractImage": true,
+    "maxConcurrency": 3,
+    "timeout": 180
+  },
+  "body": {
+    "productUrls": [
+      "https://example.com/example"
+    ],
+    "extractTitle": true,
+    "extractPrice": true,
+    "extractOriginalPrice": true,
+    "extractRating": true,
+    "extractReviewsCount": true,
+    "extractBrand": true,
+    "extractModel": true,
+    "extractCategory": true,
+    "extractAvailability": true,
+    "extractSeller": true,
+    "extractShipping": true,
+    "extractDescription": true,
+    "extractImage": true,
+    "maxConcurrency": 3,
+    "timeout": 180
+  },
+  "nodeName": "newegg",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "t0oWsDLob7QOPxcCh"
+}

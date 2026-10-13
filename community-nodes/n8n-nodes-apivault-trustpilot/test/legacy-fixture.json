@@ -1,0 +1,52 @@
+{
+  "parameters": {
+    "startUrls": "https://example.com/example",
+    "searchTerms": "example",
+    "contentMode": "companyInformationAndReviews",
+    "maxReviews": 100,
+    "dateRange": "all",
+    "filterStars": [],
+    "filterLanguages": "example",
+    "filterCountries": "example",
+    "verifiedOnly": false,
+    "repliesOnly": false,
+    "strictNameMatch": false,
+    "includeReviewInsights": true,
+    "includeCompanyDetails": true,
+    "compact": false,
+    "sortBy": "auto"
+  },
+  "body": {
+    "startUrls": [
+      "https://example.com/example"
+    ],
+    "searchTerms": [
+      "example"
+    ],
+    "contentMode": "companyInformationAndReviews",
+    "maxReviews": 100,
+    "dateRange": "all",
+    "filterStars": [],
+    "filterLanguages": [
+      "example"
+    ],
+    "filterCountries": [
+      "example"
+    ],
+    "verifiedOnly": false,
+    "repliesOnly": false,
+    "strictNameMatch": false,
+    "includeReviewInsights": true,
+    "includeCompanyDetails": true,
+    "compact": false,
+    "sortBy": "auto"
+  },
+  "nodeName": "trustpilot",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "1oi5wwO1HhVHXWqqw"
+}

@@ -1,0 +1,48 @@
+{
+  "parameters": {
+    "profileUrls": "https://example.com/example",
+    "extractUsername": true,
+    "extractFullName": true,
+    "extractBio": true,
+    "extractLocation": true,
+    "extractRating": true,
+    "extractReviews": true,
+    "extractMemberSince": true,
+    "extractResponseTime": true,
+    "extractLanguages": true,
+    "extractProfileUrl": true,
+    "extractProfileImage": true,
+    "extractSellerLevel": true,
+    "extractMetadata": true,
+    "maxConcurrency": 3,
+    "timeout": 120
+  },
+  "body": {
+    "profileUrls": [
+      "https://example.com/example"
+    ],
+    "extractUsername": true,
+    "extractFullName": true,
+    "extractBio": true,
+    "extractLocation": true,
+    "extractRating": true,
+    "extractReviews": true,
+    "extractMemberSince": true,
+    "extractResponseTime": true,
+    "extractLanguages": true,
+    "extractProfileUrl": true,
+    "extractProfileImage": true,
+    "extractSellerLevel": true,
+    "extractMetadata": true,
+    "maxConcurrency": 3,
+    "timeout": 120
+  },
+  "nodeName": "fiverr",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "GeHTIj4DfKqV2Zo4l"
+}

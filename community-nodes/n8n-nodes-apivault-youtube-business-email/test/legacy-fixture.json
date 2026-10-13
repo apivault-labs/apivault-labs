@@ -1,0 +1,53 @@
+{
+  "parameters": {
+    "channels": "@MrBeast\n@mkbhd\n@NetworkChuck",
+    "searchQueries": "example",
+    "maxChannelsPerQuery": 10,
+    "onlyWithEmail": false,
+    "onlyBusinessEmail": false,
+    "emailDomains": "example@example.com",
+    "minSubscribers": 0,
+    "enrichFromLinks": true,
+    "useDeepLookup": true,
+    "deepLookupEndpoint": "example",
+    "deepLookupApiKey": "example",
+    "preciseSubscribers": true,
+    "extractRecentVideos": true,
+    "maxConcurrency": 40,
+    "timeout": 25,
+    "additionalInput": "{}"
+  },
+  "body": {
+    "channels": [
+      "@MrBeast",
+      "@mkbhd",
+      "@NetworkChuck"
+    ],
+    "searchQueries": [
+      "example"
+    ],
+    "maxChannelsPerQuery": 10,
+    "onlyWithEmail": false,
+    "onlyBusinessEmail": false,
+    "emailDomains": [
+      "example@example.com"
+    ],
+    "minSubscribers": 0,
+    "enrichFromLinks": true,
+    "useDeepLookup": true,
+    "deepLookupEndpoint": "example",
+    "deepLookupApiKey": "example",
+    "preciseSubscribers": true,
+    "extractRecentVideos": true,
+    "maxConcurrency": 40,
+    "timeout": 25
+  },
+  "nodeName": "youtubeBusinessEmailScraper",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "7iCrjW8fqMgA950VB"
+}

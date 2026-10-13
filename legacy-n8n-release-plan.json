@@ -1,0 +1,471 @@
+[
+  {
+    "actor": "ad-library-scraper-facebook-tiktok-google-ads",
+    "package": "n8n-nodes-apivault-ad-library",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-ad-library"
+  },
+  {
+    "actor": "airbnb-revenue-occupancy-roi-analyzer",
+    "package": "n8n-nodes-apivault-airbnb-revenue-analyzer",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-airbnb-revenue-analyzer"
+  },
+  {
+    "actor": "amazon-product-scraper",
+    "package": "n8n-nodes-apivault-amazon",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-amazon"
+  },
+  {
+    "actor": "amazon-bestsellers-scraper",
+    "package": "n8n-nodes-apivault-amazon-bestsellers",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-amazon-bestsellers"
+  },
+  {
+    "actor": "amazon-reviews-scraper",
+    "package": "n8n-nodes-apivault-amazon-reviews",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-amazon-reviews"
+  },
+  {
+    "actor": "amazon-seller-revenue-strategy-analyzer",
+    "package": "n8n-nodes-apivault-amazon-seller-analyzer",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-amazon-seller-analyzer"
+  },
+  {
+    "actor": "app-developer-leads",
+    "package": "n8n-nodes-apivault-app-leads",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-app-leads"
+  },
+  {
+    "actor": "app-revenue-analyzer",
+    "package": "n8n-nodes-apivault-app-revenue-analyzer",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-app-revenue-analyzer"
+  },
+  {
+    "actor": "background-remover",
+    "package": "n8n-nodes-apivault-background-remover",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-background-remover"
+  },
+  {
+    "actor": "image-cdn-upload",
+    "package": "n8n-nodes-apivault-cdn-upload",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-cdn-upload"
+  },
+  {
+    "actor": "clutch-company-scraper",
+    "package": "n8n-nodes-apivault-clutch",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-clutch"
+  },
+  {
+    "actor": "clutch-company-search",
+    "package": "n8n-nodes-apivault-clutch-search",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-clutch-search"
+  },
+  {
+    "actor": "crunchbase-scraper",
+    "package": "n8n-nodes-apivault-crunchbase",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-crunchbase"
+  },
+  {
+    "actor": "domain-intelligence-scraper",
+    "package": "n8n-nodes-apivault-domain-intel",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-domain-intel"
+  },
+  {
+    "actor": "email-deliverability-checker",
+    "package": "n8n-nodes-apivault-email-intel",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-email-intel"
+  },
+  {
+    "actor": "email-validator",
+    "package": "n8n-nodes-apivault-email-validator",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-email-validator"
+  },
+  {
+    "actor": "email-deliverability-checker",
+    "package": "n8n-nodes-apivault-email-verifier",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-email-verifier"
+  },
+  {
+    "actor": "facebook-profile-scraper",
+    "package": "n8n-nodes-apivault-facebook",
+    "version": "0.4.0",
+    "previousVersion": "0.3.1",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook"
+  },
+  {
+    "actor": "facebook-marketplace-scraper",
+    "package": "n8n-nodes-apivault-facebook-marketplace",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook-marketplace"
+  },
+  {
+    "actor": "facebook-reels-video-scraper",
+    "package": "n8n-nodes-apivault-facebook-reels",
+    "version": "0.4.0",
+    "previousVersion": "0.3.1",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook-reels"
+  },
+  {
+    "actor": "facebook-reviews-scraper",
+    "package": "n8n-nodes-apivault-facebook-reviews",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook-reviews"
+  },
+  {
+    "actor": "fiverr-seller-scraper",
+    "package": "n8n-nodes-apivault-fiverr",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-fiverr"
+  },
+  {
+    "actor": "github-profile-scraper",
+    "package": "n8n-nodes-apivault-github",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-github"
+  },
+  {
+    "actor": "google-ads-transparency-scraper",
+    "package": "n8n-nodes-apivault-google-ads-transparency",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-google-ads-transparency"
+  },
+  {
+    "actor": "google-maps-scraper-emails-contact-details-leads",
+    "package": "n8n-nodes-apivault-google-maps-contacts",
+    "version": "0.2.0",
+    "previousVersion": "0.1.1",
+    "folder": "community-nodes/n8n-nodes-apivault-google-maps-contacts"
+  },
+  {
+    "actor": "ai-photo-upscaler",
+    "package": "n8n-nodes-apivault-image-upscaler",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-image-upscaler"
+  },
+  {
+    "actor": "indeed-jobs-scraper",
+    "package": "n8n-nodes-apivault-indeed-jobs",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-indeed-jobs"
+  },
+  {
+    "actor": "instagram-profile-scraper",
+    "package": "n8n-nodes-apivault-instagram",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-instagram"
+  },
+  {
+    "actor": "apify-actor-job-leads",
+    "package": "n8n-nodes-apivault-job-leads",
+    "version": "0.2.0",
+    "previousVersion": "0.1.2",
+    "folder": "community-nodes/n8n-nodes-apivault-job-leads"
+  },
+  {
+    "actor": "linkedin-jobs-scraper",
+    "package": "n8n-nodes-apivault-linkedin-jobs",
+    "version": "0.3.0",
+    "previousVersion": "0.2.2",
+    "folder": "community-nodes/n8n-nodes-apivault-linkedin-jobs"
+  },
+  {
+    "actor": "linkedin-profile-scraper-no-cookies",
+    "package": "n8n-nodes-apivault-linkedin-profile",
+    "version": "0.3.0",
+    "previousVersion": "0.2.0",
+    "folder": "community-nodes/n8n-nodes-apivault-linkedin-profile"
+  },
+  {
+    "actor": "local-business-lead-finder-pro",
+    "package": "n8n-nodes-apivault-local-lead-finder-pro",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-local-lead-finder-pro"
+  },
+  {
+    "actor": "apify-actor-local-leads",
+    "package": "n8n-nodes-apivault-local-leads",
+    "version": "0.2.0",
+    "previousVersion": "0.1.3",
+    "folder": "community-nodes/n8n-nodes-apivault-local-leads"
+  },
+  {
+    "actor": "maigret-username-osint",
+    "package": "n8n-nodes-apivault-maigret",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-maigret"
+  },
+  {
+    "actor": "newegg-product-scraper",
+    "package": "n8n-nodes-apivault-newegg",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-newegg"
+  },
+  {
+    "actor": "pinterest-scraper",
+    "package": "n8n-nodes-apivault-pinterest",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-pinterest"
+  },
+  {
+    "actor": "producthunt-scraper",
+    "package": "n8n-nodes-apivault-producthunt",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-producthunt"
+  },
+  {
+    "actor": "reddit-scraper",
+    "package": "n8n-nodes-apivault-reddit",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-reddit"
+  },
+  {
+    "actor": "universal-rss-scraper",
+    "package": "n8n-nodes-apivault-rss",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-rss"
+  },
+  {
+    "actor": "shopify-store-analyzer",
+    "package": "n8n-nodes-apivault-shopify-analyzer",
+    "version": "0.2.0",
+    "previousVersion": "0.1.3",
+    "folder": "community-nodes/n8n-nodes-apivault-shopify-analyzer"
+  },
+  {
+    "actor": "website-leads-database",
+    "package": "n8n-nodes-apivault-shopify-finder",
+    "version": "0.4.0",
+    "previousVersion": "0.3.2",
+    "folder": "community-nodes/n8n-nodes-apivault-shopify-finder"
+  },
+  {
+    "actor": "shopify-product-scraper",
+    "package": "n8n-nodes-apivault-shopify-product",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-shopify-product"
+  },
+  {
+    "actor": "similarweb-scraper",
+    "package": "n8n-nodes-apivault-similarweb",
+    "version": "0.3.0",
+    "previousVersion": "0.2.0",
+    "folder": "community-nodes/n8n-nodes-apivault-similarweb"
+  },
+  {
+    "actor": "skip-trace-people-finder",
+    "package": "n8n-nodes-apivault-skip-trace",
+    "version": "0.3.0",
+    "previousVersion": "0.2.0",
+    "folder": "community-nodes/n8n-nodes-apivault-skip-trace"
+  },
+  {
+    "actor": "stackowerflow-scraper",
+    "package": "n8n-nodes-apivault-stackoverflow",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-stackoverflow"
+  },
+  {
+    "actor": "tech-stack-lookup",
+    "package": "n8n-nodes-apivault-tech-stack-lookup",
+    "version": "0.3.0",
+    "previousVersion": "0.2.1",
+    "folder": "community-nodes/n8n-nodes-apivault-tech-stack-lookup"
+  },
+  {
+    "actor": "temp-email",
+    "package": "n8n-nodes-apivault-temp-email",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-temp-email"
+  },
+  {
+    "actor": "temu-product-scraper",
+    "package": "n8n-nodes-apivault-temu",
+    "version": "0.2.0",
+    "previousVersion": "0.1.1",
+    "folder": "community-nodes/n8n-nodes-apivault-temu"
+  },
+  {
+    "actor": "tiktok-shadow-ban-checker",
+    "package": "n8n-nodes-apivault-tiktok-shadowban",
+    "version": "0.2.0",
+    "previousVersion": "0.1.1",
+    "folder": "community-nodes/n8n-nodes-apivault-tiktok-shadowban"
+  },
+  {
+    "actor": "tiktok-shop-scraper",
+    "package": "n8n-nodes-apivault-tiktok-shop",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-tiktok-shop"
+  },
+  {
+    "actor": "tiktok-shop-seller-product-creator-gmv-analyzer",
+    "package": "n8n-nodes-apivault-tiktok-shop-gmv-analyzer",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-tiktok-shop-gmv-analyzer"
+  },
+  {
+    "actor": "trustpilot-scraper-reviews-ratings-api",
+    "package": "n8n-nodes-apivault-trustpilot",
+    "version": "0.2.0",
+    "previousVersion": "0.1.1",
+    "folder": "community-nodes/n8n-nodes-apivault-trustpilot"
+  },
+  {
+    "actor": "walmart-seller-revenue-product-opportunity-analyzer",
+    "package": "n8n-nodes-apivault-walmart-seller-analyzer",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-walmart-seller-analyzer"
+  },
+  {
+    "actor": "fast-ai-watermark-remover",
+    "package": "n8n-nodes-apivault-watermark-remover",
+    "version": "0.2.0",
+    "previousVersion": "0.1.1",
+    "folder": "community-nodes/n8n-nodes-apivault-watermark-remover"
+  },
+  {
+    "actor": "website-audit-leads",
+    "package": "n8n-nodes-apivault-website-audit-leads",
+    "version": "0.3.0",
+    "previousVersion": "0.2.0",
+    "folder": "community-nodes/n8n-nodes-apivault-website-audit-leads"
+  },
+  {
+    "actor": "website-traffic-database",
+    "package": "n8n-nodes-apivault-website-traffic-database",
+    "version": "0.3.0",
+    "previousVersion": "0.2.1",
+    "folder": "community-nodes/n8n-nodes-apivault-website-traffic-database"
+  },
+  {
+    "actor": "whatsapp-data-lookup",
+    "package": "n8n-nodes-apivault-whatsapp-lookup",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-whatsapp-lookup"
+  },
+  {
+    "actor": "whatsapp-number-validator",
+    "package": "n8n-nodes-apivault-whatsapp-validator",
+    "version": "0.3.0",
+    "previousVersion": "0.2.1",
+    "folder": "community-nodes/n8n-nodes-apivault-whatsapp-validator"
+  },
+  {
+    "actor": "woocommerce-product-scraper",
+    "package": "n8n-nodes-apivault-woocommerce",
+    "version": "0.2.0",
+    "previousVersion": "0.1.2",
+    "folder": "community-nodes/n8n-nodes-apivault-woocommerce"
+  },
+  {
+    "actor": "woocommerce-store-analyzer",
+    "package": "n8n-nodes-apivault-woocommerce-analyzer",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-woocommerce-analyzer"
+  },
+  {
+    "actor": "wordpress-plugins-scraper",
+    "package": "n8n-nodes-apivault-wordpress-plugins",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-wordpress-plugins"
+  },
+  {
+    "actor": "yc-companies-scraper",
+    "package": "n8n-nodes-apivault-yc-companies",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-yc-companies"
+  },
+  {
+    "actor": "yelp-business-scraper",
+    "package": "n8n-nodes-apivault-yelp",
+    "version": "0.2.0",
+    "previousVersion": "0.1.2",
+    "folder": "community-nodes/n8n-nodes-apivault-yelp"
+  },
+  {
+    "actor": "youtube-channel-business-email-scraper",
+    "package": "n8n-nodes-apivault-youtube-business-email",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-youtube-business-email"
+  },
+  {
+    "actor": "youtube-channel-stats",
+    "package": "n8n-nodes-apivault-youtube-channel-analyzer",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-youtube-channel-analyzer"
+  },
+  {
+    "actor": "zillow-property-scraper",
+    "package": "n8n-nodes-apivault-zillow",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-zillow"
+  },
+  {
+    "actor": "zillow-scraper",
+    "package": "n8n-nodes-apivault-zillow-scraper",
+    "version": "0.2.0",
+    "previousVersion": "0.1.0",
+    "folder": "community-nodes/n8n-nodes-apivault-zillow-scraper"
+  }
+]

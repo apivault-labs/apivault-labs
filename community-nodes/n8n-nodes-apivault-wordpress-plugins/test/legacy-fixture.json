@@ -1,0 +1,52 @@
+{
+  "parameters": {
+    "mode": "browse",
+    "query": "example",
+    "browseBy": "popular",
+    "slugs": "example",
+    "maxResults": 250,
+    "fullDetails": false,
+    "extractInstalls": true,
+    "extractRating": true,
+    "extractAuthor": true,
+    "extractVersion": true,
+    "extractDates": true,
+    "extractTags": true,
+    "extractSupport": true,
+    "extractDownloadLink": true,
+    "extractContributors": true,
+    "extractRatingsHistogram": true,
+    "maxConcurrency": 5,
+    "timeout": 30
+  },
+  "body": {
+    "mode": "browse",
+    "query": "example",
+    "browseBy": "popular",
+    "slugs": [
+      "example"
+    ],
+    "maxResults": 250,
+    "fullDetails": false,
+    "extractInstalls": true,
+    "extractRating": true,
+    "extractAuthor": true,
+    "extractVersion": true,
+    "extractDates": true,
+    "extractTags": true,
+    "extractSupport": true,
+    "extractDownloadLink": true,
+    "extractContributors": true,
+    "extractRatingsHistogram": true,
+    "maxConcurrency": 5,
+    "timeout": 30
+  },
+  "nodeName": "wordpressPlugins",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "jT2Ip0J6yjDrefsUd"
+}

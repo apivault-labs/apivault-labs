@@ -1,0 +1,61 @@
+{
+  "parameters": {
+    "mode": "overview",
+    "domains": "https://example.com/example",
+    "includeSimilarSites": false,
+    "includeTopKeywords": true,
+    "includeAiTraffic": true,
+    "includeScreenshot": false,
+    "includeRawData": false,
+    "includeNoData": true,
+    "returnFailureRecords": true,
+    "monitorKey": "my-competitors",
+    "monitorDepth": "overview",
+    "changeThreshold": "medium",
+    "onlyChanges": false,
+    "marketMapMaxCompetitors": 20,
+    "discoveryType": "top",
+    "discoveryCountry": "worldwide",
+    "discoveryCategory": "example",
+    "maxResults": 50,
+    "enrichDiscovery": true,
+    "maxConcurrency": 10,
+    "timeout": 15,
+    "maxRetries": 2,
+    "additionalInput": "{}"
+  },
+  "body": {
+    "mode": "overview",
+    "domains": [
+      "https://example.com/example"
+    ],
+    "includeSimilarSites": false,
+    "includeTopKeywords": true,
+    "includeAiTraffic": true,
+    "includeScreenshot": false,
+    "includeRawData": false,
+    "includeNoData": true,
+    "returnFailureRecords": true,
+    "monitorKey": "my-competitors",
+    "monitorDepth": "overview",
+    "changeThreshold": "medium",
+    "onlyChanges": false,
+    "marketMapMaxCompetitors": 20,
+    "discoveryType": "top",
+    "discoveryCountry": "worldwide",
+    "discoveryCategory": "example",
+    "maxResults": 50,
+    "enrichDiscovery": true,
+    "maxConcurrency": 10,
+    "timeout": 15,
+    "maxRetries": 2
+  },
+  "nodeName": "similarwebWebsiteAnalyzer",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "STGjEsbNydv95Thzt"
+}

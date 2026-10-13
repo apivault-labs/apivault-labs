@@ -1,0 +1,31 @@
+{
+  "parameters": {
+    "mode": "verify",
+    "emails": "example@example.com",
+    "people": "[\n  { \"name\": \"John Doe\", \"domain\": \"acme.com\" }\n]",
+    "options": {}
+  },
+  "body": {
+    "checkMx": true,
+    "deepCheck": true,
+    "verifyMailbox": true,
+    "proxyFallback": true,
+    "resolveCatchAll": true,
+    "deduplicate": true,
+    "onlyDeliverable": false,
+    "dropDisposable": false,
+    "dropRoleBased": false,
+    "exportFormat": "default",
+    "emails": [
+      "example@example.com"
+    ]
+  },
+  "nodeName": "emailVerifier",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "DufyXa26CDzS1bwa4"
+}

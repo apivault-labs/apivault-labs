@@ -1,0 +1,54 @@
+{
+  "parameters": {
+    "startUrls": "https://example.com/example",
+    "searchQueries": "example",
+    "maxReviewsPerPage": 50,
+    "maxResults": 500,
+    "maxCostUsd": 0,
+    "sinceDays": 0,
+    "keywordFilter": "example",
+    "onlyNewSinceLastRun": false,
+    "analyzeSentiment": true,
+    "enrichPageContacts": true,
+    "includeMedia": true,
+    "maxConcurrency": 5,
+    "timeout": 45,
+    "maxRetries": 2,
+    "useResidentialProxy": true,
+    "proxyCountry": "US",
+    "dedupe": true,
+    "notifyWebhookUrl": "https://example.com/example"
+  },
+  "body": {
+    "startUrls": [
+      "https://example.com/example"
+    ],
+    "searchQueries": [
+      "example"
+    ],
+    "maxReviewsPerPage": 50,
+    "maxResults": 500,
+    "maxCostUsd": 0,
+    "sinceDays": 0,
+    "keywordFilter": "example",
+    "onlyNewSinceLastRun": false,
+    "analyzeSentiment": true,
+    "enrichPageContacts": true,
+    "includeMedia": true,
+    "maxConcurrency": 5,
+    "timeout": 45,
+    "maxRetries": 2,
+    "useResidentialProxy": true,
+    "proxyCountry": "US",
+    "dedupe": true,
+    "notifyWebhookUrl": "https://example.com/example"
+  },
+  "nodeName": "facebookReviews",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "I2YiRhMLCqC9Yer8Q"
+}

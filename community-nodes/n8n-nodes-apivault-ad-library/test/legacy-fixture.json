@@ -1,0 +1,57 @@
+{
+  "parameters": {
+    "mode": "competitor",
+    "domains": "nike.com",
+    "searchQuery": "example",
+    "advertiserIds": "example",
+    "metaPageIds": "example",
+    "region": "example",
+    "startedWithinDays": 0,
+    "maxAdvertisers": 5,
+    "maxItems": 100,
+    "includeMeta": false,
+    "includeTikTok": false,
+    "includeAdvertiserInfo": false,
+    "rehostGoogleVideos": true,
+    "rehostMetaMedia": true,
+    "rehostTikTokMedia": true,
+    "maxRehostVideos": 0,
+    "maxConcurrency": 2,
+    "additionalInput": "{}"
+  },
+  "body": {
+    "mode": "competitor",
+    "domains": [
+      "nike.com"
+    ],
+    "searchQuery": [
+      "example"
+    ],
+    "advertiserIds": [
+      "example"
+    ],
+    "metaPageIds": [
+      "example"
+    ],
+    "region": "example",
+    "startedWithinDays": 0,
+    "maxAdvertisers": 5,
+    "maxItems": 100,
+    "includeMeta": false,
+    "includeTikTok": false,
+    "includeAdvertiserInfo": false,
+    "rehostGoogleVideos": true,
+    "rehostMetaMedia": true,
+    "rehostTikTokMedia": true,
+    "maxRehostVideos": 0,
+    "maxConcurrency": 2
+  },
+  "nodeName": "adLibraryScraper",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "9gQOeVrfq8gbqm6ei"
+}

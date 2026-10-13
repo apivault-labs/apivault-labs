@@ -1,0 +1,46 @@
+{
+  "parameters": {
+    "productUrls": "https://example.com/example",
+    "extractName": true,
+    "extractPrice": true,
+    "extractOriginalPrice": true,
+    "extractRating": true,
+    "extractReviews": true,
+    "extractDescription": true,
+    "extractBrand": true,
+    "extractCategory": true,
+    "extractASIN": true,
+    "extractAvailability": true,
+    "extractSeller": true,
+    "extractImage": true,
+    "maxConcurrency": 3,
+    "timeout": 120
+  },
+  "body": {
+    "productUrls": [
+      "https://example.com/example"
+    ],
+    "extractName": true,
+    "extractPrice": true,
+    "extractOriginalPrice": true,
+    "extractRating": true,
+    "extractReviews": true,
+    "extractDescription": true,
+    "extractBrand": true,
+    "extractCategory": true,
+    "extractASIN": true,
+    "extractAvailability": true,
+    "extractSeller": true,
+    "extractImage": true,
+    "maxConcurrency": 3,
+    "timeout": 120
+  },
+  "nodeName": "amazon",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "pTmZae4dSoaJUQLf7"
+}

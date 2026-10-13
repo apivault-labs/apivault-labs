@@ -1,0 +1,59 @@
+{
+  "parameters": {
+    "propertyUrls": "https://example.com/example",
+    "maxResults": 25,
+    "extractAddress": true,
+    "extractPrice": true,
+    "extractBedrooms": true,
+    "extractBathrooms": true,
+    "extractSqft": true,
+    "extractYearBuilt": true,
+    "extractPropertyType": true,
+    "extractDescription": true,
+    "extractZestimate": true,
+    "extractLotSize": true,
+    "extractPricePerSqft": true,
+    "extractHOA": true,
+    "extractAgent": true,
+    "extractBrokerage": true,
+    "extractImage": true,
+    "extractStatus": true,
+    "writeSummary": true,
+    "maxConcurrency": 3,
+    "timeout": 90,
+    "additionalInput": "{}"
+  },
+  "body": {
+    "propertyUrls": [
+      "https://example.com/example"
+    ],
+    "maxResults": 25,
+    "extractAddress": true,
+    "extractPrice": true,
+    "extractBedrooms": true,
+    "extractBathrooms": true,
+    "extractSqft": true,
+    "extractYearBuilt": true,
+    "extractPropertyType": true,
+    "extractDescription": true,
+    "extractZestimate": true,
+    "extractLotSize": true,
+    "extractPricePerSqft": true,
+    "extractHOA": true,
+    "extractAgent": true,
+    "extractBrokerage": true,
+    "extractImage": true,
+    "extractStatus": true,
+    "writeSummary": true,
+    "maxConcurrency": 3,
+    "timeout": 90
+  },
+  "nodeName": "zillowPropertyScraper",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "OKz5YMTega3ndukoB"
+}

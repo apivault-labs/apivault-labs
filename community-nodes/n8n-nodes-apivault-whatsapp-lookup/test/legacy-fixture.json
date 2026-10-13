@@ -1,0 +1,40 @@
+{
+  "parameters": {
+    "phoneNumbers": "+14155238886\n+442071838750\n+5511991234567\n+919876543210",
+    "numbersText": "example",
+    "fileUrl": "https://example.com/example",
+    "defaultCountry": "US",
+    "businessEnrichment": true,
+    "onlyValid": false,
+    "onlyWhatsappRegistered": false,
+    "concurrency": 10,
+    "timeoutSeconds": 20,
+    "exportFormat": "default",
+    "additionalInput": "{}"
+  },
+  "body": {
+    "phoneNumbers": [
+      "+14155238886",
+      "+442071838750",
+      "+5511991234567",
+      "+919876543210"
+    ],
+    "numbersText": "example",
+    "fileUrl": "https://example.com/example",
+    "defaultCountry": "US",
+    "businessEnrichment": true,
+    "onlyValid": false,
+    "onlyWhatsappRegistered": false,
+    "concurrency": 10,
+    "timeoutSeconds": 20,
+    "exportFormat": "default"
+  },
+  "nodeName": "whatsappDataLookup",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "vPgMVzqiBbxqsPQDl"
+}

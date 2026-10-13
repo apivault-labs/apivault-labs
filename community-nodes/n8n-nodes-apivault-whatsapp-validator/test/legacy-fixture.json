@@ -1,0 +1,28 @@
+{
+  "parameters": {
+    "workflow": "auto",
+    "phoneNumbers": "+12025550182",
+    "numbersText": "example",
+    "defaultCountry": "US",
+    "outputPreset": "full",
+    "exportFormat": "default"
+  },
+  "body": {
+    "workflow": "auto",
+    "phoneNumbers": [
+      "+12025550182"
+    ],
+    "numbersText": "example",
+    "defaultCountry": "US",
+    "outputPreset": "full",
+    "exportFormat": "default"
+  },
+  "nodeName": "whatsappValidator",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "LP2X15E8c4ebfnPRC"
+}

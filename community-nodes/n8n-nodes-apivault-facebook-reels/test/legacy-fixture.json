@@ -1,0 +1,48 @@
+{
+  "parameters": {
+    "workflow": "auto",
+    "startUrls": "https://example.com/example",
+    "searchQueries": "example",
+    "profileUrls": "https://example.com/example",
+    "maxReelsPerProfile": 200,
+    "maxResults": 25,
+    "outputPreset": "full",
+    "maxCostUsd": 0,
+    "sinceDays": 0,
+    "keywordFilter": "example",
+    "enrichDetailPage": true,
+    "downloadMp4": true,
+    "includeTranscript": true,
+    "dedupe": true
+  },
+  "body": {
+    "workflow": "auto",
+    "startUrls": [
+      "https://example.com/example"
+    ],
+    "searchQueries": [
+      "example"
+    ],
+    "profileUrls": [
+      "https://example.com/example"
+    ],
+    "maxReelsPerProfile": 200,
+    "maxResults": 25,
+    "outputPreset": "full",
+    "maxCostUsd": 0,
+    "sinceDays": 0,
+    "keywordFilter": "example",
+    "enrichDetailPage": true,
+    "downloadMp4": true,
+    "includeTranscript": true,
+    "dedupe": true
+  },
+  "nodeName": "facebookReels",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "1Jkc3gp6Y3H6dPCfe"
+}

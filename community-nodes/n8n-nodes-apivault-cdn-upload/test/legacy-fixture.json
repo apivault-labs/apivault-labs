@@ -1,0 +1,24 @@
+{
+  "parameters": {
+    "imageUrls": "https://example.com/example",
+    "kvStoreKeys": "example",
+    "maxConcurrency": 5
+  },
+  "body": {
+    "imageUrls": [
+      "https://example.com/example"
+    ],
+    "kvStoreKeys": [
+      "example"
+    ],
+    "maxConcurrency": 5
+  },
+  "nodeName": "cdnUpload",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "sI9IchkDQaXYyaLue"
+}

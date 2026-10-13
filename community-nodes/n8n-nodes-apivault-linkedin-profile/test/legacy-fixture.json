@@ -1,0 +1,31 @@
+{
+  "parameters": {
+    "profileUrls": "https://example.com/example",
+    "crmProfiles": {},
+    "enrich": true,
+    "exportFormat": "default",
+    "maxConcurrency": 5,
+    "timeout": 60,
+    "useDemoOnEmpty": false,
+    "execution": {}
+  },
+  "body": {
+    "profileUrls": [
+      "https://example.com/example"
+    ],
+    "profiles": [],
+    "enrich": true,
+    "exportFormat": "default",
+    "maxConcurrency": 5,
+    "timeout": 60,
+    "useDemoOnEmpty": false
+  },
+  "nodeName": "linkedinProfile",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "eZFfkRpZXeYOu3OAP"
+}

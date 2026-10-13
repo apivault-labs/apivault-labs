@@ -1,0 +1,42 @@
+{
+  "parameters": {
+    "searchQueries": "example",
+    "domains": "https://example.com/example",
+    "advertiserIds": "example",
+    "region": "example",
+    "maxItems": 0,
+    "includeAdDetails": true,
+    "includeAdvertiserInfo": true,
+    "includeDunsNumber": false,
+    "outputFields": "example",
+    "proxyConfiguration": "{}"
+  },
+  "body": {
+    "searchQueries": [
+      "example"
+    ],
+    "domains": [
+      "https://example.com/example"
+    ],
+    "advertiserIds": [
+      "example"
+    ],
+    "region": "example",
+    "maxItems": 0,
+    "includeAdDetails": true,
+    "includeAdvertiserInfo": true,
+    "includeDunsNumber": false,
+    "outputFields": [
+      "example"
+    ],
+    "proxyConfiguration": {}
+  },
+  "nodeName": "googleAdsTransparency",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "RtWF57ncDP1x48I9Z"
+}

@@ -1,0 +1,30 @@
+{
+  "parameters": {
+    "mode": "analyze",
+    "searchTerms": "example",
+    "maxSearchResults": 25,
+    "maxConcurrency": 10,
+    "targets": "example",
+    "country": "us"
+  },
+  "body": {
+    "mode": "analyze",
+    "searchTerms": [
+      "example"
+    ],
+    "maxSearchResults": 25,
+    "maxConcurrency": 10,
+    "targets": [
+      "example"
+    ],
+    "country": "us"
+  },
+  "nodeName": "appRevenueAnalyzer",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "oULtaUHKS4ya5uaSq"
+}

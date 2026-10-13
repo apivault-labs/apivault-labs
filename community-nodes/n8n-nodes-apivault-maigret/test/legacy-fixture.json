@@ -1,0 +1,54 @@
+{
+  "parameters": {
+    "usernames": "example",
+    "topSites": 500,
+    "tags": "example",
+    "excludeTags": "example",
+    "sites": "example",
+    "extractData": true,
+    "deepEnrichment": false,
+    "recursiveSearch": false,
+    "includeNotFound": false,
+    "perSiteRecords": true,
+    "exportFormat": "default",
+    "timeout": 30,
+    "maxConnections": 50,
+    "maxProfilesPerUsername": 0,
+    "runBudgetSecs": 900,
+    "proxyUrl": "https://example.com/example"
+  },
+  "body": {
+    "usernames": [
+      "example"
+    ],
+    "topSites": 500,
+    "tags": [
+      "example"
+    ],
+    "excludeTags": [
+      "example"
+    ],
+    "sites": [
+      "example"
+    ],
+    "extractData": true,
+    "deepEnrichment": false,
+    "recursiveSearch": false,
+    "includeNotFound": false,
+    "perSiteRecords": true,
+    "exportFormat": "default",
+    "timeout": 30,
+    "maxConnections": 50,
+    "maxProfilesPerUsername": 0,
+    "runBudgetSecs": 900,
+    "proxyUrl": "https://example.com/example"
+  },
+  "nodeName": "maigret",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "kE7o9mTpb1AQaKlpP"
+}

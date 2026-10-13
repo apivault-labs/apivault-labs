@@ -1,0 +1,44 @@
+name: Publish reviewed legacy n8n updates
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: publish-reviewed-n8n-portfolio
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: https://registry.npmjs.org
+      - name: Validate and publish only reviewed legacy updates
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -euo pipefail
+          test "$(npm whoami)" = "apivault"
+          first=$(node -p "require('./legacy-n8n-release-plan.json')[0].folder")
+          (cd "$first" && npm install --ignore-scripts --no-audit --no-fund)
+          shared="$GITHUB_WORKSPACE/$first/node_modules"
+          for folder in $(node -p "require('./legacy-n8n-release-plan.json').map(p => p.folder).join(' ')"); do
+            if [ "$folder" != "$first" ]; then ln -s "$shared" "$folder/node_modules"; fi
+            (
+              cd "$folder"
+              npm run lint
+              npm run build
+              npm test
+              package=$(node -p "require('./package.json').name")
+              version=$(node -p "require('./package.json').version")
+              if npm view "$package@$version" version >/dev/null 2>&1; then
+                echo "$package@$version already published"
+              else
+                npm publish --provenance --access public --ignore-scripts
+              fi
+            )
+          done

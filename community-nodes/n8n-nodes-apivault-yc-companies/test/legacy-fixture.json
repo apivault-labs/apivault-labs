@@ -1,0 +1,72 @@
+{
+  "parameters": {
+    "query": "example",
+    "batches": "example",
+    "industries": "example",
+    "regions": "example",
+    "statuses": "example",
+    "tags": "example",
+    "isHiring": false,
+    "topCompaniesOnly": false,
+    "slugs": "example",
+    "maxResults": 100,
+    "fullDetails": true,
+    "extractIndustry": true,
+    "extractBatch": true,
+    "extractLocation": true,
+    "extractTeamSize": true,
+    "extractStatus": true,
+    "extractSocials": true,
+    "extractTags": true,
+    "extractFounders": true,
+    "extractLongDescription": true,
+    "extractLogo": true,
+    "maxConcurrency": 5,
+    "timeout": 30
+  },
+  "body": {
+    "query": "example",
+    "batches": [
+      "example"
+    ],
+    "industries": [
+      "example"
+    ],
+    "regions": [
+      "example"
+    ],
+    "statuses": [
+      "example"
+    ],
+    "tags": [
+      "example"
+    ],
+    "isHiring": false,
+    "topCompaniesOnly": false,
+    "slugs": [
+      "example"
+    ],
+    "maxResults": 100,
+    "fullDetails": true,
+    "extractIndustry": true,
+    "extractBatch": true,
+    "extractLocation": true,
+    "extractTeamSize": true,
+    "extractStatus": true,
+    "extractSocials": true,
+    "extractTags": true,
+    "extractFounders": true,
+    "extractLongDescription": true,
+    "extractLogo": true,
+    "maxConcurrency": 5,
+    "timeout": 30
+  },
+  "nodeName": "ycCompanies",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "8iCyIXGoejghN22lw"
+}

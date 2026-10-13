@@ -1,0 +1,38 @@
+{
+  "parameters": {
+    "profileUrls": "https://example.com/example",
+    "extractUsername": true,
+    "extractFullName": true,
+    "extractBio": true,
+    "extractFollowers": true,
+    "extractFollowing": true,
+    "extractProfileUrl": true,
+    "extractWebsite": true,
+    "extractCategory": true,
+    "maxConcurrency": 5,
+    "timeout": 120
+  },
+  "body": {
+    "profileUrls": [
+      "https://example.com/example"
+    ],
+    "extractUsername": true,
+    "extractFullName": true,
+    "extractBio": true,
+    "extractFollowers": true,
+    "extractFollowing": true,
+    "extractProfileUrl": true,
+    "extractWebsite": true,
+    "extractCategory": true,
+    "maxConcurrency": 5,
+    "timeout": 120
+  },
+  "nodeName": "pinterest",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "WnPGfvnBIFtrYy2w0"
+}

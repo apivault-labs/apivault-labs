@@ -1,0 +1,62 @@
+{
+  "parameters": {
+    "action": "create",
+    "domain": "auto",
+    "username": "example",
+    "count": 1,
+    "allowFallback": true,
+    "address": "example",
+    "inboxes": "[]",
+    "key": "example",
+    "password": "example",
+    "waitTimeout": 0,
+    "pollInterval": 6,
+    "matchFrom": "example",
+    "matchSubject": "example",
+    "matchKeyword": "example",
+    "onlyUnseen": false,
+    "waitForNew": false,
+    "latestOnly": false,
+    "maxMessages": 0,
+    "extractCodes": true,
+    "includeBody": true,
+    "codeMinLength": 4,
+    "codeMaxLength": 8,
+    "codeRegex": "example",
+    "includeRaw": false
+  },
+  "body": {
+    "action": "create",
+    "domain": "auto",
+    "username": "example",
+    "count": 1,
+    "allowFallback": true,
+    "address": "example",
+    "inboxes": [],
+    "key": "example",
+    "password": "example",
+    "waitTimeout": 0,
+    "pollInterval": 6,
+    "matchFrom": "example",
+    "matchSubject": "example",
+    "matchKeyword": "example",
+    "onlyUnseen": false,
+    "waitForNew": false,
+    "latestOnly": false,
+    "maxMessages": 0,
+    "extractCodes": true,
+    "includeBody": true,
+    "codeMinLength": 4,
+    "codeMaxLength": 8,
+    "codeRegex": "example",
+    "includeRaw": false
+  },
+  "nodeName": "tempEmail",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "r6y7sasrtRGGjTkwy"
+}

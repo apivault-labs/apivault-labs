@@ -1,0 +1,60 @@
+{
+  "parameters": {
+    "emails": "example@example.com",
+    "people": "[]",
+    "emailsText": "example@example.com",
+    "records": "[]",
+    "emailColumn": "email",
+    "checkMx": true,
+    "deepCheck": true,
+    "verifyMailbox": true,
+    "proxyFallback": true,
+    "resolveCatchAll": true,
+    "deduplicate": true,
+    "onlyValid": false,
+    "onlyDeliverable": false,
+    "dropDisposable": false,
+    "dropRoleBased": false,
+    "exportFormat": "default",
+    "cacheDays": 0,
+    "greylistRetries": 1,
+    "greylistBackoffSecs": 30,
+    "mailboxConcurrency": 0,
+    "autoCorrect": true,
+    "fileUrl": "https://example.com/example"
+  },
+  "body": {
+    "emails": [
+      "example@example.com"
+    ],
+    "people": [],
+    "emailsText": "example@example.com",
+    "records": [],
+    "emailColumn": "email",
+    "checkMx": true,
+    "deepCheck": true,
+    "verifyMailbox": true,
+    "proxyFallback": true,
+    "resolveCatchAll": true,
+    "deduplicate": true,
+    "onlyValid": false,
+    "onlyDeliverable": false,
+    "dropDisposable": false,
+    "dropRoleBased": false,
+    "exportFormat": "default",
+    "cacheDays": 0,
+    "greylistRetries": 1,
+    "greylistBackoffSecs": 30,
+    "mailboxConcurrency": 0,
+    "autoCorrect": true,
+    "fileUrl": "https://example.com/example"
+  },
+  "nodeName": "emailIntel",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "DufyXa26CDzS1bwa4"
+}

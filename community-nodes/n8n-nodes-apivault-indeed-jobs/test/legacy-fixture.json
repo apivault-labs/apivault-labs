@@ -1,0 +1,48 @@
+{
+  "parameters": {
+    "keywords": "example",
+    "location": "example",
+    "country": "www",
+    "maxPages": 3,
+    "sortBy": "date",
+    "extractTitle": true,
+    "extractCompany": true,
+    "extractLocation": true,
+    "extractSalary": true,
+    "extractJobType": true,
+    "extractDescription": true,
+    "extractDate": true,
+    "extractRating": true,
+    "deduplicateCompanies": false,
+    "maxConcurrency": 1,
+    "timeout": 120,
+    "maxRetries": 4
+  },
+  "body": {
+    "keywords": "example",
+    "location": "example",
+    "country": "www",
+    "maxPages": 3,
+    "sortBy": "date",
+    "extractTitle": true,
+    "extractCompany": true,
+    "extractLocation": true,
+    "extractSalary": true,
+    "extractJobType": true,
+    "extractDescription": true,
+    "extractDate": true,
+    "extractRating": true,
+    "deduplicateCompanies": false,
+    "maxConcurrency": 1,
+    "timeout": 120,
+    "maxRetries": 4
+  },
+  "nodeName": "indeedJobs",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "cytD40IlrpTS7L6uQ"
+}

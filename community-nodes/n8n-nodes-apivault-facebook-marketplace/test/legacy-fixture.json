@@ -1,0 +1,62 @@
+{
+  "parameters": {
+    "mode": "search",
+    "searchTerms": "example",
+    "location": "example",
+    "categories": "example",
+    "listingUrls": "https://example.com/example",
+    "maxItems": 100,
+    "enrichContacts": true,
+    "enrichDetails": false,
+    "expandCoverage": true,
+    "onlyNew": false,
+    "notifyWebhookUrl": "https://example.com/example",
+    "minPrice": 0,
+    "maxPrice": 0,
+    "daysSinceListed": 0,
+    "sortBy": "best_match",
+    "maxRetries": 3,
+    "maxConcurrency": 3,
+    "timeout": 45,
+    "useResidentialProxy": true,
+    "proxyCountry": "US",
+    "debug": false
+  },
+  "body": {
+    "mode": "search",
+    "searchTerms": [
+      "example"
+    ],
+    "location": "example",
+    "categories": [
+      "example"
+    ],
+    "listingUrls": [
+      "https://example.com/example"
+    ],
+    "maxItems": 100,
+    "enrichContacts": true,
+    "enrichDetails": false,
+    "expandCoverage": true,
+    "onlyNew": false,
+    "notifyWebhookUrl": "https://example.com/example",
+    "minPrice": 0,
+    "maxPrice": 0,
+    "daysSinceListed": 0,
+    "sortBy": "best_match",
+    "maxRetries": 3,
+    "maxConcurrency": 3,
+    "timeout": 45,
+    "useResidentialProxy": true,
+    "proxyCountry": "US",
+    "debug": false
+  },
+  "nodeName": "facebookMarketplace",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ],
+  "actorId": "cLl2R7iBrlbR9iD8d"
+}
