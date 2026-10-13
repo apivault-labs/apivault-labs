@@ -1,8 +1,8 @@
 # Legacy n8n updates — 14 October 2026
 
-Reviewed source updates for existing API Vault community packages. npm publication is verified separately after release. Existing version 1 node identities, credentials and input field names remain supported; new version 2 nodes add event charge caps, run resumption, pagination and diagnostics. Actor run charges still apply.
+**All 67 updates are published and verified on npm with provenance.** Downloaded archives passed integrity, content checks and comparison with the reviewed node, credential and transport code. Existing version 1 node identities, credentials and input field names remain supported; new version 2 nodes add event charge caps, run resumption, pagination and diagnostics. Actor run charges still apply.
 
-| Actor | Package | Previous | Prepared update |
+| Actor | Package | Previous | Published update |
 |---|---|---|---|
 | [ad-library-scraper-facebook-tiktok-google-ads](https://apify.com/apivault_labs/ad-library-scraper-facebook-tiktok-google-ads) | [n8n-nodes-apivault-ad-library](community-nodes/n8n-nodes-apivault-ad-library/README.md) | 0.1.0 | 0.2.0 |
 | [airbnb-revenue-occupancy-roi-analyzer](https://apify.com/apivault_labs/airbnb-revenue-occupancy-roi-analyzer) | [n8n-nodes-apivault-airbnb-revenue-analyzer](community-nodes/n8n-nodes-apivault-airbnb-revenue-analyzer/README.md) | 0.1.0 | 0.2.0 |
@@ -71,3 +71,6 @@ Reviewed source updates for existing API Vault community packages. npm publicati
 | [youtube-channel-stats](https://apify.com/apivault_labs/youtube-channel-stats) | [n8n-nodes-apivault-youtube-channel-analyzer](community-nodes/n8n-nodes-apivault-youtube-channel-analyzer/README.md) | 0.1.0 | 0.2.0 |
 | [zillow-property-scraper](https://apify.com/apivault_labs/zillow-property-scraper) | [n8n-nodes-apivault-zillow](community-nodes/n8n-nodes-apivault-zillow/README.md) | 0.1.0 | 0.2.0 |
 | [zillow-scraper](https://apify.com/apivault_labs/zillow-scraper) | [n8n-nodes-apivault-zillow-scraper](community-nodes/n8n-nodes-apivault-zillow-scraper/README.md) | 0.1.0 | 0.2.0 |
+
+
+All published versions are installable through self-hosted n8n **Settings → Community nodes**. Existing installations can upgrade the installed package. npm publication does not imply n8n Cloud verification.
