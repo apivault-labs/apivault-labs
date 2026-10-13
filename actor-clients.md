@@ -15,7 +15,23 @@ For a Python client pending PyPI publication, use its linked source repository. 
 pip install "git+https://github.com/apivault-labs/apivault-labs.git#subdirectory=python-clients/PACKAGE_NAME"
 ```
 
-Replace PACKAGE_NAME with the package folder in its source link. New n8n packages are source-only; npm publishing is deferred by the owner. They are not claimed to be verified n8n Cloud nodes.
+Replace PACKAGE_NAME with the package folder in its source link.
+
+New n8n packages verified on npm with provenance: **11 of 11**. Install them in self-hosted n8n through **Settings → Community nodes → Install**, using the package name.
+
+- [n8n-nodes-apivault-1688-image-search](https://www.npmjs.com/package/n8n-nodes-apivault-1688-image-search)
+- [n8n-nodes-apivault-ai-background-changer](https://www.npmjs.com/package/n8n-nodes-apivault-ai-background-changer)
+- [n8n-nodes-apivault-adobe-stock-scraper](https://www.npmjs.com/package/n8n-nodes-apivault-adobe-stock-scraper)
+- [n8n-nodes-apivault-business-locations-analyzer](https://www.npmjs.com/package/n8n-nodes-apivault-business-locations-analyzer)
+- [n8n-nodes-apivault-coles-basket-price-monitor](https://www.npmjs.com/package/n8n-nodes-apivault-coles-basket-price-monitor)
+- [n8n-nodes-apivault-image-text-remover](https://www.npmjs.com/package/n8n-nodes-apivault-image-text-remover)
+- [n8n-nodes-apivault-real-estate-skip-trace-go](https://www.npmjs.com/package/n8n-nodes-apivault-real-estate-skip-trace-go)
+- [n8n-nodes-apivault-stackowerflow-scraper](https://www.npmjs.com/package/n8n-nodes-apivault-stackowerflow-scraper)
+- [n8n-nodes-apivault-taobao-tmall-product-analyzer](https://www.npmjs.com/package/n8n-nodes-apivault-taobao-tmall-product-analyzer)
+- [n8n-nodes-apivault-website-tech-detector](https://www.npmjs.com/package/n8n-nodes-apivault-website-tech-detector)
+- [n8n-nodes-apivault-woolworths-products-price-monitor](https://www.npmjs.com/package/n8n-nodes-apivault-woolworths-products-price-monitor)
+
+n8n Cloud verification is a separate Creator Portal review and is not claimed here.
 
 <!-- registry-status-end -->
 
