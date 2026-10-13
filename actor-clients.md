@@ -2,6 +2,23 @@
 
 Python SDKs and n8n community nodes for hosted [API Vault Actors](https://apify.com/apivault_labs). An Apify account is required; Actor runs are billed by Apify. Packages contain API clients, usage documentation and manual example workflows.
 
+<!-- registry-status-start -->
+## Registry availability — 14 October 2026
+
+All 63 Python clients and 11 new n8n nodes are available as reviewed GitHub source. PyPI releases verified: **4 of 63**; the remaining packages are pending registry publication.
+
+Available on PyPI: [apivault-1688-image-search](https://pypi.org/project/apivault-1688-image-search/), [apivault-ai-background-changer](https://pypi.org/project/apivault-ai-background-changer/), [apivault-ad-library-scraper-facebook-tiktok-google-ads](https://pypi.org/project/apivault-ad-library-scraper-facebook-tiktok-google-ads/), [apivault-adobe-stock-scraper](https://pypi.org/project/apivault-adobe-stock-scraper/).
+
+For a Python client pending PyPI publication, use its linked source repository. For clients in this catalogue:
+
+```shell
+pip install "git+https://github.com/apivault-labs/apivault-labs.git#subdirectory=python-clients/PACKAGE_NAME"
+```
+
+Replace PACKAGE_NAME with the package folder in its source link. New n8n packages are source-only; npm publishing is deferred by the owner. They are not claimed to be verified n8n Cloud nodes.
+
+<!-- registry-status-end -->
+
 | Actor | Python / PyPI | n8n / npm |
 |---|---|---|
 | [1688-image-search](https://apify.com/apivault_labs/1688-image-search) | [apivault-1688-image-search](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-1688-image-search) | [n8n-nodes-apivault-1688-image-search](community-nodes/n8n-nodes-apivault-1688-image-search/README.md) |
