@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apivault-instagram-profile-scraper"
+version = "0.1.0"
+description = "Python client for Instagram Profile Scraper on Apify. Run, resume and download results with diagnostics."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name="ApiVault Labs"}]
+keywords = ["apify", "python-sdk", "instagram", "profile", "scraper"]
+
+[project.urls]
+Homepage = "https://apify.com/apivault_labs/instagram-profile-scraper"
+Source = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-instagram-profile-scraper"
+Documentation = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-instagram-profile-scraper#readme"
+
+[tool.setuptools.packages.find]
+include = ["apivault_instagram_profile_scraper*"]

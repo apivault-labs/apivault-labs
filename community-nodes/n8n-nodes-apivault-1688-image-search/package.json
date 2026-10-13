@@ -1,0 +1,52 @@
+{
+  "name": "n8n-nodes-apivault-1688-image-search",
+  "version": "0.1.0",
+  "description": "n8n community connector for 1688 Reverse Image Search on Apify. Run, resume and read results with diagnostics.",
+  "license": "MIT",
+  "author": {
+    "name": "ApiVault Labs",
+    "email": "68965192+apivault-labs@users.noreply.github.com"
+  },
+  "homepage": "https://apify.com/apivault_labs/1688-image-search",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apivault-labs/apivault-labs.git",
+    "directory": "community-nodes/n8n-nodes-apivault-1688-image-search"
+  },
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "apify",
+    "1688",
+    "image",
+    "search"
+  ],
+  "files": [
+    "dist",
+    "examples"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/copy-icons.cjs",
+    "lint": "n8n-node lint",
+    "prepublishOnly": "npm run build",
+    "test": "node test/contract.cjs"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/ApivaultApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Apivault1688ImageSearch/Apivault1688ImageSearch.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "0.52.2",
+    "n8n-workflow": "2.16.0",
+    "typescript": "npm:@typescript/typescript6@6.0.2",
+    "@types/node": "^22.0.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}

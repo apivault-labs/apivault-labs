@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apivault-image-cdn-upload"
+version = "0.1.0"
+description = "Python client for Image Hosting API on Apify. Run, resume and download results with diagnostics."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name="ApiVault Labs"}]
+keywords = ["apify", "python-sdk", "image", "cdn", "upload"]
+
+[project.urls]
+Homepage = "https://apify.com/apivault_labs/image-cdn-upload"
+Source = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-image-cdn-upload"
+Documentation = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-image-cdn-upload#readme"
+
+[tool.setuptools.packages.find]
+include = ["apivault_image_cdn_upload*"]

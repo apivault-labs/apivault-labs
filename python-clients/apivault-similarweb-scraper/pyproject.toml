@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apivault-similarweb-scraper"
+version = "0.1.0"
+description = "Python client for Similarweb Scraper on Apify. Run, resume and download results with diagnostics."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name="ApiVault Labs"}]
+keywords = ["apify", "python-sdk", "similarweb", "scraper"]
+
+[project.urls]
+Homepage = "https://apify.com/apivault_labs/similarweb-scraper"
+Source = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-similarweb-scraper"
+Documentation = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-similarweb-scraper#readme"
+
+[tool.setuptools.packages.find]
+include = ["apivault_similarweb_scraper*"]

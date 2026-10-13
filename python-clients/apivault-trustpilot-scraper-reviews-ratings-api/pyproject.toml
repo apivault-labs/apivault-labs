@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apivault-trustpilot-scraper-reviews-ratings-api"
+version = "0.1.0"
+description = "Python client for Trustpilot Reviews Scraper on Apify. Run, resume and download results with diagnostics."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name="ApiVault Labs"}]
+keywords = ["apify", "python-sdk", "trustpilot", "scraper", "reviews", "ratings", "api"]
+
+[project.urls]
+Homepage = "https://apify.com/apivault_labs/trustpilot-scraper-reviews-ratings-api"
+Source = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-trustpilot-scraper-reviews-ratings-api"
+Documentation = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-trustpilot-scraper-reviews-ratings-api#readme"
+
+[tool.setuptools.packages.find]
+include = ["apivault_trustpilot_scraper_reviews_ratings_api*"]

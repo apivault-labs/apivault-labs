@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apivault-background-remover"
+version = "0.1.0"
+description = "Python client for AI Background Remover on Apify. Run, resume and download results with diagnostics."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name="ApiVault Labs"}]
+keywords = ["apify", "python-sdk", "background", "remover"]
+
+[project.urls]
+Homepage = "https://apify.com/apivault_labs/background-remover"
+Source = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-background-remover"
+Documentation = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-background-remover#readme"
+
+[tool.setuptools.packages.find]
+include = ["apivault_background_remover*"]

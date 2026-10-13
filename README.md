@@ -47,3 +47,8 @@ When contacting us, include the data source, required fields, example input, exp
 - **LinkedIn:** [ApiVault Labs](https://www.linkedin.com/in/apivault-labs-a2755742a)
 
 ⭐ Follow us on Apify and GitHub for new Actors, scrapers, and automation tools.
+
+
+## Python SDKs and n8n integrations
+
+[Actor client catalogue](actor-clients.md): installable clients, example workflows, hosted Actor links and usage instructions.

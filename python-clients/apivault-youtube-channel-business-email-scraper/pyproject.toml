@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apivault-youtube-channel-business-email-scraper"
+version = "0.1.0"
+description = "Python client for YouTube Channel Email Scraper on Apify. Run, resume and download results with diagnostics."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name="ApiVault Labs"}]
+keywords = ["apify", "python-sdk", "youtube", "channel", "business", "email", "scraper"]
+
+[project.urls]
+Homepage = "https://apify.com/apivault_labs/youtube-channel-business-email-scraper"
+Source = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-youtube-channel-business-email-scraper"
+Documentation = "https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-youtube-channel-business-email-scraper#readme"
+
+[tool.setuptools.packages.find]
+include = ["apivault_youtube_channel_business_email_scraper*"]

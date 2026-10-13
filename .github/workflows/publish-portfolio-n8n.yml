@@ -1,0 +1,39 @@
+name: Publish reviewed n8n portfolio
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: publish-reviewed-n8n-portfolio
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: https://registry.npmjs.org
+      - name: Validate and publish reviewed packages
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -euo pipefail
+          for folder in community-nodes/n8n-nodes-apivault-*; do
+            (
+              cd "$folder"
+              npm install --ignore-scripts --no-audit --no-fund
+              npm run lint -- --strict
+              npm run build
+              npm test
+              package=$(node -p "require('./package.json').name")
+              version=$(node -p "require('./package.json').version")
+              if npm view "$package@$version" version >/dev/null 2>&1; then
+                echo "$package@$version already published"
+              else
+                npm publish --provenance --access public --ignore-scripts
+              fi
+            )
+          done
