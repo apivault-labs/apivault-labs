@@ -1,0 +1,10 @@
+{
+  "players": [
+    "Jannik Sinner",
+    "Carlos Alcaraz"
+  ],
+  "opponent": "Carlos Alcaraz",
+  "maxResults": 3,
+  "modelFeatures": true,
+  "maxFeatureOpponents": 2
+}

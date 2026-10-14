@@ -103,3 +103,12 @@ n8n Cloud verification is a separate Creator Portal review and is not claimed he
 
 
 [Legacy n8n updates](legacy-n8n-updates.md): compatibility-preserving source releases for existing community packages.
+
+
+<!-- tennis-distribution-20261014 -->
+
+## Tennis Abstract: history, H2H and model datasets
+
+[Hosted Actor](https://apify.com/apivault_labs/tennis-abstract-bulk-scraper) · [Python client and examples](python-clients/apivault-tennis-abstract-bulk-scraper/README.md) · [n8n node and three workflows](community-nodes/n8n-nodes-apivault-tennis-abstract-bulk-scraper/README.md).
+
+GitHub sources are available. Registry publication status is recorded separately; no n8n Cloud verification is claimed. Apify account and usage charges apply.

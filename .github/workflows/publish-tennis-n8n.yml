@@ -1,0 +1,33 @@
+name: Publish Tennis n8n connector
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: publish-reviewed-n8n-portfolio
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: https://registry.npmjs.org
+      - name: Validate and publish Tennis only
+        working-directory: community-nodes/n8n-nodes-apivault-tennis-abstract-bulk-scraper
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -euo pipefail
+          test "$(npm whoami)" = "apivault"
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run lint
+          npm run build
+          npm test
+          if ! npm view n8n-nodes-apivault-tennis-abstract-bulk-scraper@0.1.0 version >/dev/null 2>&1; then
+            npm publish --provenance --access public --ignore-scripts
+          fi
