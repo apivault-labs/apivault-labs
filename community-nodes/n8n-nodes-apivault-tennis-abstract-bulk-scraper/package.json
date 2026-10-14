@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-apivault-tennis-abstract-bulk-scraper",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "n8n community connector for Tennis Abstract Scraper on Apify. Run, resume and read results with diagnostics.",
   "license": "MIT",
   "author": {

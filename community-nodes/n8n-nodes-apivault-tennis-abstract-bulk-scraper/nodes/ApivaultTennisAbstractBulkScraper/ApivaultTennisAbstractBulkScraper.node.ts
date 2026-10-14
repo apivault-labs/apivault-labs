@@ -104,7 +104,7 @@ export class ApivaultTennisAbstractBulkScraper implements INodeType {
 							else throw new NodeOperationError(this.getNode(), `Run ${runId} completed but ${key} could not be read`);
 						}
 					}
-					output.push({ json: { runId, datasetId, status: run.status, rows, summary: records.SUMMARY ?? null, errors: records.ERRORS ?? null, truncated }, pairedItem: { item: i } });
+					output.push({ json: { runId, datasetId, keyValueStoreId: storeId, status: run.status, rows, summary: records.SUMMARY ?? null, errors: records.ERRORS ?? null, truncated }, pairedItem: { item: i } });
 				} else {
 					for (const row of rows) output.push({ json: { ...row, _apifyRunId: runId, _apifyTruncated: truncated }, pairedItem: { item: i } });
 				}
