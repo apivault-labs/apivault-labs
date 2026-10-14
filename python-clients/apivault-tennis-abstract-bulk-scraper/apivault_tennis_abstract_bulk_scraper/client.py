@@ -55,7 +55,7 @@ class Client:
         except (urllib.error.URLError, TimeoutError):
             raise ActorError("Apify request could not complete; check an existing run before retrying") from None
 
-    def start(self, actor_input: Mapping[str, Any], *, max_total_charge_usd: float = 0.05, actor_timeout_secs: int = 300) -> dict[str, Any]:
+    def start(self, actor_input: Mapping[str, Any], *, max_total_charge_usd: float = 0.05, actor_timeout_secs: int = 900) -> dict[str, Any]:
         if not isinstance(actor_input, Mapping):
             raise TypeError("actor_input must be a mapping")
         if not 0 < max_total_charge_usd <= 1000 or not 1 <= actor_timeout_secs <= 3600:
@@ -68,7 +68,7 @@ class Client:
             raise ActorError("Apify did not return a run ID; check Console before retrying")
         return run
 
-    def wait(self, run_id: str, *, wait_secs: float = 600, poll_interval: float = 3) -> dict[str, Any]:
+    def wait(self, run_id: str, *, wait_secs: float = 1200, poll_interval: float = 3) -> dict[str, Any]:
         run_id = self._id(run_id)
         if wait_secs <= 0 or poll_interval <= 0:
             raise ValueError("wait_secs and poll_interval must be positive")
@@ -107,7 +107,7 @@ class Client:
         errors = self._request("GET", f"/key-value-stores/{store}/records/ERRORS", optional=True)
         return RunResult(run_id, dataset, run["status"], rows, summary, errors, metadata.get("itemCount", len(rows)) > len(rows))
 
-    def run(self, actor_input: Mapping[str, Any], *, max_total_charge_usd: float = 0.05, actor_timeout_secs: int = 300, wait_secs: float = 600, max_rows: int = 1000) -> RunResult:
+    def run(self, actor_input: Mapping[str, Any], *, max_total_charge_usd: float = 0.05, actor_timeout_secs: int = 900, wait_secs: float = 1200, max_rows: int = 1000) -> RunResult:
         run = self.start(actor_input, max_total_charge_usd=max_total_charge_usd, actor_timeout_secs=actor_timeout_secs)
         self.wait(run["id"], wait_secs=wait_secs)
         return self.result(run["id"], max_rows=max_rows)

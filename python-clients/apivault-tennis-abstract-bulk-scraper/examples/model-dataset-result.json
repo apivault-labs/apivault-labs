@@ -1,0 +1,71 @@
+{
+  "runId": "b70u8gaHuIaPr9NN7",
+  "matchRows": 2,
+  "modelRecords": 1,
+  "example": {
+    "match_id": "atp:2025-0605-385",
+    "date": "2025-11-09",
+    "score": "7-6(4) 7-5",
+    "result": "win",
+    "model_features": {
+      "cutoff": "2025-11-09",
+      "cutoff_semantics": "strictly_before_tournament_start",
+      "player": {
+        "available_prior_matches": 502,
+        "last_5": {
+          "matches": 5,
+          "wins": 5,
+          "win_rate": 1
+        },
+        "last_10": {
+          "matches": 10,
+          "wins": 10,
+          "win_rate": 1
+        },
+        "surface_record": {
+          "matches": 330,
+          "wins": 262
+        },
+        "head_to_head": {
+          "matches": 16,
+          "wins": 5
+        },
+        "latest_prior_tournament_start": "2025-10-27",
+        "days_since_prior_tournament_start": 13,
+        "rest_days": null
+      },
+      "opponent": {
+        "available_prior_matches": 433,
+        "last_5": {
+          "matches": 5,
+          "wins": 4,
+          "win_rate": 0.8
+        },
+        "last_10": {
+          "matches": 10,
+          "wins": 8,
+          "win_rate": 0.8
+        },
+        "surface_record": {
+          "matches": 200,
+          "wins": 156
+        },
+        "head_to_head": {
+          "matches": 16,
+          "wins": 11
+        },
+        "latest_prior_tournament_start": "2025-10-27",
+        "days_since_prior_tournament_start": 13,
+        "rest_days": null
+      },
+      "historical_as_of_snapshot_verified": false,
+      "excludes_same_tournament": true,
+      "includes_current_elo": false,
+      "warning": "Computed from currently observed historical records. Later source corrections cannot be reconstructed before monitoring starts; not a historical as-of snapshot.",
+      "opponent_history_loaded": true
+    },
+    "player_name": "Jannik Sinner",
+    "opponent_name": "Carlos Alcaraz"
+  },
+  "dateSemantics": "tournament_start"
+}

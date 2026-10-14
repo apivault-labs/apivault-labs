@@ -59,3 +59,7 @@ GitHub install is available even when PyPI publication is pending:
 ```bash
 pip install "git+https://github.com/apivault-labs/apivault-labs.git#subdirectory=python-clients/apivault-tennis-abstract-bulk-scraper"
 ```
+
+Source requests may take several minutes. The Tennis connector allows a 900-second Actor timeout and up to 20 minutes of waiting. Resume the existing run after a waiting failure; starting another run incurs another charge.
+
+Actual observed output excerpts with run IDs are in `examples/*-result.json`. They are historical QA samples, not a freshness guarantee or fabricated live output.

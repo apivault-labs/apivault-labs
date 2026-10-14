@@ -1,0 +1,81 @@
+{
+  "runId": "hbEyeZqMbpILE25Fs",
+  "rows": [
+    {
+      "match_id": "wta:2026-1020-296",
+      "player_name": "Iga Swiatek",
+      "opponent_name": "Elise Mertens",
+      "date": "2026-09-30",
+      "score": "7-6(0) 6-3",
+      "result": "loss",
+      "verification": {
+        "verified": true,
+        "status": "matched",
+        "source": "ESPN public scoreboard",
+        "conflicts": [],
+        "fields_checked": [
+          "players",
+          "winner",
+          "set_games",
+          "available_tiebreak_points"
+        ],
+        "checked_at": "2026-10-14T01:22:43.182556+00:00",
+        "secondary_match_id": "184353",
+        "secondary_url": "https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=20260930&limit=100",
+        "actual_match_date": "2026-10-09T11:05Z",
+        "secondary_tournament": "China Open"
+      }
+    },
+    {
+      "match_id": "wta:2026-1020-290",
+      "player_name": "Iga Swiatek",
+      "opponent_name": "Iva Jovic",
+      "date": "2026-09-30",
+      "score": "6-1 6-3",
+      "result": "win",
+      "verification": {
+        "verified": true,
+        "status": "matched",
+        "source": "ESPN public scoreboard",
+        "conflicts": [],
+        "fields_checked": [
+          "players",
+          "winner",
+          "set_games"
+        ],
+        "checked_at": "2026-10-14T01:22:49.581786+00:00",
+        "secondary_match_id": "184345",
+        "secondary_url": "https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=20260930&limit=100",
+        "actual_match_date": "2026-10-07T05:05Z",
+        "secondary_tournament": "China Open"
+      }
+    },
+    {
+      "match_id": "wta:2026-1020-278",
+      "player_name": "Iga Swiatek",
+      "opponent_name": "Donna Vekic",
+      "date": "2026-09-30",
+      "score": "4-6 7-6(0) 6-2",
+      "result": "win",
+      "verification": {
+        "verified": true,
+        "status": "matched",
+        "source": "ESPN public scoreboard",
+        "conflicts": [],
+        "fields_checked": [
+          "players",
+          "winner",
+          "set_games",
+          "available_tiebreak_points"
+        ],
+        "checked_at": "2026-10-14T01:22:49.582500+00:00",
+        "secondary_match_id": "184337",
+        "secondary_url": "https://site.api.espn.com/apis/site/v2/sports/tennis/wta/scoreboard?dates=20260930&limit=100",
+        "actual_match_date": "2026-10-05T03:05Z",
+        "secondary_tournament": "China Open"
+      }
+    }
+  ],
+  "dateSemantics": "tournament_start",
+  "observedRelease": "0.2.3"
+}

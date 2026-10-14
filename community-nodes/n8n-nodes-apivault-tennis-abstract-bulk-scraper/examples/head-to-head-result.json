@@ -1,0 +1,71 @@
+{
+  "runId": "GemcwbiJCazJM4zDd",
+  "matchRows": 3,
+  "modelRecords": 3,
+  "example": {
+    "match_id": "atp:2026-0410-373",
+    "date": "2026-04-05",
+    "score": "7-6(5) 6-3",
+    "result": "win",
+    "model_features": {
+      "cutoff": "2026-04-05",
+      "cutoff_semantics": "strictly_before_tournament_start",
+      "player": {
+        "available_prior_matches": 528,
+        "last_5": {
+          "matches": 5,
+          "wins": 5,
+          "win_rate": 1
+        },
+        "last_10": {
+          "matches": 10,
+          "wins": 10,
+          "win_rate": 1
+        },
+        "surface_record": {
+          "matches": 129,
+          "wins": 90
+        },
+        "head_to_head": {
+          "matches": 17,
+          "wins": 6
+        },
+        "latest_prior_tournament_start": "2026-03-18",
+        "days_since_prior_tournament_start": 18,
+        "rest_days": null
+      },
+      "opponent": {
+        "available_prior_matches": 457,
+        "last_5": {
+          "matches": 5,
+          "wins": 3,
+          "win_rate": 0.6
+        },
+        "last_10": {
+          "matches": 10,
+          "wins": 8,
+          "win_rate": 0.8
+        },
+        "surface_record": {
+          "matches": 194,
+          "wins": 159
+        },
+        "head_to_head": {
+          "matches": 17,
+          "wins": 11
+        },
+        "latest_prior_tournament_start": "2026-03-18",
+        "days_since_prior_tournament_start": 18,
+        "rest_days": null
+      },
+      "historical_as_of_snapshot_verified": false,
+      "excludes_same_tournament": true,
+      "includes_current_elo": false,
+      "warning": "Computed from currently observed historical records. Later source corrections cannot be reconstructed before monitoring starts; not a historical as-of snapshot.",
+      "opponent_history_loaded": true
+    },
+    "player_name": "Jannik Sinner",
+    "opponent_name": "Carlos Alcaraz"
+  },
+  "dateSemantics": "tournament_start"
+}

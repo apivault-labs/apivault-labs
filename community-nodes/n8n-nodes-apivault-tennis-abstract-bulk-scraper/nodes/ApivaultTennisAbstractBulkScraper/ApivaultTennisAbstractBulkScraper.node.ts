@@ -62,13 +62,13 @@ export class ApivaultTennisAbstractBulkScraper implements INodeType {
 					// POST is intentionally never retried: it could start a paid duplicate.
 					const started = await this.helpers.httpRequestWithAuthentication.call(this, 'apivaultApi', {
 						method: 'POST', url: `${API}/acts/${ACTOR_ID}/runs`, body, json: true,
-						qs: { build: 'latest', maxTotalChargeUsd: cap, timeout: 300 },
+						qs: { build: 'latest', maxTotalChargeUsd: cap, timeout: 900 },
 					});
 					runId = validId(started?.data?.id);
 				} else if (operation === 'read') {
 					runId = validId(this.getNodeParameter('runId', i) as string);
 				} else throw new NodeOperationError(this.getNode(), 'Unsupported operation');
-				const deadline = Date.now() + 10 * 60 * 1000;
+				const deadline = Date.now() + 20 * 60 * 1000;
 				let run;
 				while (true) {
 					if (Date.now() >= deadline) throw new NodeOperationError(this.getNode(), `Waiting timed out; use Read Existing Run for ${runId}`);

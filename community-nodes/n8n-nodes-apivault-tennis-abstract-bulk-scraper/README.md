@@ -28,3 +28,7 @@ All examples call the public Actor. Base events cost $0.19/1,000 match/ranking/E
 Verification covers listed participants/winner/score fields, not all match statistics. Features use the source's currently observed history before the target tournament start; historical as-of correctness is not established. Current Elo and target/same-tournament results are excluded. Correction tracking is opt-in and begins with your own baseline; use one monitoringKey sequentially.
 
 MODEL_DATASET, VERIFICATION_COVERAGE, OBSERVATION and CORRECTIONS are run key-value-store records, not ordinary Dataset rows. Read them with the Apify API or Python `client.record(run_id, key)`. The n8n node's full output contains keyValueStoreId: use that ID with an authenticated HTTP Request node if you need these additional records.
+
+Source requests may take several minutes. The Tennis connector allows a 900-second Actor timeout and up to 20 minutes of waiting. Resume the existing run after a waiting failure; starting another run incurs another charge.
+
+Actual observed output excerpts with run IDs are in `examples/*-result.json`. They are historical QA samples, not a freshness guarantee or fabricated live output.
