@@ -13,6 +13,7 @@ Build a small, reviewable ecommerce prospect list, then export it in the format 
 - [Google Sheets headers](sheet-headers.csv)
 - [Illustrative CSV preview](example-preview.csv) — deliberately synthetic, not a customer export
 - [32-second animated walkthrough](workflow-walkthrough.gif) — an explanatory animation, not a live screen recording
+- [40-second browser walkthrough](browser-walkthrough.mp4) — recorded public guide pages with captions and checked-sample context; live execution and a connected Sheets write are not shown
 
 No community-node installation is required. The template uses built-in n8n nodes, is inactive, and contains no credentials or schedule.
 
