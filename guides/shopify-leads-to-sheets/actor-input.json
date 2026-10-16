@@ -1,0 +1,31 @@
+{
+  "workflow": "export",
+  "platforms": [
+    "shopify_sites"
+  ],
+  "country": [
+    "US"
+  ],
+  "hasEmail": true,
+  "filters": [
+    {
+      "column": "eCommerce Platform",
+      "operator": "contains",
+      "value": "Shopify"
+    }
+  ],
+  "dedupeByDomain": true,
+  "sortBy": "Tranco",
+  "sortDesc": false,
+  "maxItems": 10,
+  "outputPreset": "custom",
+  "columns": [
+    "Root Domain",
+    "Company",
+    "Emails",
+    "Telephones",
+    "Country",
+    "eCommerce Platform",
+    "Last Found"
+  ]
+}

@@ -52,3 +52,10 @@ When contacting us, include the data source, required fields, example input, exp
 ## Python SDKs and n8n integrations
 
 [Actor client catalogue](actor-clients.md): installable clients, example workflows, hosted Actor links and usage instructions.
+
+
+<!-- shopify-contact-workflow-20261016 -->
+
+## Shopify contact leads → CSV or Google Sheets
+
+[Start with a small Shopify prospect list](guides/shopify-leads-to-sheets/README.md): a manual n8n template, CSV export, optional Sheets delivery and same-run recovery. Includes a checked sample, setup guide and source-coverage limits.

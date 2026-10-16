@@ -1,0 +1,2 @@
+domain,company,emails,phones,country,ecommerce_platform,last_found,source_status,export_scope
+sample-shop.example,Illustrative shop — synthetic row,sales@sample-shop.example,'+12025550123,US,Shopify,,MAX_ITEMS_REACHED,limited_sample

@@ -1,0 +1,745 @@
+{
+  "name": "Shopify contact leads to CSV and Google Sheets",
+  "nodes": [
+    {
+      "id": "a1a9a438-1863-57db-b8cd-f61f88e858a2",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "1fe2c64b-2960-5faf-afc2-b623f6116a0c",
+      "name": "Configure export",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        0
+      ],
+      "parameters": {
+        "jsCode": "return [{json:{\"actorInput\": {\"workflow\": \"export\", \"platforms\": [\"shopify_sites\"], \"country\": [\"US\"], \"hasEmail\": true, \"filters\": [{\"column\": \"eCommerce Platform\", \"operator\": \"contains\", \"value\": \"Shopify\"}], \"dedupeByDomain\": true, \"sortBy\": \"Tranco\", \"sortDesc\": false, \"maxItems\": 10, \"outputPreset\": \"custom\", \"columns\": [\"Root Domain\", \"Company\", \"Emails\", \"Telephones\", \"Country\", \"eCommerce Platform\", \"Last Found\"]}, \"resumeRunId\": \"\", \"sendToGoogleSheets\": false, \"maxTotalChargeUsd\": 0.15}}];"
+      }
+    },
+    {
+      "id": "b862d9bc-eab5-5fe1-97f3-ce3e04a884a1",
+      "name": "Validate settings",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        440,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const s=$input.first().json;\nif (!s.actorInput || !Number.isInteger(s.actorInput.maxItems) || s.actorInput.maxItems<1 || s.actorInput.maxItems>1000) throw new Error('Set maxItems between 1 and 1000. Start with 10.');\nif (s.actorInput.workflow!=='export') throw new Error('This workflow exports rows; workflow must be export.');\nif (typeof s.sendToGoogleSheets!=='boolean') throw new Error('sendToGoogleSheets must be true or false');\nif (typeof s.maxTotalChargeUsd!=='number' || s.maxTotalChargeUsd<=0 || s.maxTotalChargeUsd>10) throw new Error('Set an explicit event cap greater than 0 and at most $10. It is not an all-cost cap.');\nconst resume=String(s.resumeRunId||'').trim();\nif (resume && !/^[A-Za-z0-9]{17}$/.test(resume)) throw new Error('Use the exact Apify run ID, not a URL.');\nreturn [{json:{...s,resumeRunId:resume,resume:Boolean(resume)}}];"
+      }
+    },
+    {
+      "id": "75685ad9-d1b0-554c-b9d0-f4c3e11155a2",
+      "name": "Resume saved run",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        660,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "decision",
+              "leftValue": "={{ $json.resume }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "6d2d293d-9389-54d9-a84b-c18dfc531f0e",
+      "name": "Get saved run",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        -140
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "url": "={{ 'https://api.apify.com/v2/actor-runs/' + $json.resumeRunId }}",
+        "options": {
+          "timeout": 60000
+        }
+      }
+    },
+    {
+      "id": "1e44e26a-6c57-552c-858e-2c937aedb7d0",
+      "name": "Start Actor",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        140
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "method": "POST",
+        "url": "https://api.apify.com/v2/acts/apivault_labs~website-leads-database/runs",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "build",
+              "value": "0.17.5"
+            },
+            {
+              "name": "memory",
+              "value": "256"
+            },
+            {
+              "name": "timeout",
+              "value": "600"
+            },
+            {
+              "name": "maxTotalChargeUsd",
+              "value": "={{ $json.maxTotalChargeUsd }}"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.actorInput) }}",
+        "options": {
+          "timeout": 60000
+        }
+      }
+    },
+    {
+      "id": "167b609f-7967-530d-aa7c-b8f703f49ea9",
+      "name": "Validate run",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1120,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const r=$input.first().json.data;\nif (!r || !/^[A-Za-z0-9]{17}$/.test(r.id||'') || r.actId!=='InYi5NI4KMb8xo5u9') throw new Error('Run is missing or belongs to another Actor.');\nif (!['READY','RUNNING','SUCCEEDED','FAILED','ABORTING','ABORTED','TIMING-OUT','TIMED-OUT'].includes(r.status)) throw new Error('Unknown run status; inspect this run without starting another.');\nif (['FAILED','ABORTED','TIMED-OUT','ABORTING','TIMING-OUT'].includes(r.status)) throw new Error(`Run ${r.id}: ${r.status}. Inspect its log and stored results; do not create another run automatically.`);\nconst started=Date.parse(r.startedAt||r.createdAt||'');\nif (!Number.isFinite(started)) throw new Error('Missing valid start time.');\nif (r.status!=='SUCCEEDED' && Date.now()-started>15*60*1000) throw new Error(`Polling stopped for ${r.id}. Resume this same run after checking Console.`);\nif (!/^[A-Za-z0-9]{17}$/.test(r.defaultDatasetId||'') || !/^[A-Za-z0-9]{17}$/.test(r.defaultKeyValueStoreId||'')) throw new Error('Missing run storage IDs.');\nreturn [{json:{...r,ready:r.status==='SUCCEEDED'}}];"
+      }
+    },
+    {
+      "id": "41657e4e-2a95-5cb1-8be7-b5a957844132",
+      "name": "Run succeeded",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1340,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "decision",
+              "leftValue": "={{ $json.ready }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "82f80b4e-5fd6-507d-896a-92c6305d4ef4",
+      "name": "Wait for run",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1340,
+        200
+      ],
+      "parameters": {
+        "resume": "timeInterval",
+        "amount": 10,
+        "unit": "seconds"
+      }
+    },
+    {
+      "id": "298c1a95-9be9-5e11-ace0-8c878f029fb8",
+      "name": "Get run status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1120,
+        200
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "url": "={{ 'https://api.apify.com/v2/actor-runs/' + $json.id }}",
+        "options": {
+          "timeout": 60000
+        }
+      }
+    },
+    {
+      "id": "118ddcc5-b5fe-5ada-8eab-cee1b2a992ee",
+      "name": "Read SUMMARY",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1560,
+        0
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "url": "={{ 'https://api.apify.com/v2/key-value-stores/' + $json.defaultKeyValueStoreId + '/records/SUMMARY' }}",
+        "options": {
+          "timeout": 60000
+        }
+      }
+    },
+    {
+      "id": "c6f1b451-7d2d-5846-9f3b-2e93c854dd7c",
+      "name": "Validate coverage",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1780,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const s=$input.first().json;\nconst run=$('Validate run').first().json;\nif (s.success!==true || !Number.isInteger(s.rowsReturned) || s.rowsReturned<0 || s.failedShards!==0) throw new Error(`Review SUMMARY/ERRORS for ${run.id}; source coverage is not confirmed.`);\nif (!['COMPLETED','NO_RESULTS','MAX_ITEMS_REACHED'].includes(s.status)) throw new Error(`Run ${run.id} returned ${s.status}; inspect it without another paid start.`);\nif (['COMPLETED','NO_RESULTS'].includes(s.status) && s.isComplete!==true) throw new Error('Inconsistent completeness in SUMMARY.');\nreturn [{json:{...run,rowsExpected:s.rowsReturned,source_status:s.status,export_scope:s.status==='MAX_ITEMS_REACHED'?'limited_sample':'complete_matching_export'}}];"
+      }
+    },
+    {
+      "id": "c5ce56f2-1916-5079-b82e-e689208fda96",
+      "name": "Inspect dataset",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2000,
+        0
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "url": "={{ 'https://api.apify.com/v2/datasets/' + $json.defaultDatasetId }}",
+        "options": {
+          "timeout": 60000
+        }
+      }
+    },
+    {
+      "id": "537adeb8-d484-5ccf-89aa-a40bb395da43",
+      "name": "Validate dataset",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2220,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const d=$input.first().json.data;\nconst r=$('Validate coverage').first().json;\nif (!d || d.id!==r.defaultDatasetId || !Number.isInteger(d.itemCount) || d.itemCount!==r.rowsExpected) throw new Error('Dataset count does not match SUMMARY.');\nif (d.itemCount>1000) throw new Error('This template reads at most 1000 already-created rows. Use the paginated API for larger datasets; do not rerun Start Actor.');\nreturn [{json:r}];"
+      }
+    },
+    {
+      "id": "d4eb9995-d252-506d-b77e-7c38b2a53f8d",
+      "name": "Read lead rows",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2440,
+        0
+      ],
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "url": "={{ 'https://api.apify.com/v2/datasets/' + $json.defaultDatasetId + '/items' }}",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "clean",
+              "value": "true"
+            },
+            {
+              "name": "limit",
+              "value": "1000"
+            }
+          ]
+        },
+        "options": {
+          "timeout": 60000
+        }
+      }
+    },
+    {
+      "id": "a770f79b-6f09-54e8-a8e1-a31c76212c09",
+      "name": "Prepare rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2660,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const out=[],seen=new Set();\nconst coverage=$('Validate coverage').first().json;\nfor (const item of $input.all()) {\n const r=item.json,domain=String(r['Root Domain']||'').trim().toLowerCase();\n if (!/^(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z]{2,63}$/.test(domain)) throw new Error('Invalid domain in exported row; inspect Dataset.');\n if (seen.has(domain)) continue;\n seen.add(domain);\n out.push({json:{domain,company:String(r.Company||''),emails:String(r.Emails||''),phones:String(r.Telephones||''),country:String(r.Country||''),ecommerce_platform:String(r['eCommerce Platform']||''),last_found:String(r['Last Found']||''),source_status:coverage.source_status,export_scope:coverage.export_scope}});\n}\nif ($input.all().length!==coverage.rowsExpected) throw new Error('Result page length differs from SUMMARY; do not silently truncate.');\nreturn out;"
+      }
+    },
+    {
+      "id": "bdd86f82-e56d-52da-87ca-72f550e911c1",
+      "name": "CSV-safe text",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2880,
+        -100
+      ],
+      "parameters": {
+        "jsCode": "return $input.all().map(item=>({json:Object.fromEntries(Object.entries(item.json).map(([k,v])=>[k,typeof v==='string' && /^[=+@\\-\\t\\r]/.test(v)?\"'\"+v:v]))}));"
+      }
+    },
+    {
+      "id": "2ef5eeee-680e-5940-a669-850a8ce0daec",
+      "name": "Download CSV",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        3100,
+        -100
+      ],
+      "parameters": {
+        "operation": "csv",
+        "options": {
+          "fileName": "shopify-contact-leads.csv",
+          "headerRow": true
+        }
+      }
+    },
+    {
+      "id": "ceae4c17-fa98-575f-b13b-4c13a6daef04",
+      "name": "Send to Sheets",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2880,
+        140
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "decision",
+              "leftValue": "={{ $('Configure export').first().json.sendToGoogleSheets }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "e04b5cd9-1e8b-52c6-92ef-4700ba3f0f77",
+      "name": "Upsert by domain",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        3100,
+        140
+      ],
+      "parameters": {
+        "resource": "sheet",
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "REPLACE_WITH_SPREADSHEET_ID"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Leads"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "domain"
+          ],
+          "schema": [
+            {
+              "id": "domain",
+              "displayName": "domain",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "company",
+              "displayName": "company",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "emails",
+              "displayName": "emails",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "phones",
+              "displayName": "phones",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "country",
+              "displayName": "country",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "ecommerce_platform",
+              "displayName": "ecommerce_platform",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "last_found",
+              "displayName": "last_found",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "source_status",
+              "displayName": "source_status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "export_scope",
+              "displayName": "export_scope",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "RAW",
+          "handlingExtraData": "error"
+        }
+      }
+    },
+    {
+      "id": "dbcc650a-bca3-5726-9a7c-e7150e346868",
+      "name": "Setup and recovery",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        0,
+        -440
+      ],
+      "parameters": {
+        "height": 350,
+        "width": 1040,
+        "content": "## Manual first; no automatic schedule\nSelect HTTP Header Auth on every HTTP node: Authorization = Bearer YOUR_APIFY_TOKEN. Default:10 requested US records with stored Shopify and email fields. 1 site = 1 paid result, not 1 email. Limit is not guaranteed coverage.\n\nCSV works without Google credentials. For Sheets: create a Leads tab with the supplied headers, select Google Sheets OAuth on Upsert by domain, replace spreadsheet ID, set sendToGoogleSheets=true. Values use RAW mode.\n\n## Recover without a new paid run\nCopy the original run ID from Start Actor to resumeRunId, then execute manually. No automatic POST retry. Review source errors before retrying. MAX_ITEMS_REACHED is an intentional limited sample; not a complete audience export. Larger-than1000 datasets are rejected. $0.15 is an event cap, not a guarantee about all platform/proxy costs. No hidden telemetry."
+      }
+    }
+  ],
+  "connections": {
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Configure export",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure export": {
+      "main": [
+        [
+          {
+            "node": "Validate settings",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate settings": {
+      "main": [
+        [
+          {
+            "node": "Resume saved run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resume saved run": {
+      "main": [
+        [
+          {
+            "node": "Get saved run",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Start Actor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get saved run": {
+      "main": [
+        [
+          {
+            "node": "Validate run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start Actor": {
+      "main": [
+        [
+          {
+            "node": "Validate run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate run": {
+      "main": [
+        [
+          {
+            "node": "Run succeeded",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Run succeeded": {
+      "main": [
+        [
+          {
+            "node": "Read SUMMARY",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Wait for run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait for run": {
+      "main": [
+        [
+          {
+            "node": "Get run status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get run status": {
+      "main": [
+        [
+          {
+            "node": "Validate run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read SUMMARY": {
+      "main": [
+        [
+          {
+            "node": "Validate coverage",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate coverage": {
+      "main": [
+        [
+          {
+            "node": "Inspect dataset",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Inspect dataset": {
+      "main": [
+        [
+          {
+            "node": "Validate dataset",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Validate dataset": {
+      "main": [
+        [
+          {
+            "node": "Read lead rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read lead rows": {
+      "main": [
+        [
+          {
+            "node": "Prepare rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare rows": {
+      "main": [
+        [
+          {
+            "node": "CSV-safe text",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Send to Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CSV-safe text": {
+      "main": [
+        [
+          {
+            "node": "Download CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to Sheets": {
+      "main": [
+        [
+          {
+            "node": "Upsert by domain",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Europe/Minsk",
+    "executionTimeout": 1200
+  },
+  "pinData": {},
+  "tags": []
+}
