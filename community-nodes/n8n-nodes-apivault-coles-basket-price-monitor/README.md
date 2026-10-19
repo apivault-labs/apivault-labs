@@ -13,3 +13,14 @@ The event cap defaults to $0.05. Review [Actor pricing](https://apify.com/apivau
 Publication on npm makes this a community package. n8n Cloud availability depends on separate review and verification by n8n; this package does not claim verified status. No runtime dependencies are included.
 
 [Actor inputs](https://apify.com/apivault_labs/coles-basket-price-monitor/input) · [npm](https://www.npmjs.com/package/n8n-nodes-apivault-coles-basket-price-monitor) · [GitHub](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-coles-basket-price-monitor)
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Coles Scraper — Bulk Prices & CSV API on Apify](https://apify.com/apivault_labs/coles-basket-price-monitor).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/coles-basket-price-monitor/pricing).
+- [n8n community package: n8n-nodes-apivault-coles-basket-price-monitor](https://www.npmjs.com/package/n8n-nodes-apivault-coles-basket-price-monitor).
+- [Python client](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-coles-basket-price-monitor).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

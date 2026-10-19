@@ -35,3 +35,14 @@ An Apify account and token are required. The package has no subscription of its 
 Rows can be serialized as JSON or used in your own CSV/Excel pipeline. Native Dataset exports are available in Apify. Optional integrations and credentials depend on the Actor.
 
 [Hosted Actor](https://apify.com/apivault_labs/clutch-company-search) · [Source](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-clutch-company-search) · [PyPI](https://pypi.org/project/apivault-clutch-company-search/)
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Clutch Company Search — No Login, CSV API on Apify](https://apify.com/apivault_labs/clutch-company-search).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/clutch-company-search/pricing).
+- [n8n community package: n8n-nodes-apivault-clutch-search](https://www.npmjs.com/package/n8n-nodes-apivault-clutch-search).
+- [n8n source and usage](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-clutch-search).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

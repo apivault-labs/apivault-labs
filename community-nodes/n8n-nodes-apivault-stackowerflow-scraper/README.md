@@ -13,3 +13,16 @@ The event cap defaults to $0.05. Review [Actor pricing](https://apify.com/apivau
 Publication on npm makes this a community package. n8n Cloud availability depends on separate review and verification by n8n; this package does not claim verified status. No runtime dependencies are included.
 
 [Actor inputs](https://apify.com/apivault_labs/stackowerflow-scraper/input) · [npm](https://www.npmjs.com/package/n8n-nodes-apivault-stackowerflow-scraper) · [GitHub](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-stackowerflow-scraper)
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Stack Overflow Profile Scraper — Bulk CSV API on Apify](https://apify.com/apivault_labs/stackowerflow-scraper).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/stackowerflow-scraper/pricing).
+- [n8n community package: n8n-nodes-apivault-stackoverflow](https://www.npmjs.com/package/n8n-nodes-apivault-stackoverflow).
+- [n8n community package: n8n-nodes-apivault-stackowerflow-scraper](https://www.npmjs.com/package/n8n-nodes-apivault-stackowerflow-scraper).
+- [Python client](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-stackowerflow-scraper).
+- [n8n source and usage](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-stackoverflow).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

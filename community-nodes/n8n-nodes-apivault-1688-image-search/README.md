@@ -13,3 +13,14 @@ The event cap defaults to $0.05. Review [Actor pricing](https://apify.com/apivau
 Publication on npm makes this a community package. n8n Cloud availability depends on separate review and verification by n8n; this package does not claim verified status. No runtime dependencies are included.
 
 [Actor inputs](https://apify.com/apivault_labs/1688-image-search/input) · [npm](https://www.npmjs.com/package/n8n-nodes-apivault-1688-image-search) · [GitHub](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-1688-image-search)
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run 1688 Reverse Image Search — Bulk Taobao API on Apify](https://apify.com/apivault_labs/1688-image-search).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/1688-image-search/pricing).
+- [n8n community package: n8n-nodes-apivault-1688-image-search](https://www.npmjs.com/package/n8n-nodes-apivault-1688-image-search).
+- [Python client](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-1688-image-search).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

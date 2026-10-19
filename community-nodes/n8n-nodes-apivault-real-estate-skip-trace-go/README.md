@@ -13,3 +13,14 @@ The event cap defaults to $0.05. Review [Actor pricing](https://apify.com/apivau
 Publication on npm makes this a community package. n8n Cloud availability depends on separate review and verification by n8n; this package does not claim verified status. No runtime dependencies are included.
 
 [Actor inputs](https://apify.com/apivault_labs/real-estate-skip-trace-go/input) · [npm](https://www.npmjs.com/package/n8n-nodes-apivault-real-estate-skip-trace-go) · [GitHub](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-real-estate-skip-trace-go)
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Real Estate Skip Trace — No Login, Owner Phones & Emails on Apify](https://apify.com/apivault_labs/real-estate-skip-trace-go).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/real-estate-skip-trace-go/pricing).
+- [n8n community package: n8n-nodes-apivault-real-estate-skip-trace-go](https://www.npmjs.com/package/n8n-nodes-apivault-real-estate-skip-trace-go).
+- [Python client](https://github.com/apivault-labs/real-estate-skip-trace-go-python).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

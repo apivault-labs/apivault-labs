@@ -59,3 +59,9 @@ When contacting us, include the data source, required fields, example input, exp
 ## Shopify contact leads → CSV or Google Sheets
 
 [Start with a small Shopify prospect list](guides/shopify-leads-to-sheets/README.md): a manual n8n template, CSV export, optional Sheets delivery and same-run recovery. Includes a checked sample, setup guide and source-coverage limits.
+
+<!-- apivault-integrations:start -->
+## Find an Actor integration
+
+[Browse the Actor integration catalogue](actor-integrations.md) for direct Apify, npm/n8n and public Python client links. Check setup, pricing and limitations before running an Actor.
+<!-- apivault-integrations:end -->

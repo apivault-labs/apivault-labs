@@ -36,3 +36,14 @@ An Apify account and token are required. The package has no subscription of its 
 Rows can be serialized as JSON or used in your own CSV/Excel pipeline. Native Dataset exports are available in Apify. Optional integrations and credentials depend on the Actor.
 
 [Hosted Actor](https://apify.com/apivault_labs/business-locations-analyzer) · [Source](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-business-locations-analyzer) · [PyPI](https://pypi.org/project/apivault-business-locations-analyzer/)
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Business Locations Analyzer — 28M+ Records & Phones on Apify](https://apify.com/apivault_labs/business-locations-analyzer).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/business-locations-analyzer/pricing).
+- [n8n community package: n8n-nodes-apivault-business-locations-analyzer](https://www.npmjs.com/package/n8n-nodes-apivault-business-locations-analyzer).
+- [n8n source and usage](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-business-locations-analyzer).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

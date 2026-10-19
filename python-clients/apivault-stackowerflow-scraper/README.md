@@ -37,3 +37,16 @@ An Apify account and token are required. The package has no subscription of its 
 Rows can be serialized as JSON or used in your own CSV/Excel pipeline. Native Dataset exports are available in Apify. Optional integrations and credentials depend on the Actor.
 
 [Hosted Actor](https://apify.com/apivault_labs/stackowerflow-scraper) · [Source](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-stackowerflow-scraper) · [PyPI](https://pypi.org/project/apivault-stackowerflow-scraper/)
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Stack Overflow Profile Scraper — Bulk CSV API on Apify](https://apify.com/apivault_labs/stackowerflow-scraper).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/stackowerflow-scraper/pricing).
+- [n8n community package: n8n-nodes-apivault-stackoverflow](https://www.npmjs.com/package/n8n-nodes-apivault-stackoverflow).
+- [n8n community package: n8n-nodes-apivault-stackowerflow-scraper](https://www.npmjs.com/package/n8n-nodes-apivault-stackowerflow-scraper).
+- [n8n source and usage](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-stackowerflow-scraper).
+- [n8n source and usage](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-stackoverflow).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

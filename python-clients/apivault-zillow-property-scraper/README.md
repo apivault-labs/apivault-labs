@@ -38,3 +38,14 @@ An Apify account and token are required. The package has no subscription of its 
 Rows can be serialized as JSON or used in your own CSV/Excel pipeline. Native Dataset exports are available in Apify. Optional integrations and credentials depend on the Actor.
 
 [Hosted Actor](https://apify.com/apivault_labs/zillow-property-scraper) · [Source](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-zillow-property-scraper) · [PyPI](https://pypi.org/project/apivault-zillow-property-scraper/)
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Zillow Property Details Scraper — Bulk CSV API on Apify](https://apify.com/apivault_labs/zillow-property-scraper).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/zillow-property-scraper/pricing).
+- [n8n community package: n8n-nodes-apivault-zillow](https://www.npmjs.com/package/n8n-nodes-apivault-zillow).
+- [n8n source and usage](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-zillow).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

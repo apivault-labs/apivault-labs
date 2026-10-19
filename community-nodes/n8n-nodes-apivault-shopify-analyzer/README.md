@@ -18,3 +18,15 @@ Runtime dependencies: none. n8n Cloud availability requires separate n8n verific
 - [Python package on PyPI](https://pypi.org/project/shopify-store-analyzer/)
 
 The published Python SDK 0.1.0 covers URL analysis. Use the Actor API for discovery, presets and newer options. npm publication does not establish n8n Cloud verification.
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Shopify Store Analyzer — No Login, Apps, Emails & Phones on Apify](https://apify.com/apivault_labs/shopify-store-analyzer).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/shopify-store-analyzer/pricing).
+- [n8n community package: n8n-nodes-apivault-shopify-analyzer](https://www.npmjs.com/package/n8n-nodes-apivault-shopify-analyzer).
+- [n8n source and usage](https://github.com/apivault-labs/n8n-nodes-apivault-shopify-analyzer).
+- [Python client](https://github.com/apivault-labs/shopify-store-analyzer-python).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

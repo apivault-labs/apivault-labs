@@ -38,3 +38,16 @@ An Apify account and token are required. The package has no subscription of its 
 Rows can be serialized as JSON or used in your own CSV/Excel pipeline. Native Dataset exports are available in Apify. Optional integrations and credentials depend on the Actor.
 
 [Hosted Actor](https://apify.com/apivault_labs/tiktok-shop-seller-product-creator-gmv-analyzer) · [Source](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-tiktok-shop-seller-product-creator-gmv-analyzer) · [PyPI](https://pypi.org/project/apivault-tiktok-shop-seller-product-creator-gmv-analyzer/)
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run TikTok Shop GMV Analyzer — Bulk JSON & CSV API on Apify](https://apify.com/apivault_labs/tiktok-shop-seller-product-creator-gmv-analyzer).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/tiktok-shop-seller-product-creator-gmv-analyzer/pricing).
+- [n8n community package: n8n-nodes-apivault-tiktok-shop-gmv-analyzer](https://www.npmjs.com/package/n8n-nodes-apivault-tiktok-shop-gmv-analyzer).
+- [n8n source and usage](https://github.com/apivault-labs/n8n-nodes-apivault-tiktok-shop-gmv-analyzer).
+- [Python client](https://github.com/apivault-labs/tiktok-shop-gmv-analyzer-python).
+- [n8n source and usage](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-tiktok-shop-gmv-analyzer).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

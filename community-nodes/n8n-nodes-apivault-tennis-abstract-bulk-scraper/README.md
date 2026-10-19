@@ -32,3 +32,13 @@ MODEL_DATASET, VERIFICATION_COVERAGE, OBSERVATION and CORRECTIONS are run key-va
 Source requests may take several minutes. The Tennis connector allows a 900-second Actor timeout and up to 20 minutes of waiting. Resume the existing run after a waiting failure; starting another run incurs another charge.
 
 Actual observed output excerpts with run IDs are in `examples/*-result.json`. They are historical QA samples, not a freshness guarantee or fabricated live output.
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Tennis Abstract Scraper — Score Checks, Model Features & Elo on Apify](https://apify.com/apivault_labs/tennis-abstract-bulk-scraper).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/tennis-abstract-bulk-scraper/pricing).
+- [n8n community package: n8n-nodes-apivault-tennis-abstract-bulk-scraper](https://www.npmjs.com/package/n8n-nodes-apivault-tennis-abstract-bulk-scraper).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->

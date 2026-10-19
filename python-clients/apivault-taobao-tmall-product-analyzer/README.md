@@ -38,3 +38,14 @@ An Apify account and token are required. The package has no subscription of its 
 Rows can be serialized as JSON or used in your own CSV/Excel pipeline. Native Dataset exports are available in Apify. Optional integrations and credentials depend on the Actor.
 
 [Hosted Actor](https://apify.com/apivault_labs/taobao-tmall-product-analyzer) · [Source](https://github.com/apivault-labs/apivault-labs/tree/main/python-clients/apivault-taobao-tmall-product-analyzer) · [PyPI](https://pypi.org/project/apivault-taobao-tmall-product-analyzer/)
+
+<!-- apivault-integrations:start -->
+## Hosted Actor and integrations
+
+- [Run Taobao Product Analyzer — Bulk CSV Export & API on Apify](https://apify.com/apivault_labs/taobao-tmall-product-analyzer).
+- [Current pricing and usage terms](https://apify.com/apivault_labs/taobao-tmall-product-analyzer/pricing).
+- [n8n community package: n8n-nodes-apivault-taobao-tmall-product-analyzer](https://www.npmjs.com/package/n8n-nodes-apivault-taobao-tmall-product-analyzer).
+- [n8n source and usage](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-taobao-tmall-product-analyzer).
+
+An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
+<!-- apivault-integrations:end -->
