@@ -112,3 +112,14 @@ n8n Cloud verification is a separate Creator Portal review and is not claimed he
 [Hosted Actor](https://apify.com/apivault_labs/tennis-abstract-bulk-scraper) · [Python client and examples](python-clients/apivault-tennis-abstract-bulk-scraper/README.md) · [n8n node and three workflows](community-nodes/n8n-nodes-apivault-tennis-abstract-bulk-scraper/README.md).
 
 GitHub sources are available. Registry publication status is recorded separately; no n8n Cloud verification is claimed. Apify account and usage charges apply.
+
+<!-- new-actor-wave-20261023 -->
+## New review and public channel clients — 23 October 2026
+
+Python packages below are published as version0.1.0. The corresponding n8n sources and inactive example workflows are available on GitHub. npm releases currently await staged-release approval; the0.0.0-stage placeholder is not an operational integration. n8n Cloud/verification is not claimed.
+
+| Actor | Python SDK | n8n source and workflow |
+| --- | --- | --- |
+| [Google Play Scraper](https://apify.com/apivault_labs/google-play-reviews-scraper) | [PyPI](https://pypi.org/project/apivault-google-play-reviews-scraper/) · [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-google-play-reviews-scraper) | [source/workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-google-play-reviews-scraper) |
+| [App Store Reviews Scraper](https://apify.com/apivault_labs/app-store-reviews-scraper) | [PyPI](https://pypi.org/project/apivault-app-store-reviews-scraper/) · [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-app-store-reviews-scraper) | [source/workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-app-store-reviews-scraper) |
+| [Telegram Channel Scraper](https://apify.com/apivault_labs/telegram-public-channels-scraper) | [PyPI](https://pypi.org/project/apivault-telegram-public-channels-scraper/) · [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-telegram-public-channels-scraper) | [source/workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-telegram-public-channels-scraper) |
