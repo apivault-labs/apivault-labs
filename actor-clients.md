@@ -155,3 +155,9 @@ Python and n8n sources and manual workflows are public. Python0.1.0 releases are
 | [YouTube Transcripts and Subtitles](https://apify.com/apivault_labs/youtube-transcripts-scraper) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-youtube-transcripts-scraper) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-youtube-transcripts-scraper) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-youtube-transcripts-scraper) |
 | [Bilibili Popular Videos](https://apify.com/apivault_labs/bilibili-popular-videos-prototype) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-bilibili-popular-videos-prototype) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-bilibili-popular-videos-prototype) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-bilibili-popular-videos-prototype) |
 | [Naver Brand Store Scraper](https://apify.com/apivault_labs/naver-smartstore-source-probe) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-naver-smartstore-source-probe) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-naver-smartstore-source-probe) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-naver-smartstore-source-probe) |
+
+
+<!-- github-python-install-20261024 -->
+## Python installation while PyPI releases are pending
+
+[Verified installation from pinned public GitHub sources](guides/python-clients-from-github.md) is available for Google News, Threads, Substack, YouTube transcripts, Bilibili and Naver. All six0.1.0 clients were installed and their exact source origins, Actor IDs and existing-run reads verified. Python3.10+, Git and standard build requirements are needed. This does not mean the PyPI packages are published.
