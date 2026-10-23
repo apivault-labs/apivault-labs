@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apivault-youtube-transcripts-scraper"
+version = "0.1.0"
+description = "Python client for YouTube Transcripts and Subtitles on Apify. Run, resume and download results with diagnostics."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name="ApiVault Labs"}]
+keywords = ["apify", "python-sdk", "youtube", "transcripts", "scraper"]
+
+[project.urls]
+Homepage = "https://apify.com/apivault_labs/youtube-transcripts-scraper"
+Source = "https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-youtube-transcripts-scraper"
+Documentation = "https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-youtube-transcripts-scraper#readme"
+
+[tool.setuptools.packages.find]
+include = ["apivault_youtube_transcripts_scraper*"]
