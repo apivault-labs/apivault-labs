@@ -1,0 +1,46 @@
+name: Publish Steam npm funnel
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: One reviewed new actor package
+        required: true
+        type: choice
+        options:
+          - n8n-nodes-apivault-steam-reviews
+permissions:
+  contents: read
+  id-token: write
+concurrency:
+  group: new-actor-npm-${{ inputs.package }}
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          registry-url: https://registry.npmjs.org
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate and publish selected node
+        env:
+          PACKAGE: ${{ inputs.package }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -euo pipefail
+          test "$(npm whoami)" = "apivault"
+          folder="community-nodes/$PACKAGE"
+          python distribution-tools/security_gate.py "$folder"
+          cd "$folder"
+          npm install --ignore-scripts --no-audit --no-fund
+          npm run lint
+          npm run build
+          npm test
+          npm pack --ignore-scripts
+          python ../../distribution-tools/security_gate.py ./*.tgz
+          npm publish --provenance --access public --ignore-scripts
