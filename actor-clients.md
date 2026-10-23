@@ -142,3 +142,16 @@ Python source and n8n workflows are public. PyPI uploads currently receive HTTP4
 |---|---|---|
 | [Google News Search](https://apify.com/apivault_labs/google-news-search) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-google-news-search) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-google-news-search) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-google-news-search) |
 | [Threads Scraper](https://apify.com/apivault_labs/threads-scraper) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-threads-scraper) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-threads-scraper) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-threads-scraper) |
+
+
+<!-- four-funnels-partial-20261024 -->
+## Substack, YouTube captions, Bilibili and Naver integrations
+
+Python and n8n sources and manual workflows are public. Python0.1.0 releases are pending: PyPI uploads are paused after HTTP429. Source availability is not a claim that pip installation from PyPI works. npm availability is listed below;0.0.0-stage is not operational. Workflows are inactive and credential-free. Hosted runs require your Apify account; Actor events, start fees where configured, platform usage and applicable proxy traffic are billed separately. n8n Cloud verification is not claimed.
+
+| Actor | Python source | n8n |
+|---|---|---|
+| [Substack Archive Scraper](https://apify.com/apivault_labs/substack-archive-scraper) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-substack-archive-scraper) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-substack-archive-scraper) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-substack-archive-scraper) |
+| [YouTube Transcripts and Subtitles](https://apify.com/apivault_labs/youtube-transcripts-scraper) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-youtube-transcripts-scraper) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-youtube-transcripts-scraper) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-youtube-transcripts-scraper) |
+| [Bilibili Popular Videos](https://apify.com/apivault_labs/bilibili-popular-videos-prototype) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-bilibili-popular-videos-prototype) | npm0.1.0 pending / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-bilibili-popular-videos-prototype) |
+| [Naver Brand Store Scraper](https://apify.com/apivault_labs/naver-smartstore-source-probe) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-naver-smartstore-source-probe) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-naver-smartstore-source-probe) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-naver-smartstore-source-probe) |
