@@ -131,3 +131,14 @@ Python SDKs and n8n packages below are published as version0.1.0. Registry archi
 [Hosted Actor](https://apify.com/apivault_labs/steam-reviews-source-probe) | [Python / PyPI](https://pypi.org/project/apivault-steam-reviews/) | [Python source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-steam-reviews) | [n8n / npm](https://www.npmjs.com/package/n8n-nodes-apivault-steam-reviews) | [n8n source and manual workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-steam-reviews)
 
 Version 0.1.0 clients use the official Apify API. Runs require your Apify account and are billed at Actor prices plus resources. The example workflow is inactive and contains no credentials. npm publication does not imply n8n verification or n8n Cloud availability.
+
+
+<!-- news-threads-funnels-partial-20261023 -->
+## Google News and Threads integration sources
+
+Python source and n8n workflows are public. PyPI uploads currently receive HTTP429; the Python0.1.0 registry packages are not yet available. No pip install from PyPI is claimed. npm status is recorded below; a0.0.0-stage placeholder is not operational. Workflows are manual, inactive and credential-free. Hosted runs require your Apify account and are billed at Actor rates plus resources. n8n Cloud verification is not claimed.
+
+| Actor | Python source | n8n |
+|---|---|---|
+| [Google News Search](https://apify.com/apivault_labs/google-news-search) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-google-news-search) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-google-news-search) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-google-news-search) |
+| [Threads Scraper](https://apify.com/apivault_labs/threads-scraper) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-threads-scraper) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-threads-scraper) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-threads-scraper) |
