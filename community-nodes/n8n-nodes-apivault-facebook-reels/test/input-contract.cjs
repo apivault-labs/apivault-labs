@@ -10,8 +10,10 @@ const run = {id:'run1',status:'SUCCEEDED',defaultDatasetId:'dataset1',defaultKey
 async function execute(value, version = 2, mode = 'run', fresh = false) {
   const calls = [];
   const defaults = Object.fromEntries(node.description.properties.map(p => [p.name,p.default]));
-  const parameters = {...defaults, ...fixture.parameters, apivaultMode:mode, apivaultExecution:{maxRows:1,runId:'run1'}};
-  if (fresh) parameters[spec.parameter] = defaults[spec.parameter];
+  const parameters = {...defaults, ...(fresh ? {} : fixture.parameters), apivaultMode:mode, apivaultExecution:{maxRows:1,runId:'run1'}};
+  if (fresh) for (const property of node.description.properties) {
+    if (property.required && !parameters[property.name]) parameters[property.name] = fixture.parameters[property.name];
+  }
   if (value !== undefined) parameters[spec.parameter] = spec.parameter === spec.field ? value : {[spec.field]:value};
   const context = {
     getInputData:()=>[{json:{}}],
