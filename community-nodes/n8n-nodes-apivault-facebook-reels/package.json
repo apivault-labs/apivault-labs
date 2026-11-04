@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-apivault-facebook-reels",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Run Facebook Reels Scraper through the hosted Apify Actor and read its results",
   "license": "MIT",
   "homepage": "https://apify.com/apivault_labs/facebook-reels-video-scraper",
@@ -27,7 +27,7 @@
   "scripts": {
     "build": "tsc && node scripts/copy-icons.cjs",
     "lint": "n8n-node lint",
-    "test": "node test/contract.cjs",
+    "test": "node test/contract.cjs && node test/input-contract.cjs",
     "prepublishOnly": "npm run build"
   },
   "files": [

@@ -27,7 +27,6 @@
     "workflow": "auto",
     "minVisits": 1000,
     "maxVisits": 0,
-    "topGlobalRank": 0,
     "category": "example",
     "country": "example",
     "minSearchShare": 0,

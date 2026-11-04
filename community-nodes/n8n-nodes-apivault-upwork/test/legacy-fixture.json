@@ -1,0 +1,39 @@
+{
+  "parameters": {
+    "searchQuery": "example",
+    "sort": "recency",
+    "maxResults": 100,
+    "maxCostUsd": 0,
+    "jobType": "",
+    "experienceLevel": "",
+    "minBudget": 0,
+    "requiredSkills": "example",
+    "urgentOnly": false,
+    "minOpportunityScore": 0,
+    "onlyNewJobs": false,
+    "flatOutput": false
+  },
+  "body": {
+    "searchQuery": "example",
+    "sort": "recency",
+    "maxResults": 100,
+    "maxCostUsd": 0,
+    "jobType": "",
+    "experienceLevel": "",
+    "minBudget": 0,
+    "requiredSkills": [
+      "example"
+    ],
+    "urgentOnly": false,
+    "minOpportunityScore": 0,
+    "onlyNewJobs": false,
+    "flatOutput": false
+  },
+  "nodeName": "upwork",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ]
+}

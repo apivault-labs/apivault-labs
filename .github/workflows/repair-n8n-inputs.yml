@@ -1,0 +1,68 @@
+name: Validate and release n8n input repairs
+on:
+  pull_request:
+    paths:
+      - n8n-input-repair-plan.json
+      - .github/workflows/repair-n8n-inputs.yml
+      - scripts/n8n-repair-*.cjs
+      - community-nodes/**
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the exact ten tested package versions
+        type: boolean
+        default: false
+      expected_sha:
+        description: Required exact main commit for publishing
+        type: string
+        required: false
+permissions:
+  contents: read
+concurrency:
+  group: n8n-input-repairs-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24.22.2'
+          registry-url: https://registry.npmjs.org
+      - name: Build, official lint, regression contracts and pack
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .qa
+          first=$(node -p "require('./n8n-input-repair-plan.json')[0].folder")
+          (cd "$first" && npm install --ignore-scripts --legacy-peer-deps --no-audit --no-fund)
+          shared="$GITHUB_WORKSPACE/$first/node_modules"
+          for folder in $(node -p "require('./n8n-input-repair-plan.json').map(p=>p.folder).join(' ')"); do
+            [[ "$folder" =~ ^community-nodes/n8n-nodes-apivault-[a-z0-9-]+$ ]]
+            if [ "$folder" != "$first" ]; then ln -s "$shared" "$folder/node_modules"; fi
+            (cd "$folder" && npm run build && npm run lint && npm test && npm pack --ignore-scripts)
+          done
+      - name: Install isolated complete n8n engine
+        run: npm install --prefix .qa/engine --legacy-peer-deps --no-audit --no-fund n8n@2.43.7 nock@14.0.16
+      - name: Execute installed community packages through n8n CLI
+        run: node scripts/n8n-repair-engine-smoke.cjs
+      - name: Publish exact verified plan with provenance
+        if: github.event_name == 'workflow_dispatch' && inputs.publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/main
+          test "$EXPECTED_SHA" = "$GITHUB_SHA"
+          test "$(npm whoami)" = apivault
+          for folder in $(node -p "require('./n8n-input-repair-plan.json').map(p=>p.folder).join(' ')"); do
+            (cd "$folder" && npm publish --provenance --access public --ignore-scripts)
+          done

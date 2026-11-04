@@ -2,6 +2,7 @@ import type { INodeProperties, IExecuteFunctions, INodeExecutionData, INodeType,
 
 import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 import { executionProperties, runActor, SafeActorError } from '../helpers/actorTransport';
+import { normalizeActorInput } from '../helpers/actorInput';
 const ACTOR_ID = 'NTugGARLmEpshWq7A';
 
 export class LocalLeadFinderPro implements INodeType {
@@ -314,12 +315,13 @@ export class LocalLeadFinderPro implements INodeType {
   {
     "displayName": "Max results (after enrichment + sorting)",
     "name": "maxResults",
-    "description": "Actor input: Max results (after enrichment + sorting)",
+    "description": "Maximum results. Zero uses the Actor default.",
     "type": "number",
-    "default": 0,
+    "default": 25,
     "typeOptions": {
       "minValue": 0,
-      "maxValue": 1000
+      "numberPrecision": 0,
+      "maxValue": 10000
     },
     "displayOptions": {
       "show": {
@@ -405,6 +407,7 @@ const body: Record<string, unknown> = {};
 				body["minLeadScore"] = this.getNodeParameter("minLeadScore", i);
 				body["maxResults"] = this.getNodeParameter("maxResults", i);
 				body["exportFormat"] = this.getNodeParameter("exportFormat", i);
+					normalizeActorInput(body);
 					return body;
 				})();
 				const results = await runActor(this, i, ACTOR_ID, body);

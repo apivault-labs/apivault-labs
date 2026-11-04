@@ -30,7 +30,6 @@
     "maxResults": 25,
     "outputPreset": "full",
     "maxCostUsd": 0,
-    "sinceDays": 0,
     "keywordFilter": "example",
     "enrichDetailPage": true,
     "downloadMp4": true,

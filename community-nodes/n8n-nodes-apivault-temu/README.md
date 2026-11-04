@@ -21,3 +21,7 @@ Runtime dependencies: none. n8n Cloud availability requires separate n8n verific
 
 An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
 <!-- apivault-integrations:end -->
+
+## 0.2.1 input compatibility
+
+The former 180-second timeout setting is translated to the current Actor default of 30 seconds. New values must be integers between 20 and 60.

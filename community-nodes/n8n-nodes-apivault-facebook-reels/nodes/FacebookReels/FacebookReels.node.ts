@@ -2,6 +2,7 @@ import type { INodeProperties, IExecuteFunctions, INodeExecutionData, INodeType,
 
 import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 import { executionProperties, runActor, SafeActorError } from '../helpers/actorTransport';
+import { normalizeActorInput } from '../helpers/actorInput';
 const ACTOR_ID = '1Jkc3gp6Y3H6dPCfe';
 
 export class FacebookReels implements INodeType {
@@ -161,15 +162,15 @@ export class FacebookReels implements INodeType {
     "type": "options",
     "options": [
       {
-        "name": "Compact — small MCP response",
+        "name": "Compact \u2014 small MCP response",
         "value": "compact"
       },
       {
-        "name": "Engagement — compact plus social metrics",
+        "name": "Engagement \u2014 compact plus social metrics",
         "value": "engagement"
       },
       {
-        "name": "Full — every available field (legacy default)",
+        "name": "Full \u2014 every available field (legacy default)",
         "value": "full"
       }
     ],
@@ -202,11 +203,12 @@ export class FacebookReels implements INodeType {
   {
     "displayName": "Only videos from last N days",
     "name": "sinceDays",
-    "description": "Actor input: Only videos from last N days",
+    "description": "Optional filter. Zero leaves this filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
-      "minValue": 1,
+      "minValue": 0,
+      "numberPrecision": 0,
       "maxValue": 3650
     },
     "displayOptions": {
@@ -310,6 +312,7 @@ const body: Record<string, unknown> = {};
 				body["downloadMp4"] = this.getNodeParameter("downloadMp4", i);
 				body["includeTranscript"] = this.getNodeParameter("includeTranscript", i);
 				body["dedupe"] = this.getNodeParameter("dedupe", i);
+					normalizeActorInput(body);
 					return body;
 				})();
 				const results = await runActor(this, i, ACTOR_ID, body);

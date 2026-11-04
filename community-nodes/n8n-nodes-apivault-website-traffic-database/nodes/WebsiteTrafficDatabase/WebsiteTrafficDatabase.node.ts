@@ -2,6 +2,7 @@ import type { INodeProperties, IExecuteFunctions, INodeExecutionData, INodeType,
 
 import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 import { executionProperties, runActor, SafeActorError } from '../helpers/actorTransport';
+import { normalizeActorInput } from '../helpers/actorInput';
 const ACTOR_ID = '2ahDVr2hK6unhydIJ';
 
 export class WebsiteTrafficDatabase implements INodeType {
@@ -110,11 +111,12 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Top sites worldwide (enter N, e.g. 100)",
     "name": "topGlobalRank",
-    "description": "Actor input: Top sites worldwide (enter N, e.g. 100)",
+    "description": "Optional filter. Zero leaves this filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
-      "minValue": 1
+      "minValue": 0,
+      "numberPrecision": 0
     },
     "displayOptions": {
       "show": {
@@ -437,15 +439,15 @@ export class WebsiteTrafficDatabase implements INodeType {
     "type": "options",
     "options": [
       {
-        "name": "Compact — AI friendly",
+        "name": "Compact \u2014 AI friendly",
         "value": "compact"
       },
       {
-        "name": "Outreach — recommended",
+        "name": "Outreach \u2014 recommended",
         "value": "outreach"
       },
       {
-        "name": "Full — every field",
+        "name": "Full \u2014 every field",
         "value": "full"
       }
     ],
@@ -517,6 +519,7 @@ const body: Record<string, unknown> = {};
 				body["outputPreset"] = this.getNodeParameter("outputPreset", i);
 				{ const _v = this.getNodeParameter("domains", i, '') as string; const _a = _v.split(/[,\n]/).map(s=>s.trim()).filter(s=>s.length>0); if (_a.length) body["domains"] = _a; }
 				body["similarTo"] = this.getNodeParameter("similarTo", i);
+					normalizeActorInput(body);
 					return body;
 				})();
 				const results = await runActor(this, i, ACTOR_ID, body);

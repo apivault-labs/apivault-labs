@@ -22,7 +22,6 @@
       "example"
     ],
     "region": "example",
-    "maxItems": 0,
     "includeAdDetails": true,
     "includeAdvertiserInfo": true,
     "includeDunsNumber": false,

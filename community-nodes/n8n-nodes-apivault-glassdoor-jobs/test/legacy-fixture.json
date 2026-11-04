@@ -1,0 +1,41 @@
+{
+  "parameters": {
+    "keywords": "example",
+    "location": "example",
+    "maxPages": 3,
+    "extractTitle": true,
+    "extractCompany": true,
+    "extractLocation": true,
+    "extractSalary": true,
+    "extractRating": true,
+    "extractJobType": true,
+    "extractDate": true,
+    "extractDescription": true,
+    "deduplicateCompanies": false,
+    "maxConcurrency": 2,
+    "timeout": 120
+  },
+  "body": {
+    "keywords": "example",
+    "location": "example",
+    "maxPages": 3,
+    "extractTitle": true,
+    "extractCompany": true,
+    "extractLocation": true,
+    "extractSalary": true,
+    "extractRating": true,
+    "extractJobType": true,
+    "extractDate": true,
+    "extractDescription": true,
+    "deduplicateCompanies": false,
+    "maxConcurrency": 2,
+    "timeout": 120
+  },
+  "nodeName": "glassdoorJobs",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ]
+}
