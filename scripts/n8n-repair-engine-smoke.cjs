@@ -11,7 +11,7 @@ const home = path.join(qa,'engine-home');
 const env = {...process.env,N8N_USER_FOLDER:home,N8N_DIAGNOSTICS_ENABLED:'false',
   N8N_VERSION_NOTIFICATIONS_ENABLED:'false',N8N_ENCRYPTION_KEY:'public-fixture-key-for-isolated-ci-only',
   N8N_COMMUNITY_PACKAGES_ENABLED:'true',N8N_UNVERIFIED_PACKAGES_ENABLED:'true',
-  N8N_RUNNERS_ENABLED:'false',N8N_LOG_LEVEL:'error'};
+  N8N_RUNNERS_ENABLED:'false',N8N_LOG_LEVEL:'info'};
 const nodesHome=path.join(home,'.n8n/nodes');
 fs.mkdirSync(nodesHome,{recursive:true});
 const archives=plan.map(p=>path.join(root,p.folder,`${p.package}-${p.version}.tgz`));
@@ -58,7 +58,8 @@ const output=command(['execute','--id='+workflow.id,'--rawOutput'],{...env,
   N8N_FIXTURE_NOCK:path.join(qa,'engine/node_modules/nock'),N8N_FIXTURE_TRACE:trace});
 fs.writeFileSync(path.join(qa,'engine-output.log'),output);
 const start=output.indexOf('{');
-const result=JSON.parse(output.slice(start));
+assert(start>=0,'n8n returned no execution JSON: '+output.slice(-5000));
+const result=JSON.parse(output.slice(start,output.lastIndexOf('}')+1));
 assert(!result.data.resultData.error,JSON.stringify(result.data.resultData.error));
 for(const node of workflow.nodes.slice(1)){
   const data=result.data.resultData.runData[node.name];
@@ -73,3 +74,4 @@ assert.equal(calls.filter(c=>c.method==='GET').length,20);
 fs.writeFileSync(path.join(qa,'engine-receipt.json'),JSON.stringify({engine:'n8n@2.43.7',packageCount:10,executedNodes:20,rows:20,
   starts:10,resumesWithoutPost:10,transport:'synthetic Apify HTTP via nock; real n8n CLI, loader, credentials and workflow execution',status:'pass'},null,2)+'\n');
 console.log('FULL_N8N_ENGINE_20_NODE_RUN_AND_RESUME_PASS');
+console.log(fs.readFileSync(path.join(qa,'engine-receipt.json'),'utf8'));

@@ -53,6 +53,17 @@ jobs:
         run: npm install --prefix .qa/engine --legacy-peer-deps --no-audit --no-fund n8n@2.43.7 nock@14.0.16
       - name: Execute installed community packages through n8n CLI
         run: node scripts/n8n-repair-engine-smoke.cjs
+      - name: Save synthetic engine verification evidence
+        if: always()
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: n8n-input-repair-engine
+          include-hidden-files: true
+          path: |
+            .qa/engine-receipt.json
+            .qa/engine-api-trace.json
+            .qa/engine-output.log
+          if-no-files-found: ignore
       - name: Publish exact verified plan with provenance
         if: github.event_name == 'workflow_dispatch' && inputs.publish
         env:
