@@ -51,6 +51,14 @@ async function execute(value, version = 2, mode = 'run', fresh = false) {
   }
   const fresh=await execute(undefined,2,'run',true);
   const payload=fresh.find(c=>c.method==='POST').body;
+  for(const key of ['maxVisits','maxBounce','minSearchShare','minSourceShare','minPagesPerVisit','minTimeOnSite','minGrowthPercent']) {
+    assert(!Object.hasOwn(payload,key),'Unset optional traffic filter was sent: '+key);
+  }
+  const explicitTraffic = {...payload,maxVisits:5000,maxBounce:40,minSearchShare:20,minSourceShare:20,minPagesPerVisit:2,minTimeOnSite:30,minGrowthPercent:5};
+  const {normalizeActorInput}=require('../dist/nodes/helpers/actorInput.js');
+  normalizeActorInput(explicitTraffic);
+  assert.equal(explicitTraffic.maxVisits,5000);
+  assert.equal(explicitTraffic.maxBounce,40);
   if(spec.default===null)assert(!Object.hasOwn(payload,spec.field));
   else assert.equal(payload[spec.field],spec.default);
   if(process.env.INPUT_RECEIPT_PATH)fs.writeFileSync(process.env.INPUT_RECEIPT_PATH,JSON.stringify({package:meta.name,version:meta.version,body:payload},null,2)+'\n');

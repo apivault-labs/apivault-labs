@@ -25,3 +25,5 @@ An Apify account and API token are required. Hosted Actor/platform charges apply
 ## 0.3.1 input compatibility
 
 An existing zero `topGlobalRank` is omitted from the Actor input. This keeps optional filters off or uses the Actor default limit. Positive explicit values remain unchanged.
+
+Zero also leaves the optional maximum visits, bounce rate, search/channel share, engagement and growth filters unset. In particular, an unset maximum visits no longer sends an upper bound of zero below the default minimum. Use a nonzero number to enable one of these optional filters; negative growth thresholds remain supported.

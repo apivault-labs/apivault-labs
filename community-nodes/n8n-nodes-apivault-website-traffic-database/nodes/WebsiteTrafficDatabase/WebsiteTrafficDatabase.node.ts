@@ -97,7 +97,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Maximum monthly visits",
     "name": "maxVisits",
-    "description": "Actor input: Maximum monthly visits",
+    "description": "Actor input: Maximum monthly visits Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "displayOptions": {
@@ -157,7 +157,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Minimum search-traffic share (%)",
     "name": "minSearchShare",
-    "description": "Actor input: Minimum search-traffic share (%)",
+    "description": "Actor input: Minimum search-traffic share (%) Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
@@ -203,7 +203,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Minimum growth (%)",
     "name": "minGrowthPercent",
-    "description": "Actor input: Minimum growth (%)",
+    "description": "Actor input: Minimum growth (%) Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "displayOptions": {
@@ -275,7 +275,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Minimum channel share (%)",
     "name": "minSourceShare",
-    "description": "Actor input: Minimum channel share (%)",
+    "description": "Actor input: Minimum channel share (%) Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
@@ -293,7 +293,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Maximum bounce rate (%)",
     "name": "maxBounce",
-    "description": "Actor input: Maximum bounce rate (%)",
+    "description": "Actor input: Maximum bounce rate (%) Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
@@ -311,7 +311,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Minimum pages per visit",
     "name": "minPagesPerVisit",
-    "description": "Actor input: Minimum pages per visit",
+    "description": "Actor input: Minimum pages per visit Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
@@ -328,7 +328,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Minimum time on site (seconds)",
     "name": "minTimeOnSite",
-    "description": "Actor input: Minimum time on site (seconds)",
+    "description": "Actor input: Minimum time on site (seconds) Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
