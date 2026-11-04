@@ -1,0 +1,368 @@
+{
+  "checkedAt": "2026-11-04T23:49:07.508447+00:00",
+  "sourceClients": 60,
+  "publishedOnPyPI": 12,
+  "pendingPyPI": 48,
+  "packages": [
+    {
+      "package": "apivault-1688-image-search",
+      "folder": "python-clients/apivault-1688-image-search",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-ad-library-scraper-facebook-tiktok-google-ads",
+      "folder": "python-clients/apivault-ad-library-scraper-facebook-tiktok-google-ads",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-adobe-stock-scraper",
+      "folder": "python-clients/apivault-adobe-stock-scraper",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-ai-background-changer",
+      "folder": "python-clients/apivault-ai-background-changer",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-ai-photo-upscaler",
+      "folder": "python-clients/apivault-ai-photo-upscaler",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-amazon-bestsellers-scraper",
+      "folder": "python-clients/apivault-amazon-bestsellers-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-amazon-reviews-scraper",
+      "folder": "python-clients/apivault-amazon-reviews-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-app-developer-leads",
+      "folder": "python-clients/apivault-app-developer-leads",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-background-remover",
+      "folder": "python-clients/apivault-background-remover",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-business-locations-analyzer",
+      "folder": "python-clients/apivault-business-locations-analyzer",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-clutch-company-scraper",
+      "folder": "python-clients/apivault-clutch-company-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-clutch-company-search",
+      "folder": "python-clients/apivault-clutch-company-search",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-coles-basket-price-monitor",
+      "folder": "python-clients/apivault-coles-basket-price-monitor",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-crunchbase-scraper",
+      "folder": "python-clients/apivault-crunchbase-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-domain-intelligence-scraper",
+      "folder": "python-clients/apivault-domain-intelligence-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-email-deliverability-checker",
+      "folder": "python-clients/apivault-email-deliverability-checker",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-email-validator",
+      "folder": "python-clients/apivault-email-validator",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-facebook-marketplace-scraper",
+      "folder": "python-clients/apivault-facebook-marketplace-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-facebook-reviews-scraper",
+      "folder": "python-clients/apivault-facebook-reviews-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-google-ads-transparency-scraper",
+      "folder": "python-clients/apivault-google-ads-transparency-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-google-maps-scraper-emails-contact-details-leads",
+      "folder": "python-clients/apivault-google-maps-scraper-emails-contact-details-leads",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-image-cdn-upload",
+      "folder": "python-clients/apivault-image-cdn-upload",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-image-text-remover",
+      "folder": "python-clients/apivault-image-text-remover",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-indeed-jobs-scraper",
+      "folder": "python-clients/apivault-indeed-jobs-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-instagram-profile-scraper",
+      "folder": "python-clients/apivault-instagram-profile-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-job-leads",
+      "folder": "python-clients/apivault-job-leads",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-local-business-lead-finder-pro",
+      "folder": "python-clients/apivault-local-business-lead-finder-pro",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-newegg-product-scraper",
+      "folder": "python-clients/apivault-newegg-product-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-pinterest-scraper",
+      "folder": "python-clients/apivault-pinterest-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-producthunt-scraper",
+      "folder": "python-clients/apivault-producthunt-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-reddit-scraper",
+      "folder": "python-clients/apivault-reddit-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-shopify-product-scraper",
+      "folder": "python-clients/apivault-shopify-product-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-similarweb-scraper",
+      "folder": "python-clients/apivault-similarweb-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-stackowerflow-scraper",
+      "folder": "python-clients/apivault-stackowerflow-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-taobao-tmall-product-analyzer",
+      "folder": "python-clients/apivault-taobao-tmall-product-analyzer",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-tennis-abstract-bulk-scraper",
+      "folder": "python-clients/apivault-tennis-abstract-bulk-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-tiktok-shop-seller-product-creator-gmv-analyzer",
+      "folder": "python-clients/apivault-tiktok-shop-seller-product-creator-gmv-analyzer",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-trustpilot-scraper-reviews-ratings-api",
+      "folder": "python-clients/apivault-trustpilot-scraper-reviews-ratings-api",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-universal-rss-scraper",
+      "folder": "python-clients/apivault-universal-rss-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-walmart-seller-analyzer",
+      "folder": "python-clients/apivault-walmart-seller-analyzer",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-website-tech-detector",
+      "folder": "python-clients/apivault-website-tech-detector",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-woocommerce-product-scraper",
+      "folder": "python-clients/apivault-woocommerce-product-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-woolworths-products-price-monitor",
+      "folder": "python-clients/apivault-woolworths-products-price-monitor",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-wordpress-plugins-scraper",
+      "folder": "python-clients/apivault-wordpress-plugins-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-yc-companies-scraper",
+      "folder": "python-clients/apivault-yc-companies-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-yelp-business-scraper",
+      "folder": "python-clients/apivault-yelp-business-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-youtube-channel-business-email-scraper",
+      "folder": "python-clients/apivault-youtube-channel-business-email-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-youtube-channel-stats",
+      "folder": "python-clients/apivault-youtube-channel-stats",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-zillow-property-scraper",
+      "folder": "python-clients/apivault-zillow-property-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-zillow-scraper",
+      "folder": "python-clients/apivault-zillow-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-app-store-reviews-scraper",
+      "folder": "packages/apivault-app-store-reviews-scraper",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-bilibili-popular-videos-prototype",
+      "folder": "packages/apivault-bilibili-popular-videos-prototype",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-google-news-search",
+      "folder": "packages/apivault-google-news-search",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-google-play-reviews-scraper",
+      "folder": "packages/apivault-google-play-reviews-scraper",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-naver-smartstore-source-probe",
+      "folder": "packages/apivault-naver-smartstore-source-probe",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-steam-reviews",
+      "folder": "packages/apivault-steam-reviews",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-substack-archive-scraper",
+      "folder": "packages/apivault-substack-archive-scraper",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-telegram-public-channels-scraper",
+      "folder": "packages/apivault-telegram-public-channels-scraper",
+      "status": "published",
+      "version": "0.1.0"
+    },
+    {
+      "package": "apivault-threads-scraper",
+      "folder": "packages/apivault-threads-scraper",
+      "status": "pending",
+      "http": 404
+    },
+    {
+      "package": "apivault-youtube-transcripts-scraper",
+      "folder": "packages/apivault-youtube-transcripts-scraper",
+      "status": "published",
+      "version": "0.1.0"
+    }
+  ]
+}

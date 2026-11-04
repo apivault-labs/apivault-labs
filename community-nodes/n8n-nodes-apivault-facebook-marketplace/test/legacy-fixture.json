@@ -42,7 +42,6 @@
     "notifyWebhookUrl": "https://example.com/example",
     "minPrice": 0,
     "maxPrice": 0,
-    "daysSinceListed": 0,
     "sortBy": "best_match",
     "maxRetries": 3,
     "maxConcurrency": 3,

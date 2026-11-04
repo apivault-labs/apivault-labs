@@ -2,6 +2,7 @@ import type { INodeProperties, IExecuteFunctions, INodeExecutionData, INodeType,
 
 import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 import { executionProperties, runActor, SafeActorError } from '../helpers/actorTransport';
+import { normalizeActorInput } from '../helpers/actorInput';
 const ACTOR_ID = '4kqabNhJmz8CRgV5z';
 
 export class Temu implements INodeType {
@@ -129,14 +130,14 @@ export class Temu implements INodeType {
           "maxValue": 100
         },
         "default": 0,
-        "description": "Drop products below this hotProductScore (recommend ≥55 for premium-only)"
+        "description": "Drop products below this hotProductScore (recommend \u226555 for premium-only)"
       },
       {
         "displayName": "Only Trending",
         "name": "onlyTrending",
         "type": "boolean",
         "default": false,
-        "description": "Whether to keep only products flagged isTrending (sold ≥ 10K AND rating ≥ 4.4)"
+        "description": "Whether to keep only products flagged isTrending (sold \u2265 10K AND rating \u2265 4.4)"
       },
       {
         "displayName": "Only Free Shipping",
@@ -173,7 +174,7 @@ export class Temu implements INodeType {
         "name": "extractVariants",
         "type": "boolean",
         "default": true,
-        "description": "Whether to extract variant options (color, size) — needed for full Shopify migration"
+        "description": "Whether to extract variant options (color, size) \u2014 needed for full Shopify migration"
       },
       {
         "displayName": "Extract Image Gallery",
@@ -198,7 +199,7 @@ export class Temu implements INodeType {
           "maxValue": 8
         },
         "default": 3,
-        "description": "Parallel product scrapes (Temu is sensitive — 2-3 recommended)"
+        "description": "Parallel product scrapes (Temu is sensitive \u2014 2-3 recommended)"
       },
       {
         "displayName": "Max Retries",
@@ -216,11 +217,12 @@ export class Temu implements INodeType {
         "name": "timeout",
         "type": "number",
         "typeOptions": {
-          "minValue": 60,
-          "maxValue": 300
+          "minValue": 20,
+          "numberPrecision": 0,
+          "maxValue": 60
         },
-        "default": 180,
-        "description": "Max wait per Temu product page"
+        "default": 30,
+        "description": "Request timeout in seconds, from 20 to 60. The former 180-second default is migrated to 30."
       }
     ],
     "displayOptions": {
@@ -285,8 +287,9 @@ const raw = this.getNodeParameter('productUrls', i) as string;
 					extractOutreachLinks: extra.extractOutreachLinks ?? true,
 					maxConcurrency: extra.maxConcurrency ?? 3,
 					maxRetries: extra.maxRetries ?? 1,
-					timeout: extra.timeout ?? 180,
+					timeout: extra.timeout ?? 30,
 				};
+					normalizeActorInput(body);
 					return body;
 				})();
 				const results = await runActor(this, i, ACTOR_ID, body);

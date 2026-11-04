@@ -1,6 +1,6 @@
 # Install ApiVault Python clients from pinned GitHub sources
 
-These six Python clients are public on GitHub and installable with pip from a pinned source checkout. Their0.1.0 PyPI releases are still pending after an upload rate limit. Commands below install approved source revisions; they do not claim that the PyPI releases are available.
+These six Python clients are public on GitHub and installable with pip from a pinned source checkout. As of 5 November 2026, Google News, Substack, YouTube Transcripts and Naver 0.1.0 are also published on PyPI and verified by clean installation. Threads and Bilibili remain pending. The pinned source method below remains available for all six.
 
 Requirements: Python3.10 or newer, Git on PATH, internet access to GitHub and standard build requirements (setuptools/wheel). Use a virtual environment and a short working directory, especially on Windows (for example C:\src). Installation clones a specific public revision and installs its package subdirectory: [pip local project documentation](https://pip.pypa.io/en/stable/topics/local-project-installs/).
 
@@ -22,6 +22,8 @@ git -c core.longpaths=true clone --filter=blob:none --no-checkout https://github
 Use the exact revision listed for each package. The checked-out files are the approved source snapshots, not a floating main branch.
 
 ## apivault-google-news-search
+
+Registry installation is available: `python -m pip install apivault-google-news-search==0.1.0`. [PyPI](https://pypi.org/project/apivault-google-news-search/).
 
 [Hosted Actor](https://apify.com/apivault_labs/google-news-search) | [Source](https://github.com/apivault-labs/apivault-labs/tree/348f82894d1a5685a4e1ccd3b1d73c8eeedbe6ba/packages/apivault-google-news-search)
 
@@ -61,6 +63,8 @@ print(result.rows)
 
 ## apivault-substack-archive-scraper
 
+Registry installation is available: `python -m pip install apivault-substack-archive-scraper==0.1.0`. [PyPI](https://pypi.org/project/apivault-substack-archive-scraper/).
+
 [Hosted Actor](https://apify.com/apivault_labs/substack-archive-scraper) | [Source](https://github.com/apivault-labs/apivault-labs/tree/8c43e5b9c7d3549801e07a5fee01f1e0952568bc/packages/apivault-substack-archive-scraper)
 
 ```bash
@@ -79,6 +83,8 @@ print(result.rows)
 ```
 
 ## apivault-youtube-transcripts-scraper
+
+Registry installation is available: `python -m pip install apivault-youtube-transcripts-scraper==0.1.0`. [PyPI](https://pypi.org/project/apivault-youtube-transcripts-scraper/).
 
 [Hosted Actor](https://apify.com/apivault_labs/youtube-transcripts-scraper) | [Source](https://github.com/apivault-labs/apivault-labs/tree/8c43e5b9c7d3549801e07a5fee01f1e0952568bc/packages/apivault-youtube-transcripts-scraper)
 
@@ -117,6 +123,8 @@ print(result.rows)
 ```
 
 ## apivault-naver-smartstore-source-probe
+
+Registry installation is available: `python -m pip install apivault-naver-smartstore-source-probe==0.1.0`. [PyPI](https://pypi.org/project/apivault-naver-smartstore-source-probe/).
 
 [Hosted Actor](https://apify.com/apivault_labs/naver-smartstore-source-probe) | [Source](https://github.com/apivault-labs/apivault-labs/tree/8c43e5b9c7d3549801e07a5fee01f1e0952568bc/packages/apivault-naver-smartstore-source-probe)
 

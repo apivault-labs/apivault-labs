@@ -22,7 +22,7 @@
     "extractOutreachLinks": true,
     "maxConcurrency": 3,
     "maxRetries": 1,
-    "timeout": 180
+    "timeout": 30
   },
   "nodeName": "temu",
   "credentials": [

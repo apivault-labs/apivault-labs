@@ -3,35 +3,36 @@
 Python SDKs and n8n community nodes for hosted [API Vault Actors](https://apify.com/apivault_labs). An Apify account is required; Actor runs are billed by Apify. Packages contain API clients, usage documentation and manual example workflows.
 
 <!-- registry-status-start -->
-## Registry availability — 14 October 2026
+## Registry availability — 5 November 2026
 
-All 63 Python clients and 11 new n8n nodes are available as reviewed GitHub source. PyPI releases verified: **4 of 63**; the remaining packages are pending registry publication.
+This catalogue currently contains **60 Python client source packages** across `python-clients/` and `packages/`. All 60 were built and installed during the audit. **12 are published on PyPI; 48 are pending.** The [per-package registry snapshot](python-registry-status.json) records actual registry availability. Source installation remains available for pending projects.
 
-Available on PyPI: [apivault-1688-image-search](https://pypi.org/project/apivault-1688-image-search/), [apivault-ai-background-changer](https://pypi.org/project/apivault-ai-background-changer/), [apivault-ad-library-scraper-facebook-tiktok-google-ads](https://pypi.org/project/apivault-ad-library-scraper-facebook-tiktok-google-ads/), [apivault-adobe-stock-scraper](https://pypi.org/project/apivault-adobe-stock-scraper/).
+Published PyPI clients:
 
-For a Python client pending PyPI publication, use its linked source repository. For clients in this catalogue:
+- [apivault-1688-image-search](https://pypi.org/project/apivault-1688-image-search/) 0.1.0
+- [apivault-ad-library-scraper-facebook-tiktok-google-ads](https://pypi.org/project/apivault-ad-library-scraper-facebook-tiktok-google-ads/) 0.1.0
+- [apivault-adobe-stock-scraper](https://pypi.org/project/apivault-adobe-stock-scraper/) 0.1.0
+- [apivault-ai-background-changer](https://pypi.org/project/apivault-ai-background-changer/) 0.1.0
+- [apivault-app-store-reviews-scraper](https://pypi.org/project/apivault-app-store-reviews-scraper/) 0.1.0
+- [apivault-google-news-search](https://pypi.org/project/apivault-google-news-search/) 0.1.0
+- [apivault-google-play-reviews-scraper](https://pypi.org/project/apivault-google-play-reviews-scraper/) 0.1.0
+- [apivault-naver-smartstore-source-probe](https://pypi.org/project/apivault-naver-smartstore-source-probe/) 0.1.0
+- [apivault-steam-reviews](https://pypi.org/project/apivault-steam-reviews/) 0.1.0
+- [apivault-substack-archive-scraper](https://pypi.org/project/apivault-substack-archive-scraper/) 0.1.0
+- [apivault-telegram-public-channels-scraper](https://pypi.org/project/apivault-telegram-public-channels-scraper/) 0.1.0
+- [apivault-youtube-transcripts-scraper](https://pypi.org/project/apivault-youtube-transcripts-scraper/) 0.1.0
+
+For a pending client, use its exact source folder from the snapshot. Replace `PACKAGE_PATH` with the full `python-clients/...` or `packages/...` path:
 
 ```shell
-pip install "git+https://github.com/apivault-labs/apivault-labs.git#subdirectory=python-clients/PACKAGE_NAME"
+pip install "git+https://github.com/apivault-labs/apivault-labs.git@6073e97dcda1f948b39a2d7639f309b0dab1fbb0#subdirectory=PACKAGE_PATH"
 ```
 
-Replace PACKAGE_NAME with the package folder in its source link.
+On Windows, prefer the [short pinned-checkout instructions](guides/python-clients-from-github.md) if a temporary clone path is too long.
 
-New n8n packages verified on npm with provenance: **11 of 11**. Install them in self-hosted n8n through **Settings → Community nodes → Install**, using the package name.
+All **92 catalogued npm community packages** exist. npm availability does not certify fresh output for every Actor. Image Generator and Upwork currently have Actor maintenance notices. Install unverified community nodes in self-hosted n8n through **Settings → Community nodes → Install**, using the package name. n8n Cloud verification is a separate review and is not claimed here.
 
-- [n8n-nodes-apivault-1688-image-search](https://www.npmjs.com/package/n8n-nodes-apivault-1688-image-search)
-- [n8n-nodes-apivault-ai-background-changer](https://www.npmjs.com/package/n8n-nodes-apivault-ai-background-changer)
-- [n8n-nodes-apivault-adobe-stock-scraper](https://www.npmjs.com/package/n8n-nodes-apivault-adobe-stock-scraper)
-- [n8n-nodes-apivault-business-locations-analyzer](https://www.npmjs.com/package/n8n-nodes-apivault-business-locations-analyzer)
-- [n8n-nodes-apivault-coles-basket-price-monitor](https://www.npmjs.com/package/n8n-nodes-apivault-coles-basket-price-monitor)
-- [n8n-nodes-apivault-image-text-remover](https://www.npmjs.com/package/n8n-nodes-apivault-image-text-remover)
-- [n8n-nodes-apivault-real-estate-skip-trace-go](https://www.npmjs.com/package/n8n-nodes-apivault-real-estate-skip-trace-go)
-- [n8n-nodes-apivault-stackowerflow-scraper](https://www.npmjs.com/package/n8n-nodes-apivault-stackowerflow-scraper)
-- [n8n-nodes-apivault-taobao-tmall-product-analyzer](https://www.npmjs.com/package/n8n-nodes-apivault-taobao-tmall-product-analyzer)
-- [n8n-nodes-apivault-website-tech-detector](https://www.npmjs.com/package/n8n-nodes-apivault-website-tech-detector)
-- [n8n-nodes-apivault-woolworths-products-price-monitor](https://www.npmjs.com/package/n8n-nodes-apivault-woolworths-products-price-monitor)
-
-n8n Cloud verification is a separate Creator Portal review and is not claimed here.
+PyPI limits new personal-account projects to four in a rolling 24-hour window, as [support confirmed](https://github.com/pypi/support/issues/12833#issuecomment-6642571535). This release used four slots; additional pending projects remain queued.
 
 <!-- registry-status-end -->
 
@@ -136,28 +137,28 @@ Version 0.1.0 clients use the official Apify API. Runs require your Apify accoun
 <!-- news-threads-funnels-partial-20261023 -->
 ## Google News and Threads integration sources
 
-Python source and n8n workflows are public. PyPI uploads currently receive HTTP429; the Python0.1.0 registry packages are not yet available. No pip install from PyPI is claimed. npm status is recorded below; a0.0.0-stage placeholder is not operational. Workflows are manual, inactive and credential-free. Hosted runs require your Apify account and are billed at Actor rates plus resources. n8n Cloud verification is not claimed.
+Python source and n8n workflows are public. Google News 0.1.0 is published on PyPI; Threads remains pending. Published npm versions are linked below. Workflows are manual, inactive and credential-free. Hosted runs require your Apify account and are billed at Actor rates plus resources. n8n Cloud verification is not claimed.
 
 | Actor | Python source | n8n |
 |---|---|---|
-| [Google News Search](https://apify.com/apivault_labs/google-news-search) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-google-news-search) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-google-news-search) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-google-news-search) |
+| [Google News Search](https://apify.com/apivault_labs/google-news-search) | [PyPI 0.1.0](https://pypi.org/project/apivault-google-news-search/) / [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-google-news-search) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-google-news-search) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-google-news-search) |
 | [Threads Scraper](https://apify.com/apivault_labs/threads-scraper) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-threads-scraper) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-threads-scraper) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-threads-scraper) |
 
 
 <!-- four-funnels-partial-20261024 -->
 ## Substack, YouTube captions, Bilibili and Naver integrations
 
-Python and n8n sources and manual workflows are public. Python0.1.0 releases are pending: PyPI uploads are paused after HTTP429. Source availability is not a claim that pip installation from PyPI works. npm availability is listed below;0.0.0-stage is not operational. Workflows are inactive and credential-free. Hosted runs require your Apify account; Actor events, start fees where configured, platform usage and applicable proxy traffic are billed separately. n8n Cloud verification is not claimed.
+Python and n8n sources and manual workflows are public. Substack, YouTube Transcripts and Naver 0.1.0 are published on PyPI; Bilibili remains pending. Published npm versions are linked below. Workflows are inactive and credential-free. Hosted runs require your Apify account; Actor events, start fees where configured, platform usage and applicable proxy traffic are billed separately. n8n Cloud verification is not claimed.
 
 | Actor | Python source | n8n |
 |---|---|---|
-| [Substack Archive Scraper](https://apify.com/apivault_labs/substack-archive-scraper) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-substack-archive-scraper) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-substack-archive-scraper) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-substack-archive-scraper) |
-| [YouTube Transcripts and Subtitles](https://apify.com/apivault_labs/youtube-transcripts-scraper) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-youtube-transcripts-scraper) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-youtube-transcripts-scraper) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-youtube-transcripts-scraper) |
+| [Substack Archive Scraper](https://apify.com/apivault_labs/substack-archive-scraper) | [PyPI 0.1.0](https://pypi.org/project/apivault-substack-archive-scraper/) / [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-substack-archive-scraper) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-substack-archive-scraper) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-substack-archive-scraper) |
+| [YouTube Transcripts and Subtitles](https://apify.com/apivault_labs/youtube-transcripts-scraper) | [PyPI 0.1.0](https://pypi.org/project/apivault-youtube-transcripts-scraper/) / [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-youtube-transcripts-scraper) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-youtube-transcripts-scraper) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-youtube-transcripts-scraper) |
 | [Bilibili Popular Videos](https://apify.com/apivault_labs/bilibili-popular-videos-prototype) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-bilibili-popular-videos-prototype) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-bilibili-popular-videos-prototype) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-bilibili-popular-videos-prototype) |
-| [Naver Brand Store Scraper](https://apify.com/apivault_labs/naver-smartstore-source-probe) | [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-naver-smartstore-source-probe) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-naver-smartstore-source-probe) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-naver-smartstore-source-probe) |
+| [Naver Brand Store Scraper](https://apify.com/apivault_labs/naver-smartstore-source-probe) | [PyPI 0.1.0](https://pypi.org/project/apivault-naver-smartstore-source-probe/) / [source](https://github.com/apivault-labs/apivault-labs/tree/main/packages/apivault-naver-smartstore-source-probe) | [npm0.1.0](https://www.npmjs.com/package/n8n-nodes-apivault-naver-smartstore-source-probe) / [source and workflow](https://github.com/apivault-labs/apivault-labs/tree/main/community-nodes/n8n-nodes-apivault-naver-smartstore-source-probe) |
 
 
 <!-- github-python-install-20261024 -->
 ## Python installation while PyPI releases are pending
 
-[Verified installation from pinned public GitHub sources](guides/python-clients-from-github.md) is available for Google News, Threads, Substack, YouTube transcripts, Bilibili and Naver. All six0.1.0 clients were installed and their exact source origins, Actor IDs and existing-run reads verified. Python3.10+, Git and standard build requirements are needed. This does not mean the PyPI packages are published.
+[Verified installation from pinned public GitHub sources](guides/python-clients-from-github.md) is available for Google News, Threads, Substack, YouTube transcripts, Bilibili and Naver. All six0.1.0 clients were installed and their exact source origins, Actor IDs and existing-run reads verified. Python3.10+, Git and standard build requirements are needed. Google News, Substack, YouTube Transcripts and Naver are also published on PyPI as 0.1.0; Threads and Bilibili remain available from GitHub while registry publication is pending.

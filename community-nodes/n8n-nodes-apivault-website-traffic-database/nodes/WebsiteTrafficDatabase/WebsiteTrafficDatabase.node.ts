@@ -2,6 +2,7 @@ import type { INodeProperties, IExecuteFunctions, INodeExecutionData, INodeType,
 
 import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 import { executionProperties, runActor, SafeActorError } from '../helpers/actorTransport';
+import { normalizeActorInput } from '../helpers/actorInput';
 const ACTOR_ID = '2ahDVr2hK6unhydIJ';
 
 export class WebsiteTrafficDatabase implements INodeType {
@@ -96,7 +97,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Maximum monthly visits",
     "name": "maxVisits",
-    "description": "Actor input: Maximum monthly visits",
+    "description": "Actor input: Maximum monthly visits Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "displayOptions": {
@@ -110,11 +111,12 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Top sites worldwide (enter N, e.g. 100)",
     "name": "topGlobalRank",
-    "description": "Actor input: Top sites worldwide (enter N, e.g. 100)",
+    "description": "Optional filter. Zero leaves this filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
-      "minValue": 1
+      "minValue": 0,
+      "numberPrecision": 0
     },
     "displayOptions": {
       "show": {
@@ -155,7 +157,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Minimum search-traffic share (%)",
     "name": "minSearchShare",
-    "description": "Actor input: Minimum search-traffic share (%)",
+    "description": "Actor input: Minimum search-traffic share (%) Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
@@ -201,7 +203,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Minimum growth (%)",
     "name": "minGrowthPercent",
-    "description": "Actor input: Minimum growth (%)",
+    "description": "Actor input: Minimum growth (%) Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "displayOptions": {
@@ -273,7 +275,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Minimum channel share (%)",
     "name": "minSourceShare",
-    "description": "Actor input: Minimum channel share (%)",
+    "description": "Actor input: Minimum channel share (%) Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
@@ -291,7 +293,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Maximum bounce rate (%)",
     "name": "maxBounce",
-    "description": "Actor input: Maximum bounce rate (%)",
+    "description": "Actor input: Maximum bounce rate (%) Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
@@ -309,7 +311,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Minimum pages per visit",
     "name": "minPagesPerVisit",
-    "description": "Actor input: Minimum pages per visit",
+    "description": "Actor input: Minimum pages per visit Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
@@ -326,7 +328,7 @@ export class WebsiteTrafficDatabase implements INodeType {
   {
     "displayName": "Minimum time on site (seconds)",
     "name": "minTimeOnSite",
-    "description": "Actor input: Minimum time on site (seconds)",
+    "description": "Actor input: Minimum time on site (seconds) Zero leaves this optional filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
@@ -437,15 +439,15 @@ export class WebsiteTrafficDatabase implements INodeType {
     "type": "options",
     "options": [
       {
-        "name": "Compact — AI friendly",
+        "name": "Compact \u2014 AI friendly",
         "value": "compact"
       },
       {
-        "name": "Outreach — recommended",
+        "name": "Outreach \u2014 recommended",
         "value": "outreach"
       },
       {
-        "name": "Full — every field",
+        "name": "Full \u2014 every field",
         "value": "full"
       }
     ],
@@ -517,6 +519,7 @@ const body: Record<string, unknown> = {};
 				body["outputPreset"] = this.getNodeParameter("outputPreset", i);
 				{ const _v = this.getNodeParameter("domains", i, '') as string; const _a = _v.split(/[,\n]/).map(s=>s.trim()).filter(s=>s.length>0); if (_a.length) body["domains"] = _a; }
 				body["similarTo"] = this.getNodeParameter("similarTo", i);
+					normalizeActorInput(body);
 					return body;
 				})();
 				const results = await runActor(this, i, ACTOR_ID, body);

@@ -1,0 +1,116 @@
+[
+  {
+    "package": "n8n-nodes-apivault-facebook-marketplace",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook-marketplace",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "field": "daysSinceListed",
+    "minimum": 1,
+    "maximum": 90,
+    "default": null,
+    "parameter": "daysSinceListed",
+    "legacy": 0
+  },
+  {
+    "package": "n8n-nodes-apivault-facebook-reels",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook-reels",
+    "previousVersion": "0.4.0",
+    "version": "0.4.1",
+    "field": "sinceDays",
+    "minimum": 1,
+    "maximum": 3650,
+    "default": null,
+    "parameter": "sinceDays",
+    "legacy": 0
+  },
+  {
+    "package": "n8n-nodes-apivault-facebook-reviews",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook-reviews",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "field": "sinceDays",
+    "minimum": 1,
+    "maximum": 3650,
+    "default": null,
+    "parameter": "sinceDays",
+    "legacy": 0
+  },
+  {
+    "package": "n8n-nodes-apivault-google-ads-transparency",
+    "folder": "community-nodes/n8n-nodes-apivault-google-ads-transparency",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "field": "maxItems",
+    "minimum": 1,
+    "maximum": 10000,
+    "default": 5,
+    "parameter": "maxItems",
+    "legacy": 0
+  },
+  {
+    "package": "n8n-nodes-apivault-local-lead-finder-pro",
+    "folder": "community-nodes/n8n-nodes-apivault-local-lead-finder-pro",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "field": "maxResults",
+    "minimum": 1,
+    "maximum": 10000,
+    "default": 25,
+    "parameter": "maxResults",
+    "legacy": 0
+  },
+  {
+    "package": "n8n-nodes-apivault-temu",
+    "folder": "community-nodes/n8n-nodes-apivault-temu",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "field": "timeout",
+    "minimum": 20,
+    "maximum": 60,
+    "default": 30,
+    "parameter": "additionalOptions",
+    "legacy": 180
+  },
+  {
+    "package": "n8n-nodes-apivault-website-traffic-database",
+    "folder": "community-nodes/n8n-nodes-apivault-website-traffic-database",
+    "previousVersion": "0.3.0",
+    "version": "0.3.1",
+    "field": "topGlobalRank",
+    "minimum": 1,
+    "maximum": null,
+    "default": null,
+    "parameter": "topGlobalRank",
+    "legacy": 0
+  },
+  {
+    "package": "n8n-nodes-apivault-glassdoor-jobs",
+    "folder": "community-nodes/n8n-nodes-apivault-glassdoor-jobs",
+    "previousVersion": "0.1.0",
+    "version": "0.2.0",
+    "actor": "glassdoor-jobs-scraper",
+    "actorId": "KnFPYISvHrDkYyD6L",
+    "notice": "NONE",
+    "repair": "async-resume-pagination-transport"
+  },
+  {
+    "package": "n8n-nodes-apivault-image-generator",
+    "folder": "community-nodes/n8n-nodes-apivault-image-generator",
+    "previousVersion": "0.1.0",
+    "version": "0.2.0",
+    "actor": "ai-image-generator",
+    "actorId": "Mp57DQfkhayPSf3TK",
+    "notice": "UNDER_MAINTENANCE",
+    "repair": "async-resume-pagination-transport"
+  },
+  {
+    "package": "n8n-nodes-apivault-upwork",
+    "folder": "community-nodes/n8n-nodes-apivault-upwork",
+    "previousVersion": "0.1.0",
+    "version": "0.2.0",
+    "actor": "upwork-job-scraper",
+    "actorId": "L66CMnYBZ3RnJb0gb",
+    "notice": "UNDER_MAINTENANCE",
+    "repair": "async-resume-pagination-transport"
+  }
+]

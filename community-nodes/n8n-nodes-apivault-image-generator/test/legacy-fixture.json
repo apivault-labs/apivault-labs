@@ -1,0 +1,29 @@
+{
+  "parameters": {
+    "prompt": "example",
+    "imageUrl": "https://example.com/example",
+    "model": "nano-2-lite",
+    "aspectRatio": "1:1",
+    "resolution": "1K",
+    "numImages": "1",
+    "customProxyUrl": "https://example.com/example",
+    "timeout": 120
+  },
+  "body": {
+    "prompt": "example",
+    "imageUrl": "https://example.com/example",
+    "model": "nano-2-lite",
+    "aspectRatio": "1:1",
+    "resolution": "1K",
+    "numImages": "1",
+    "customProxyUrl": "https://example.com/example",
+    "timeout": 120
+  },
+  "nodeName": "imageGenerator",
+  "credentials": [
+    {
+      "name": "apifyApi",
+      "required": true
+    }
+  ]
+}

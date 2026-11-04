@@ -1,0 +1,8 @@
+{
+  "field": "timeout",
+  "minimum": 20,
+  "maximum": 60,
+  "default": 30,
+  "parameter": "additionalOptions",
+  "legacy": 180
+}

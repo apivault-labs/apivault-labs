@@ -1,0 +1,8 @@
+{
+  "field": "topGlobalRank",
+  "minimum": 1,
+  "maximum": null,
+  "default": null,
+  "parameter": "topGlobalRank",
+  "legacy": 0
+}

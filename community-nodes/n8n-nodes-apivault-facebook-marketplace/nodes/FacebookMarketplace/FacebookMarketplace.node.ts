@@ -2,6 +2,7 @@ import type { INodeProperties, IExecuteFunctions, INodeExecutionData, INodeType,
 
 import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 import { executionProperties, runActor, SafeActorError } from '../helpers/actorTransport';
+import { normalizeActorInput } from '../helpers/actorInput';
 const ACTOR_ID = 'cLl2R7iBrlbR9iD8d';
 
 export class FacebookMarketplace implements INodeType {
@@ -249,11 +250,12 @@ export class FacebookMarketplace implements INodeType {
   {
     "displayName": "Days since listed",
     "name": "daysSinceListed",
-    "description": "Actor input: Days since listed",
+    "description": "Optional filter. Zero leaves this filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
-      "minValue": 1,
+      "minValue": 0,
+      "numberPrecision": 0,
       "maxValue": 90
     },
     "displayOptions": {
@@ -426,6 +428,7 @@ const body: Record<string, unknown> = {};
 				body["useResidentialProxy"] = this.getNodeParameter("useResidentialProxy", i);
 				body["proxyCountry"] = this.getNodeParameter("proxyCountry", i);
 				body["debug"] = this.getNodeParameter("debug", i);
+					normalizeActorInput(body);
 					return body;
 				})();
 				const results = await runActor(this, i, ACTOR_ID, body);

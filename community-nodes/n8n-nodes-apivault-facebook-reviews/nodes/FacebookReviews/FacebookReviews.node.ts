@@ -2,6 +2,7 @@ import type { INodeProperties, IExecuteFunctions, INodeExecutionData, INodeType,
 
 import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 import { executionProperties, runActor, SafeActorError } from '../helpers/actorTransport';
+import { normalizeActorInput } from '../helpers/actorInput';
 const ACTOR_ID = 'I2YiRhMLCqC9Yer8Q';
 
 export class FacebookReviews implements INodeType {
@@ -124,11 +125,12 @@ export class FacebookReviews implements INodeType {
   {
     "displayName": "Only reviews from last N days",
     "name": "sinceDays",
-    "description": "Actor input: Only reviews from last N days",
+    "description": "Optional filter. Zero leaves this filter off.",
     "type": "number",
     "default": 0,
     "typeOptions": {
-      "minValue": 1,
+      "minValue": 0,
+      "numberPrecision": 0,
       "maxValue": 3650
     },
     "displayOptions": {
@@ -154,9 +156,9 @@ export class FacebookReviews implements INodeType {
     }
   },
   {
-    "displayName": "Incremental — only new reviews",
+    "displayName": "Incremental \u2014 only new reviews",
     "name": "onlyNewSinceLastRun",
-    "description": "Actor input: Incremental — only new reviews",
+    "description": "Actor input: Incremental \u2014 only new reviews",
     "type": "boolean",
     "default": false,
     "displayOptions": {
@@ -346,6 +348,7 @@ const body: Record<string, unknown> = {};
 				body["proxyCountry"] = this.getNodeParameter("proxyCountry", i);
 				body["dedupe"] = this.getNodeParameter("dedupe", i);
 				body["notifyWebhookUrl"] = this.getNodeParameter("notifyWebhookUrl", i);
+					normalizeActorInput(body);
 					return body;
 				})();
 				const results = await runActor(this, i, ACTOR_ID, body);

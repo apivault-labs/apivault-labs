@@ -2,6 +2,7 @@ import type { INodeProperties, IExecuteFunctions, INodeExecutionData, INodeType,
 
 import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 import { executionProperties, runActor, SafeActorError } from '../helpers/actorTransport';
+import { normalizeActorInput } from '../helpers/actorInput';
 const ACTOR_ID = 'RtWF57ncDP1x48I9Z';
 
 export class GoogleAdsTransparency implements INodeType {
@@ -99,11 +100,12 @@ export class GoogleAdsTransparency implements INodeType {
   {
     "displayName": "Max Items",
     "name": "maxItems",
-    "description": "Actor input: Max Items",
+    "description": "Maximum results. Zero uses the Actor default.",
     "type": "number",
-    "default": 0,
+    "default": 5,
     "typeOptions": {
-      "minValue": 1,
+      "minValue": 0,
+      "numberPrecision": 0,
       "maxValue": 10000
     },
     "displayOptions": {
@@ -203,6 +205,7 @@ const body: Record<string, unknown> = {};
 				body["includeDunsNumber"] = this.getNodeParameter("includeDunsNumber", i);
 				{ const _v = this.getNodeParameter("outputFields", i, '') as string; const _a = _v.split(/[,\n]/).map(s=>s.trim()).filter(s=>s.length>0); if (_a.length) body["outputFields"] = _a; }
 				{ const _r = this.getNodeParameter("proxyConfiguration", i, '') as string|object; if (_r) { try { body["proxyConfiguration"] = typeof _r === 'string' ? JSON.parse(_r) : _r; } catch { throw new NodeOperationError(this.getNode(), "proxyConfiguration" + ' must be valid JSON', { itemIndex: i }); } } }
+					normalizeActorInput(body);
 					return body;
 				})();
 				const results = await runActor(this, i, ACTOR_ID, body);

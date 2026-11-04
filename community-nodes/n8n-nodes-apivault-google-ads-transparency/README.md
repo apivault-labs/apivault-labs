@@ -20,3 +20,7 @@ Runtime dependencies: none. n8n Cloud availability requires separate n8n verific
 
 An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
 <!-- apivault-integrations:end -->
+
+## 0.2.1 input compatibility
+
+An existing zero `maxItems` is omitted from the Actor input. This keeps optional filters off or uses the Actor default limit. Positive explicit values remain unchanged.

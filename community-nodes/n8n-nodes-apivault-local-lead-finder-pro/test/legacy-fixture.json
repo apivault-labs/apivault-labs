@@ -43,7 +43,6 @@
     "enrichGeocode": false,
     "excludeChains": false,
     "minLeadScore": 0,
-    "maxResults": 0,
     "exportFormat": "default"
   },
   "nodeName": "localLeadFinderPro",

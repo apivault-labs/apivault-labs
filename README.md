@@ -4,7 +4,6 @@
 
 [![Apify Actors](https://img.shields.io/badge/Apify-50%2B%20Actors-00c46a?style=for-the-badge&logo=apify)](https://apify.com/apivault_labs)
 [![Actor Catalog](https://img.shields.io/badge/Explore-Live%20Catalog-5cf2a5?style=for-the-badge&logo=githubpages&logoColor=07100e)](https://apivault-labs.github.io/)
-[![Run success](https://img.shields.io/badge/Run%20success-98%25%2B-2563eb?style=for-the-badge)](https://apify.com/apivault_labs)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-ApiVault%20Labs-0a66c2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/apivault-labs-a2755742a)
 
 We build reliable **Apify Actors, web scrapers, data extraction APIs, and automation tools** for businesses, developers, agencies, and AI workflows.

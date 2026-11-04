@@ -1,0 +1,8 @@
+{
+  "field": "sinceDays",
+  "minimum": 1,
+  "maximum": 3650,
+  "default": null,
+  "parameter": "sinceDays",
+  "legacy": 0
+}
