@@ -1,3 +1,4 @@
+import { formatRunFailure } from '../helpers/runFailure';
 import type { INodeProperties,
 	IExecuteFunctions,
 	IHttpRequestMethods,
@@ -15,7 +16,7 @@ const TERMINAL_STATUSES = new Set(['SUCCEEDED', 'FAILED', 'ABORTED', 'TIMED-OUT'
 const splitList = (value: string): string[] =>
 	value.split(/[,\n]+/).map((item) => item.trim()).filter(Boolean);
 
-import { executionProperties, runActor, legacyRequest } from '../helpers/actorTransport';
+import { executionProperties, runActor, legacyRequest, SafeActorError } from '../helpers/actorTransport';
 
 export class LinkedinProfile implements INodeType {
  description: INodeTypeDescription = {
@@ -252,6 +253,8 @@ export class LinkedinProfile implements INodeType {
 		const items = this.getInputData();
 		const returnData: INodeExecutionData[] = [];
 		for (let itemIndex = 0; itemIndex < items.length; itemIndex++) {
+			let knownRunId = '';
+			let knownTerminalStatus = '';
 			try {
 				if (this.getNodeParameter('apivaultMode', itemIndex, 'run') === 'read') {
 					const results = await runActor(this, itemIndex, ACTOR_ID, {});
@@ -290,6 +293,7 @@ export class LinkedinProfile implements INodeType {
 					method: 'POST' as IHttpRequestMethods, url: `${API_BASE}/acts/${ACTOR_ID}/runs`, body, json: true,
 				} as IHttpRequestOptions);
 				let run = started?.data ?? started;
+				knownRunId = String(run?.id ?? '');
 				if (!run?.id) throw new NodeOperationError(this.getNode(), 'Apify did not return a run ID', { itemIndex });
 				if (execution.waitForResults === false) {
 					returnData.push({ json: run, pairedItem: { item: itemIndex } });
@@ -309,6 +313,7 @@ export class LinkedinProfile implements INodeType {
 					throw new NodeOperationError(this.getNode(), `Actor run ${run.id} is still running after ${execution.maxWaitSeconds ?? 600} seconds`, { itemIndex });
 				}
 				if (run.status !== 'SUCCEEDED') {
+					knownTerminalStatus = String(run.status);
 					throw new NodeOperationError(this.getNode(), `Actor run ${run.id} finished with status ${run.status}`, { itemIndex });
 				}
 				if (!run.defaultDatasetId) {
@@ -321,12 +326,13 @@ export class LinkedinProfile implements INodeType {
 				} as IHttpRequestOptions);
 				const results = Array.isArray(response) ? response : [response];
 				for (const result of results) returnData.push({ json: result, pairedItem: { item: itemIndex } });
-			} catch {
+			} catch (error) {
+				const message = error instanceof SafeActorError ? error.message : formatRunFailure(knownRunId, knownTerminalStatus);
 				if (this.continueOnFail()) {
-					returnData.push({ json: { error: 'Could not finish the Actor request. Check inputs and credentials before retrying' }, pairedItem: { item: itemIndex } });
+					returnData.push({ json: { error: message }, pairedItem: { item: itemIndex } });
 					continue;
 				}
-				throw new NodeOperationError(this.getNode(), 'Could not finish the Actor request. Check inputs and credentials before retrying', { itemIndex });
+				throw new NodeOperationError(this.getNode(), message, { itemIndex });
 			}
 		}
 		return [returnData];

@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-apivault-temp-email",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Run Temp Email API through the hosted Apify Actor and read its results",
   "license": "MIT",
   "homepage": "https://apify.com/apivault_labs/temp-email",
@@ -25,7 +25,7 @@
   "scripts": {
     "build": "tsc && node scripts/copy-icons.cjs",
     "lint": "n8n-node lint",
-    "test": "node test/contract.cjs",
+    "test": "node test/contract.cjs && node test/failure-guidance.cjs",
     "prepublishOnly": "npm run build"
   },
   "files": [

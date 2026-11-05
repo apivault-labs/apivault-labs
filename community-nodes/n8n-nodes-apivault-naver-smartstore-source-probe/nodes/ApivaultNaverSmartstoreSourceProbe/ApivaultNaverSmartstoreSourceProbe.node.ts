@@ -1,3 +1,4 @@
+import { formatRunFailure } from '../helpers/runFailure';
 import type { IExecuteFunctions, INodeExecutionData, INodeType, INodeTypeDescription } from 'n8n-workflow';
 import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 
@@ -49,6 +50,7 @@ export class ApivaultNaverSmartstoreSourceProbe implements INodeType {
 		};
 		for (let i = 0; i < items.length; i++) {
 			let runId = '';
+			let terminalStatus = '';
 			try {
 				const operation = this.getNodeParameter('operation', i) as string;
 				const maxRows = this.getNodeParameter('maxRows', i) as number;
@@ -77,7 +79,7 @@ export class ApivaultNaverSmartstoreSourceProbe implements INodeType {
 					});
 					run = response.data;
 					if (run.status === 'SUCCEEDED') break;
-					if (['FAILED', 'TIMED-OUT', 'ABORTED'].includes(run.status)) throw new NodeOperationError(this.getNode(), `Run ${runId} ended with status ${run.status}`);
+					if (['FAILED', 'TIMED-OUT', 'ABORTED'].includes(run.status)) { terminalStatus = run.status; throw new NodeOperationError(this.getNode(), 'Run did not succeed'); }
 				}
 				const datasetId = validId(run.defaultDatasetId);
 				const dataset = await this.helpers.httpRequestWithAuthentication.call(this, 'apivaultApi', { method: 'GET', url: `${API}/datasets/${datasetId}`, json: true });
@@ -110,7 +112,7 @@ export class ApivaultNaverSmartstoreSourceProbe implements INodeType {
 				}
 			} catch {
 				// Avoid copying raw upstream bodies, headers or private input into errors.
-				const message = runId ? `Could not finish reading run ${runId}; inspect it in Apify and resume with Read Existing Run` : 'Could not start or read the Actor. Check inputs, credentials and Console before retrying';
+				const message = formatRunFailure(runId, terminalStatus);
 				if (this.continueOnFail()) output.push({ json: { error: message, runId: runId || null }, pairedItem: { item: i } });
 				else throw new NodeOperationError(this.getNode(), message, { itemIndex: i });
 			}

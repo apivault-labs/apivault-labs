@@ -9,3 +9,7 @@ Install `n8n-nodes-apivault-glassdoor-jobs` in self-hosted n8n under Settings â†
 Node registration, credential type, parameter names and input mapping are retained. Run Actor now starts asynchronously and reads paginated results. Read Existing Run resumes without a new paid POST. Version 1 retains its previous charge behavior unless an event cap is set. New version 2 defaults to a $0.05 event charge cap and 1,000 downloaded rows. Platform usage can be billed separately. Full output includes run metadata, SUMMARY and ERRORS when available. Download caps do not limit paid collection; configure Actor input limits and event cap.
 
 No scraping implementation or runtime dependencies are bundled. n8n Cloud verification is not claimed.
+
+## 0.2.1 failure guidance
+
+FAILED, TIMED-OUT and ABORTED runs now report their final status and link to the exact run in Apify Console. Inspect the cause before starting another run. If reading fails because of a connection or Dataset error, keep the Run ID and use Read Existing Run to continue reading without a paid duplicate. No start request is automatically retried.

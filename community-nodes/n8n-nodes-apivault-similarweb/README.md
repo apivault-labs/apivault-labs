@@ -20,3 +20,7 @@ Runtime dependencies: none. n8n Cloud availability requires separate n8n verific
 
 An Apify account and API token are required. Hosted Actor/platform charges apply. npm publication is not n8n verification or confirmation of n8n Cloud availability.
 <!-- apivault-integrations:end -->
+
+## 0.3.1 failure guidance
+
+FAILED, TIMED-OUT and ABORTED runs now report their final status and link to the exact run in Apify Console. Inspect the cause before starting another run. If reading fails because of a connection or Dataset error, keep the Run ID and use Read Existing Run to continue reading without a paid duplicate. No start request is automatically retried.

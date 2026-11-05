@@ -73,6 +73,7 @@ jobs:
           set -euo pipefail
           test "$GITHUB_REF" = refs/heads/main
           test "$EXPECTED_SHA" = "$GITHUB_SHA"
+          node -e "const assert=require('node:assert/strict'); for(const p of require('./n8n-input-repair-plan.json')) assert.equal(require('./'+p.folder+'/package.json').version,p.version,'This historical release plan no longer matches source versions. Use the current reviewed release workflow.')"
           test "$(npm whoami)" = apivault
           for folder in $(node -p "require('./n8n-input-repair-plan.json').map(p=>p.folder).join(' ')"); do
             (cd "$folder" && npm publish --provenance --access public --ignore-scripts)
