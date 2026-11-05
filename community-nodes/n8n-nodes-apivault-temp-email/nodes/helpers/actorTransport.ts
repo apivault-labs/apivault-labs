@@ -118,8 +118,8 @@ export async function legacyRequest(context: IExecuteFunctions, item: number, ra
 		}
 		throw new Error('Waiting timed out');
 		} catch (error) {
-			if (error instanceof SafeActorError) throw error;
-			throw new SafeActorError(context, runId, item);
+			const safeError: NodeOperationError = error instanceof SafeActorError ? error : new SafeActorError(context, runId, item);
+			throw safeError;
 		}
 	}
 	if (options.method === 'GET' && /\/datasets\/[A-Za-z0-9_-]+\/items$/.test(options.url)) {
