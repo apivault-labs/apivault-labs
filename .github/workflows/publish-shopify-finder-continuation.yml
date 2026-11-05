@@ -1,0 +1,65 @@
+name: Publish reviewed Shopify Finder continuation
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: Exact main commit containing the approved 0.4.2 source
+        type: string
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: publish-shopify-finder-continuation
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24.22.2'
+          registry-url: https://registry.npmjs.org
+      - name: Verify the approved package identity
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF" = refs/heads/main
+          test "$GITHUB_SHA" = "$EXPECTED_SHA"
+          folder=community-nodes/n8n-nodes-apivault-shopify-finder
+          git diff --exit-code 192faed60516ea736b0121e2b101893cf4896911 HEAD -- "$folder"
+          cd "$folder"
+          test "$(node -p "require('./package.json').name")" = n8n-nodes-apivault-shopify-finder
+          test "$(node -p "require('./package.json').version")" = 0.4.2
+      - name: Build, lint, test and pack only Shopify Finder
+        working-directory: community-nodes/n8n-nodes-apivault-shopify-finder
+        run: |
+          set -euo pipefail
+          npm install --ignore-scripts --legacy-peer-deps --no-audit --no-fund
+          npm run build
+          npm run lint
+          npm test
+          npm pack --ignore-scripts --json > "$RUNNER_TEMP/shopify-finder-pack.json"
+          node -e 'const fs=require("fs");const p=JSON.parse(fs.readFileSync(process.env.RUNNER_TEMP+"/shopify-finder-pack.json"))[0];if(p.name!=="n8n-nodes-apivault-shopify-finder"||p.version!=="0.4.2"||p.filename!=="n8n-nodes-apivault-shopify-finder-0.4.2.tgz")process.exit(1)'
+      - name: Preserve the exact release archive
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: shopify-finder-0.4.2
+          path: community-nodes/n8n-nodes-apivault-shopify-finder/n8n-nodes-apivault-shopify-finder-0.4.2.tgz
+          if-no-files-found: error
+      - name: Publish the verified archive with provenance
+        working-directory: community-nodes/n8n-nodes-apivault-shopify-finder
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          set -euo pipefail
+          test "$(npm whoami)" = apivault
+          npm publish ./n8n-nodes-apivault-shopify-finder-0.4.2.tgz --provenance --access public --ignore-scripts
