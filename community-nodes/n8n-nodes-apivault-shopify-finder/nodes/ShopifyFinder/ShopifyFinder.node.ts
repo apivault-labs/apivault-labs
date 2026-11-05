@@ -39,7 +39,14 @@ export class ShopifyFinder implements INodeType {
   ],
   "defaultVersion": 2
 ,
-  properties: [...executionProperties, ...([
+  properties: [...executionProperties, {
+    displayName: 'Resume Input JSON',
+    name: 'resumeInput',
+    type: 'json',
+    default: '',
+    description: 'Copy the complete resumeInput from the previous run output or EXPORT_CONTINUATION. Its filters and cursor are used as the next Actor input.',
+    displayOptions: { show: { apivaultMode: ['run'] } },
+  }, ...([
   {
     "displayName": "Workflow",
     "name": "workflow",
@@ -429,7 +436,7 @@ export class ShopifyFinder implements INodeType {
   {
     "displayName": "Offset (skip first N)",
     "name": "offset",
-    "description": "Actor input: Offset (skip first N)",
+    "description": "Compatibility offset. To continue an export, copy the complete resumeInput from EXPORT_CONTINUATION into Resume Input JSON.",
     "type": "number",
     "default": 0,
     "typeOptions": {
@@ -451,6 +458,14 @@ export class ShopifyFinder implements INodeType {
 		for (let i = 0; i < this.getInputData().length; i++) {
 			try {
 				const body: Record<string, unknown> = this.getNodeParameter('apivaultMode', i, 'run') === 'read' ? {} : (() => {
+const resume = this.getNodeParameter('resumeInput', i, '') as string | Record<string, unknown>;
+if (resume) {
+  const parsed: unknown = typeof resume === 'string' ? JSON.parse(resume) : resume;
+  if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed) || Object.keys(parsed).length === 0) {
+    throw new NodeOperationError(this.getNode(), 'Resume Input JSON must contain the complete resumeInput object', { itemIndex: i });
+  }
+  return parsed as Record<string, unknown>;
+}
 const body: Record<string, unknown> = {};
 				body["workflow"] = this.getNodeParameter("workflow", i);
 				{ const _v = this.getNodeParameter("platforms", i, '') as string; const _a = _v.split(/[,\n]/).map(s=>s.trim()).filter(s=>s.length>0); if (_a.length) body["platforms"] = _a; }

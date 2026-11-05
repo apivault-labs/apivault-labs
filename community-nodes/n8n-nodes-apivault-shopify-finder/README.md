@@ -25,3 +25,9 @@ An Apify account and API token are required. Hosted Actor/platform charges apply
 ## 0.4.1 failure guidance
 
 FAILED, TIMED-OUT and ABORTED runs now report their final status and link to the exact run in Apify Console. Inspect the cause before starting another run. If reading fails because of a connection or Dataset error, keep the Run ID and use Read Existing Run to continue reading without a paid duplicate. No start request is automatically retried.
+
+## Continue an export in 0.4.2
+
+Choose **Run, Rows and Diagnostics** in Execution Options to include the Actor's continuation. Copy the complete **continuation.resumeInput** into **Resume Input JSON** on the next Run Actor node. You can also obtain it from **EXPORT_CONTINUATION** in the run's Key-Value Store. This object supplies the next run's filters and cursor. Edit maxItems inside that object to choose a different page size.
+
+**Read Existing Run** reads results already produced by that Run ID. To collect another page, start a Run Actor node with the complete resumeInput. An offset alone uses the currently ready index when no saved session is available. Keep the complete resumeInput to continue the previous source selection.

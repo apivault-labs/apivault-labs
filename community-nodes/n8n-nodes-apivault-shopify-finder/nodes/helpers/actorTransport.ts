@@ -75,7 +75,7 @@ export async function runActor(context: IExecuteFunctions, item: number, actorId
 		if (options.output === 'full') {
 			const storeId = id(run.defaultKeyValueStoreId);
 			const records: IDataObject = {};
-			for (const key of ['SUMMARY', 'ERRORS']) {
+			for (const key of ['SUMMARY', 'ERRORS', 'EXPORT_CONTINUATION']) {
 				try { records[key] = await request({ method: 'GET', url: `${API}/key-value-stores/${storeId}/records/${key}`, json: true }); }
 				catch (error) {
 					const e = error as { statusCode?: number; response?: { status?: number } };
@@ -83,7 +83,7 @@ export async function runActor(context: IExecuteFunctions, item: number, actorId
 					else throw new NodeOperationError(context.getNode(), 'Diagnostics unavailable');
 				}
 			}
-			return [{ runId, datasetId, status: run.status, rows, summary: records.SUMMARY ?? null, errors: records.ERRORS ?? null, truncated }];
+			return [{ runId, datasetId, status: run.status, rows, summary: records.SUMMARY ?? null, errors: records.ERRORS ?? null, continuation: records.EXPORT_CONTINUATION ?? null, truncated }];
 		}
 		return rows.map(row => ({ ...row, _apifyRunId: runId, _apifyTruncated: truncated }));
 	} catch {

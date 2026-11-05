@@ -31,6 +31,7 @@ function context(version, overrides = {}, total = 2500) {
         return Array.from({ length: Math.max(0, Math.min(limit, total - start)) }, (_, index) => ({ resultIndex: start + index }));
       }
       if (options.url.endsWith('/SUMMARY')) return { count: total };
+      if (options.url.endsWith('/EXPORT_CONTINUATION')) return { hasMore: true, resumeInput: { offset: 2500, sourceSession: 'signed-session', exportCursor: 'signed-checkpoint' } };
       if (options.url.endsWith('/ERRORS')) throw Object.assign(new Error('Missing optional record'), { statusCode: 404 });
       if (options.url.endsWith('/MCP_RESPONSE')) return { preview: true, total };
       throw new Error('Unexpected mock request');
@@ -66,6 +67,20 @@ function context(version, overrides = {}, total = 2500) {
   assert.equal(details[0][0].json.truncated, false);
   assert.deepEqual(details[0][0].json.summary, { count: 2500 });
   assert.equal(details[0][0].json.errors, null);
+  assert.equal(details[0][0].json.continuation.resumeInput.offset, 2500);
+  const resumeInput = { platforms: ['shopify_sites'], hasEmail: true, maxItems: 12, offset: 2500, dataSource: 'warmed', sourceSession: 'signed-session', exportCursor: 'signed-checkpoint' };
+  for (const value of [JSON.stringify(resumeInput), resumeInput]) {
+    const next = context(2, { resumeInput: value, country: 'GB', offset: 0 });
+    await node.execute.call(next);
+    assert.deepEqual(next.calls.find(call => call.method === 'POST').body, resumeInput);
+    assert.equal(next.calls.filter(call => call.method === 'POST').length, 1);
+  }
+  const badResume = context(2, { resumeInput: '[]' });
+  badResume.continueOnFail = () => true;
+  const invalid = await node.execute.call(badResume);
+  assert.equal(badResume.calls.filter(call => call.method === 'POST').length, 0);
+  assert(invalid[0][0].json.error);
+
 
   const failed = context(2, { apivaultMode: 'read', apivaultExecution: { runId: 'run1' } });
   failed.continueOnFail = () => true;
