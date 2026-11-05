@@ -14,7 +14,10 @@ const env = {...process.env,N8N_USER_FOLDER:home,N8N_DIAGNOSTICS_ENABLED:'false'
   N8N_RUNNERS_ENABLED:'false',N8N_LOG_LEVEL:'info'};
 const nodesHome=path.join(home,'.n8n/nodes');
 fs.mkdirSync(nodesHome,{recursive:true});
-const archives=plan.map(p=>path.join(root,p.folder,`${p.package}-${p.version}.tgz`));
+const archives=plan.map(p=>{
+  const version=require(path.join(root,p.folder,'package.json')).version;
+  return path.join(root,p.folder,`${p.package}-${version}.tgz`);
+});
 function command(args, localEnv=env){
   const result=spawnSync(process.execPath,[engine,...args],{env:localEnv,encoding:'utf8',timeout:180000,maxBuffer:8*1024*1024});
   assert.equal(result.status,0,(result.stdout+result.stderr).slice(-7000));

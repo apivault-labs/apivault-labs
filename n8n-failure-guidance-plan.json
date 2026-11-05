@@ -1,0 +1,646 @@
+[
+  {
+    "package": "n8n-nodes-apivault-1688-image-search",
+    "folder": "community-nodes/n8n-nodes-apivault-1688-image-search",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-ad-library",
+    "folder": "community-nodes/n8n-nodes-apivault-ad-library",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-adobe-stock-scraper",
+    "folder": "community-nodes/n8n-nodes-apivault-adobe-stock-scraper",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-ai-background-changer",
+    "folder": "community-nodes/n8n-nodes-apivault-ai-background-changer",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-airbnb-revenue-analyzer",
+    "folder": "community-nodes/n8n-nodes-apivault-airbnb-revenue-analyzer",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-amazon",
+    "folder": "community-nodes/n8n-nodes-apivault-amazon",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-amazon-bestsellers",
+    "folder": "community-nodes/n8n-nodes-apivault-amazon-bestsellers",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-amazon-reviews",
+    "folder": "community-nodes/n8n-nodes-apivault-amazon-reviews",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-amazon-seller-analyzer",
+    "folder": "community-nodes/n8n-nodes-apivault-amazon-seller-analyzer",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-app-leads",
+    "folder": "community-nodes/n8n-nodes-apivault-app-leads",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-app-revenue-analyzer",
+    "folder": "community-nodes/n8n-nodes-apivault-app-revenue-analyzer",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-app-store-reviews-scraper",
+    "folder": "community-nodes/n8n-nodes-apivault-app-store-reviews-scraper",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-background-remover",
+    "folder": "community-nodes/n8n-nodes-apivault-background-remover",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-bilibili-popular-videos-prototype",
+    "folder": "community-nodes/n8n-nodes-apivault-bilibili-popular-videos-prototype",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-business-locations-analyzer",
+    "folder": "community-nodes/n8n-nodes-apivault-business-locations-analyzer",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-cdn-upload",
+    "folder": "community-nodes/n8n-nodes-apivault-cdn-upload",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-clutch",
+    "folder": "community-nodes/n8n-nodes-apivault-clutch",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-clutch-search",
+    "folder": "community-nodes/n8n-nodes-apivault-clutch-search",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-coles-basket-price-monitor",
+    "folder": "community-nodes/n8n-nodes-apivault-coles-basket-price-monitor",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-crunchbase",
+    "folder": "community-nodes/n8n-nodes-apivault-crunchbase",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-domain-intel",
+    "folder": "community-nodes/n8n-nodes-apivault-domain-intel",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-email-intel",
+    "folder": "community-nodes/n8n-nodes-apivault-email-intel",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-email-validator",
+    "folder": "community-nodes/n8n-nodes-apivault-email-validator",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-email-verifier",
+    "folder": "community-nodes/n8n-nodes-apivault-email-verifier",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-facebook",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook",
+    "previousVersion": "0.4.0",
+    "version": "0.4.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-facebook-marketplace",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook-marketplace",
+    "previousVersion": "0.2.1",
+    "version": "0.2.2",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-facebook-reels",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook-reels",
+    "previousVersion": "0.4.1",
+    "version": "0.4.2",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-facebook-reviews",
+    "folder": "community-nodes/n8n-nodes-apivault-facebook-reviews",
+    "previousVersion": "0.2.1",
+    "version": "0.2.2",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-fiverr",
+    "folder": "community-nodes/n8n-nodes-apivault-fiverr",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-github",
+    "folder": "community-nodes/n8n-nodes-apivault-github",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-glassdoor-jobs",
+    "folder": "community-nodes/n8n-nodes-apivault-glassdoor-jobs",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-google-ads-transparency",
+    "folder": "community-nodes/n8n-nodes-apivault-google-ads-transparency",
+    "previousVersion": "0.2.1",
+    "version": "0.2.2",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-google-maps-contacts",
+    "folder": "community-nodes/n8n-nodes-apivault-google-maps-contacts",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-google-news-search",
+    "folder": "community-nodes/n8n-nodes-apivault-google-news-search",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-google-play-reviews-scraper",
+    "folder": "community-nodes/n8n-nodes-apivault-google-play-reviews-scraper",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-image-generator",
+    "folder": "community-nodes/n8n-nodes-apivault-image-generator",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-image-text-remover",
+    "folder": "community-nodes/n8n-nodes-apivault-image-text-remover",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-image-upscaler",
+    "folder": "community-nodes/n8n-nodes-apivault-image-upscaler",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-indeed-jobs",
+    "folder": "community-nodes/n8n-nodes-apivault-indeed-jobs",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-instagram",
+    "folder": "community-nodes/n8n-nodes-apivault-instagram",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-job-leads",
+    "folder": "community-nodes/n8n-nodes-apivault-job-leads",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-linkedin-jobs",
+    "folder": "community-nodes/n8n-nodes-apivault-linkedin-jobs",
+    "previousVersion": "0.3.0",
+    "version": "0.3.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-linkedin-profile",
+    "folder": "community-nodes/n8n-nodes-apivault-linkedin-profile",
+    "previousVersion": "0.3.0",
+    "version": "0.3.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-local-lead-finder-pro",
+    "folder": "community-nodes/n8n-nodes-apivault-local-lead-finder-pro",
+    "previousVersion": "0.2.1",
+    "version": "0.2.2",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-local-leads",
+    "folder": "community-nodes/n8n-nodes-apivault-local-leads",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-maigret",
+    "folder": "community-nodes/n8n-nodes-apivault-maigret",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-naver-smartstore-source-probe",
+    "folder": "community-nodes/n8n-nodes-apivault-naver-smartstore-source-probe",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-newegg",
+    "folder": "community-nodes/n8n-nodes-apivault-newegg",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-pinterest",
+    "folder": "community-nodes/n8n-nodes-apivault-pinterest",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-producthunt",
+    "folder": "community-nodes/n8n-nodes-apivault-producthunt",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-real-estate-skip-trace-go",
+    "folder": "community-nodes/n8n-nodes-apivault-real-estate-skip-trace-go",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-reddit",
+    "folder": "community-nodes/n8n-nodes-apivault-reddit",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-rss",
+    "folder": "community-nodes/n8n-nodes-apivault-rss",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-shopify-analyzer",
+    "folder": "community-nodes/n8n-nodes-apivault-shopify-analyzer",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-shopify-finder",
+    "folder": "community-nodes/n8n-nodes-apivault-shopify-finder",
+    "previousVersion": "0.4.0",
+    "version": "0.4.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-shopify-product",
+    "folder": "community-nodes/n8n-nodes-apivault-shopify-product",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-similarweb",
+    "folder": "community-nodes/n8n-nodes-apivault-similarweb",
+    "previousVersion": "0.3.0",
+    "version": "0.3.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-skip-trace",
+    "folder": "community-nodes/n8n-nodes-apivault-skip-trace",
+    "previousVersion": "0.3.0",
+    "version": "0.3.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-stackoverflow",
+    "folder": "community-nodes/n8n-nodes-apivault-stackoverflow",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-stackowerflow-scraper",
+    "folder": "community-nodes/n8n-nodes-apivault-stackowerflow-scraper",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-steam-reviews",
+    "folder": "community-nodes/n8n-nodes-apivault-steam-reviews",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-substack-archive-scraper",
+    "folder": "community-nodes/n8n-nodes-apivault-substack-archive-scraper",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-taobao-tmall-product-analyzer",
+    "folder": "community-nodes/n8n-nodes-apivault-taobao-tmall-product-analyzer",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-tech-stack-lookup",
+    "folder": "community-nodes/n8n-nodes-apivault-tech-stack-lookup",
+    "previousVersion": "0.3.0",
+    "version": "0.3.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-telegram-public-channels-scraper",
+    "folder": "community-nodes/n8n-nodes-apivault-telegram-public-channels-scraper",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-temp-email",
+    "folder": "community-nodes/n8n-nodes-apivault-temp-email",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-temu",
+    "folder": "community-nodes/n8n-nodes-apivault-temu",
+    "previousVersion": "0.2.1",
+    "version": "0.2.2",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-tennis-abstract-bulk-scraper",
+    "folder": "community-nodes/n8n-nodes-apivault-tennis-abstract-bulk-scraper",
+    "previousVersion": "0.1.2",
+    "version": "0.1.3",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-threads-scraper",
+    "folder": "community-nodes/n8n-nodes-apivault-threads-scraper",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-tiktok-shadowban",
+    "folder": "community-nodes/n8n-nodes-apivault-tiktok-shadowban",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-tiktok-shop",
+    "folder": "community-nodes/n8n-nodes-apivault-tiktok-shop",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-tiktok-shop-gmv-analyzer",
+    "folder": "community-nodes/n8n-nodes-apivault-tiktok-shop-gmv-analyzer",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-trustpilot",
+    "folder": "community-nodes/n8n-nodes-apivault-trustpilot",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-upwork",
+    "folder": "community-nodes/n8n-nodes-apivault-upwork",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-walmart-seller-analyzer",
+    "folder": "community-nodes/n8n-nodes-apivault-walmart-seller-analyzer",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-watermark-remover",
+    "folder": "community-nodes/n8n-nodes-apivault-watermark-remover",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-website-audit-leads",
+    "folder": "community-nodes/n8n-nodes-apivault-website-audit-leads",
+    "previousVersion": "0.3.0",
+    "version": "0.3.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-website-tech-detector",
+    "folder": "community-nodes/n8n-nodes-apivault-website-tech-detector",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-website-traffic-database",
+    "folder": "community-nodes/n8n-nodes-apivault-website-traffic-database",
+    "previousVersion": "0.3.1",
+    "version": "0.3.2",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-whatsapp-lookup",
+    "folder": "community-nodes/n8n-nodes-apivault-whatsapp-lookup",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-whatsapp-validator",
+    "folder": "community-nodes/n8n-nodes-apivault-whatsapp-validator",
+    "previousVersion": "0.3.0",
+    "version": "0.3.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-woocommerce",
+    "folder": "community-nodes/n8n-nodes-apivault-woocommerce",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-woocommerce-analyzer",
+    "folder": "community-nodes/n8n-nodes-apivault-woocommerce-analyzer",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-woolworths-products-price-monitor",
+    "folder": "community-nodes/n8n-nodes-apivault-woolworths-products-price-monitor",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-wordpress-plugins",
+    "folder": "community-nodes/n8n-nodes-apivault-wordpress-plugins",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-yc-companies",
+    "folder": "community-nodes/n8n-nodes-apivault-yc-companies",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-yelp",
+    "folder": "community-nodes/n8n-nodes-apivault-yelp",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-youtube-business-email",
+    "folder": "community-nodes/n8n-nodes-apivault-youtube-business-email",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-youtube-channel-analyzer",
+    "folder": "community-nodes/n8n-nodes-apivault-youtube-channel-analyzer",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-youtube-transcripts-scraper",
+    "folder": "community-nodes/n8n-nodes-apivault-youtube-transcripts-scraper",
+    "previousVersion": "0.1.0",
+    "version": "0.1.1",
+    "transport": "inline"
+  },
+  {
+    "package": "n8n-nodes-apivault-zillow",
+    "folder": "community-nodes/n8n-nodes-apivault-zillow",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  },
+  {
+    "package": "n8n-nodes-apivault-zillow-scraper",
+    "folder": "community-nodes/n8n-nodes-apivault-zillow-scraper",
+    "previousVersion": "0.2.0",
+    "version": "0.2.1",
+    "transport": "shared"
+  }
+]

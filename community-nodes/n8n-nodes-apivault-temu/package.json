@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-apivault-temu",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Run Temu Product Scraper through the hosted Apify Actor and read its results",
   "license": "MIT",
   "homepage": "https://apify.com/apivault_labs/temu-product-scraper",
@@ -32,7 +32,7 @@
   "scripts": {
     "build": "tsc && node scripts/copy-icons.cjs",
     "lint": "n8n-node lint",
-    "test": "node test/contract.cjs && node test/input-contract.cjs",
+    "test": "node test/contract.cjs && node test/input-contract.cjs && node test/failure-guidance.cjs",
     "prepublishOnly": "npm run build"
   },
   "files": [

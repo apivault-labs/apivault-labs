@@ -25,3 +25,7 @@ Publication on npm makes this a community package. n8n Cloud availability depend
 Reviews are collected in recent creation order for supplied numeric Steam app IDs. Set `maxReviews` to bound collection (up to 10,000 per run). Language, recommendation, purchase, paired date and playtime filters depend on the hosted Actor inputs. Output playtime is in minutes; input playtime filters use whole hours. Author identifiers and profiles are not included. Missing fields are null. Results are not guaranteed to cover every review.
 
 Inspect SUMMARY for partial results and stop reasons. Reading an existing run downloads its saved rows and does not continue source collection. To continue collection, copy the CONTINUATION input from that run’s key-value store into a new, separately billed run. The connector does not automatically start continuation runs.
+
+## 0.1.1 failure guidance
+
+FAILED, TIMED-OUT and ABORTED runs now report their final status and link to the exact run in Apify Console. Inspect the cause before starting another run. If reading fails because of a connection or Dataset error, keep the Run ID and use Read Existing Run to continue reading without a paid duplicate. No start request is automatically retried.

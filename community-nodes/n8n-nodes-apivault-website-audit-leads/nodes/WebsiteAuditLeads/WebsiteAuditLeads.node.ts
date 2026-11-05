@@ -1,3 +1,4 @@
+import { formatRunFailure } from '../helpers/runFailure';
 import type { INodeProperties,
 	IExecuteFunctions,
 	INodeExecutionData,
@@ -10,7 +11,7 @@ import { NodeConnectionTypes, NodeOperationError } from 'n8n-workflow';
 
 const ACTOR_ID = '4tbFN8UyTf5qVmnLT';
 
-import { executionProperties, runActor, legacyRequest } from '../helpers/actorTransport';
+import { executionProperties, runActor, legacyRequest, SafeActorError } from '../helpers/actorTransport';
 
 export class WebsiteAuditLeads implements INodeType {
  description: INodeTypeDescription = {
@@ -575,6 +576,8 @@ export class WebsiteAuditLeads implements INodeType {
 		const items = this.getInputData();
 		const returnData: INodeExecutionData[] = [];
 		for (let i = 0; i < items.length; i++) {
+			let knownRunId = '';
+			let knownTerminalStatus = '';
 			try {
 				if (this.getNodeParameter('apivaultMode', i, 'run') === 'read') {
 					const results = await runActor(this, i, ACTOR_ID, {});
@@ -617,7 +620,9 @@ export class WebsiteAuditLeads implements INodeType {
 				};
 				const runResponse = await legacyRequest(this, i, runOptions) as { data?: Record<string, unknown> };
 				const run = runResponse.data ?? runResponse as Record<string, unknown>;
+				knownRunId = String(run.id ?? '');
 				if (run.status !== 'SUCCEEDED') {
+					knownTerminalStatus = String(run.status ?? '');
 					throw new NodeOperationError(this.getNode(), `Actor run did not succeed (status: ${String(run.status ?? 'unknown')})`, { itemIndex: i });
 				}
 				let response: unknown;
@@ -641,12 +646,13 @@ export class WebsiteAuditLeads implements INodeType {
 				}
 				const results = Array.isArray(response) ? response : [response];
 				for (const result of results) returnData.push({ json: result, pairedItem: { item: i } });
-			} catch {
+			} catch (error) {
+				const message = error instanceof SafeActorError ? error.message : formatRunFailure(knownRunId, knownTerminalStatus);
 				if (this.continueOnFail()) {
-					returnData.push({ json: { error: 'Could not finish the Actor request. Check inputs and credentials before retrying' }, pairedItem: { item: i } });
+					returnData.push({ json: { error: message }, pairedItem: { item: i } });
 					continue;
 				}
-				throw new NodeOperationError(this.getNode(), 'Could not finish the Actor request. Check inputs and credentials before retrying', { itemIndex: i });
+				throw new NodeOperationError(this.getNode(), message, { itemIndex: i });
 			}
 		}
 		return [returnData];

@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-apivault-bilibili-popular-videos-prototype",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "n8n community connector for Bilibili Popular Videos on Apify. Run, resume and read results with diagnostics.",
   "license": "MIT",
   "author": {
@@ -30,7 +30,7 @@
     "build": "tsc && node scripts/copy-icons.cjs",
     "lint": "n8n-node lint",
     "prepublishOnly": "npm run build",
-    "test": "node test/contract.cjs"
+    "test": "node test/contract.cjs && node test/failure-guidance.cjs"
   },
   "n8n": {
     "n8nNodesApiVersion": 1,

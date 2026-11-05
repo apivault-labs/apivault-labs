@@ -30,3 +30,7 @@ Popular feed only; no keyword search, detail scraping, comments, transcripts or 
 The small example sets `maxVideos` to bound paid collection. `max_rows` / Maximum Rows to Read limits only the dataset download. The event charge cap does not cap infrastructure or proxy usage. The clients do not start an automatic paid retry after a start request fails. Save the run ID and inspect that run before starting another. For source failures, inspect SUMMARY and ERRORS in Apify Console; Client.result only returns successful runs.
 
 The hosted Actor also charges an Actor Start event at USD 0.00005 per GB of configured memory, minimum one event, in addition to delivered-result events and infrastructure usage. Empty or failed runs can still incur start and resource costs.
+
+## 0.1.1 failure guidance
+
+FAILED, TIMED-OUT and ABORTED runs now report their final status and link to the exact run in Apify Console. Inspect the cause before starting another run. If reading fails because of a connection or Dataset error, keep the Run ID and use Read Existing Run to continue reading without a paid duplicate. No start request is automatically retried.

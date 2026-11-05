@@ -23,3 +23,7 @@ Publication on npm makes this a community package. n8n Cloud availability depend
 ## Source coverage and limits
 
 Public initial page only; no full archive, fetched pagination or complete reply tree. Unknown metrics remain null. Direct requests can fail with source rate limits; the connector does not automatically enable separately billed proxy traffic. Inspect SUMMARY and ERRORS in Apify Console after failed or partial source runs; Client.result only returns successful runs.
+
+## 0.1.1 failure guidance
+
+FAILED, TIMED-OUT and ABORTED runs now report their final status and link to the exact run in Apify Console. Inspect the cause before starting another run. If reading fails because of a connection or Dataset error, keep the Run ID and use Read Existing Run to continue reading without a paid duplicate. No start request is automatically retried.

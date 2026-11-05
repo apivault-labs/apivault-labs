@@ -1,3 +1,4 @@
+import { formatRunFailure } from './runFailure';
 import type { IExecuteFunctions, INodeProperties, IHttpRequestOptions, IDataObject } from 'n8n-workflow';
 import { NodeOperationError } from 'n8n-workflow';
 
@@ -10,8 +11,8 @@ const id = (value: unknown): string => {
 
 export class SafeActorError extends NodeOperationError {
 	readonly runId: string;
-	constructor(context: IExecuteFunctions, runId: string, item: number) {
-		super(context.getNode(), runId ? `Could not finish reading run ${runId}; select Read Existing Run to resume` : 'Could not start or read the Actor. Check inputs and credentials before retrying', { itemIndex: item });
+	constructor(context: IExecuteFunctions, runId: string, item: number, terminalStatus = '') {
+		super(context.getNode(), formatRunFailure(runId, terminalStatus), { itemIndex: item });
 		this.runId = runId;
 	}
 }
@@ -32,6 +33,7 @@ export const executionProperties: INodeProperties[] = [
 
 export async function runActor(context: IExecuteFunctions, item: number, actorId: string, body: Record<string, unknown>): Promise<IDataObject[]> {
 	let runId = '';
+	let terminalStatus = '';
 	try {
 		const mode = context.getNodeParameter('apivaultMode', item, 'run') as string;
 		const options = context.getNodeParameter('apivaultExecution', item, {}) as Options;
@@ -57,7 +59,7 @@ export async function runActor(context: IExecuteFunctions, item: number, actorId
 			const response = await request({ method: 'GET', url: `${API}/actor-runs/${runId}`, qs: { waitForFinish: 20 }, json: true });
 			run = response.data;
 			if (run.status === 'SUCCEEDED') break;
-			if (['FAILED', 'TIMED-OUT', 'ABORTED'].includes(run.status)) throw new Error('Run did not succeed');
+			if (['FAILED', 'TIMED-OUT', 'ABORTED'].includes(run.status)) { terminalStatus = run.status; throw new Error('Run did not succeed'); }
 		}
 		const datasetId = id(run.defaultDatasetId);
 		const dataset = await request({ method: 'GET', url: `${API}/datasets/${datasetId}`, json: true });
@@ -85,7 +87,7 @@ export async function runActor(context: IExecuteFunctions, item: number, actorId
 		}
 		return rows.map(row => ({ ...row, _apifyRunId: runId, _apifyTruncated: truncated }));
 	} catch {
-		const safeError: NodeOperationError = new SafeActorError(context, runId, item);
+		const safeError: NodeOperationError = new SafeActorError(context, runId, item, terminalStatus);
 		throw safeError;
 	}
 }
@@ -107,13 +109,18 @@ export async function legacyRequest(context: IExecuteFunctions, item: number, ra
 		const started = await request({ ...options, qs });
 		if (!wait) return started;
 		const runId = id(started?.data?.id);
+		try {
 		const deadline = Date.now() + 10 * 60 * 1000;
 		while (Date.now() < deadline) {
 			const result = await request({ method: 'GET', url: `${API}/actor-runs/${runId}`, qs: { waitForFinish: 20 }, json: true });
 			if (result.data.status === 'SUCCEEDED') return result;
-			if (['FAILED', 'TIMED-OUT', 'ABORTED'].includes(result.data.status)) throw new Error('Run did not succeed');
+			if (['FAILED', 'TIMED-OUT', 'ABORTED'].includes(result.data.status)) throw new SafeActorError(context, runId, item, result.data.status);
 		}
 		throw new Error('Waiting timed out');
+		} catch (error) {
+			if (error instanceof SafeActorError) throw error;
+			throw new SafeActorError(context, runId, item);
+		}
 	}
 	if (options.method === 'GET' && /\/datasets\/[A-Za-z0-9_-]+\/items$/.test(options.url)) {
 		const maxRows = controls.maxRows ?? (context.getNode().typeVersion < 2 ? 100000 : 1000);

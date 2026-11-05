@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-apivault-linkedin-profile",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Run LinkedIn Profile Scraper through the hosted Apify Actor and read its results",
   "license": "MIT",
   "homepage": "https://apify.com/apivault_labs/linkedin-profile-scraper-no-cookies",
@@ -28,7 +28,7 @@
   "scripts": {
     "build": "tsc && node scripts/copy-icons.cjs",
     "lint": "n8n-node lint",
-    "test": "node test/contract.cjs",
+    "test": "node test/contract.cjs && node test/failure-guidance.cjs",
     "prepublishOnly": "npm run build"
   },
   "files": [
