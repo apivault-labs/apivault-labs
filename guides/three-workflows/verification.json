@@ -119,7 +119,23 @@
   },
   "googleSheets": {
     "tested": false,
-    "reason": "No Google OAuth connection configured for campaign acceptance; require actual write, same-dataset replay and interrupted-write recovery."
+    "reason": "No Google OAuth connection configured for campaign acceptance; require actual write, same-dataset replay and interrupted-write recovery.",
+    "seedWorkbook": {
+      "file": "three-workflows-sheets.xlsx",
+      "sheetNames": [
+        "shopify-agencies",
+        "competitor-prices",
+        "company-jobs"
+      ],
+      "headerCells": 38,
+      "dataRows": 0,
+      "formulas": 0,
+      "externalLinks": 0,
+      "frozenHeaders": true,
+      "verified": "Artifact Tool export/import, independent XLSX XML inspection and three visual renders",
+      "nativeGoogleSheetCreated": false
+    },
+    "connectionFollowUp": "Google browser sign-in is available; the Google Drive native spreadsheet import connector is not installed/connected. No destination write or replay has been performed."
   },
   "make": {
     "importContract": "Native apify:runActor and apify:fetchDatasetItems v1 read from saved account scenario",
@@ -139,11 +155,12 @@
       "connectionTestCode": "SC424",
       "connectionCause": "Unresolved; editable schema returned IM005 Cannot edit this connection",
       "scenarioSchedules": "All three inactive"
-    }
+    },
+    "browserFollowUp": "Google sign-in reached new-account registration, not the existing Make workspace. No account was created and no scenario or connection was changed. Make remains an additional distribution channel, not a prerequisite for publishing n8n materials."
   },
   "community": {
     "posted": false,
-    "reason": "Forum sign-in not established; API secrets for Apify/Make do not establish a forum login"
+    "reason": "Google sign-in reached forum registration requiring acceptance of terms; no account was created and no reply was posted. Existing-account sign-in or owner approval of registration is still required."
   },
   "ownerQaExcludedFromDemand": true
 }
