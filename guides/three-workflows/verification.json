@@ -43,7 +43,8 @@
     "ciRuns": [
       "https://github.com/apivault-labs/actors-apify/actions/runs/43509839557",
       "https://github.com/apivault-labs/actors-apify/actions/runs/43510877622",
-      "https://github.com/apivault-labs/actors-apify/actions/runs/43512179168"
+      "https://github.com/apivault-labs/actors-apify/actions/runs/43512179168",
+      "https://github.com/apivault-labs/actors-apify/actions/runs/43517195248"
     ]
   },
   "n8n": {
@@ -78,7 +79,43 @@
     ],
     "httpCalls": 13,
     "paidSourceStarts": 0,
-    "fixtureStarts": 4
+    "fixtureStarts": 4,
+    "savedRunRecovery": {
+      "scenarios": [
+        {
+          "key": "shopify-agencies",
+          "passed": true,
+          "rows": 1,
+          "csvGenerated": true,
+          "googleSheetsWrite": false,
+          "transport": "Real HTTP Request nodes and header credential against local fictional fixture",
+          "engine": "n8n@2.43.7"
+        },
+        {
+          "key": "competitor-prices",
+          "passed": true,
+          "rows": 1,
+          "csvGenerated": true,
+          "googleSheetsWrite": false,
+          "transport": "Real HTTP Request nodes and header credential against local fictional fixture",
+          "engine": "n8n@2.43.7"
+        },
+        {
+          "key": "company-jobs",
+          "passed": true,
+          "rows": 1,
+          "csvGenerated": true,
+          "googleSheetsWrite": false,
+          "transport": "Real HTTP Request nodes and header credential against local fictional fixture",
+          "engine": "n8n@2.43.7"
+        }
+      ],
+      "httpCalls": 9,
+      "paidSourceStarts": 0,
+      "fixtureStarts": 0,
+      "assertions": "All three saved-run CSV branches passed; 0 POST requests, 0 new source starts; agency source and contact runs both resumed",
+      "data": "Fictional local HTTP fixtures; not Google Sheets delivery"
+    }
   },
   "googleSheets": {
     "tested": false,
@@ -91,7 +128,18 @@
     "executeHttpStatus": 401,
     "liveExecutionPassed": false,
     "googleSheetsConnectionPresent": false,
-    "publicTemplates": "source CSV starters; complete contact join/price diff/Sheets path not accepted"
+    "publicTemplates": "source CSV starters; complete contact join/price diff/Sheets path not accepted",
+    "diagnostic": {
+      "checkedAt": "2026-11-13T22:11:49Z",
+      "httpStatus": 401,
+      "code": "IM001",
+      "message": "Access denied",
+      "detail": "Required scope: scenarios:run",
+      "connectionTestHttpStatus": 424,
+      "connectionTestCode": "SC424",
+      "connectionCause": "Unresolved; editable schema returned IM005 Cannot edit this connection",
+      "scenarioSchedules": "All three inactive"
+    }
   },
   "community": {
     "posted": false,
