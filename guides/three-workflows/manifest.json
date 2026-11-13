@@ -99,7 +99,7 @@
       ]
     }
   },
-  "makeStatus": "source CSV starters; account execution HTTP401; complete destination path requires account connection and acceptance QA",
+  "makeStatus": "source CSV starters; execution HTTP401 requires scenarios:run; existing Apify connection test HTTP424 unresolved; complete destination path requires account connection and acceptance QA",
   "n8nStatus": "three imports and CSV branches passed real n8n2.43.7 with fictional HTTP fixtures; Google Sheets unverified",
   "ownerQaExcludedFromDemand": true
 }

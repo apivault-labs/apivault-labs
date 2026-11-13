@@ -55,6 +55,8 @@ The destination matches `rowKey = jobId`. It can recover a repeated delivery wit
 
 This repository distributes imports. It does not claim approval or listing in the n8n/Make template galleries. Native module source exports, Google OAuth delivery and community publication each have separate evidence in `verification.json`.
 
+The owner-account diagnostic returned HTTP 401 / IM001 with `Required scope: scenarios:run`; the Make API token therefore cannot execute the saved QA scenarios. A separate test of the existing Apify connection returned HTTP 424 / SC424; that connection's cause is unresolved and it cannot be edited through the inspected API. This does not invalidate the working Apify token used in GitHub QA. No schedules were activated. These account checks are not evidence of a successful Make export.
+
 ## Costs, checked 2026-11-13 UTC / November14 Minsk
 
 | Actor | Current primary event rate | Other costs |
