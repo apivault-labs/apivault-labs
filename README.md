@@ -64,3 +64,7 @@ When contacting us, include the data source, required fields, example input, exp
 
 [Browse the Actor integration catalogue](actor-integrations.md) for direct Apify, npm/n8n and public Python client links. Check setup, pricing and limitations before running an Actor.
 <!-- apivault-integrations:end -->
+
+## Practical workflow kits
+
+[Three editable workflows](guides/three-workflows/README.md): Shopify agency contact review, comparable variant prices and selected-company job exports. n8n imports include CSV and an optional Sheets upsert; Make files are source CSV starters. [Verification and remaining acceptance gaps](guides/three-workflows/verification.json) distinguish live source QA, fictional n8n engine tests and unverified destination paths.

@@ -1,0 +1,105 @@
+{
+  "sourceCheckedAt": "2026-11-13T21:17:51Z",
+  "scenarios": {
+    "shopify-agencies": {
+      "title": "Shopify + Klaviyo leads with contact evidence",
+      "actor": "GgG3Xran5X3zZxpRZ",
+      "build": "0.15.30",
+      "input": {
+        "mode": "find",
+        "technologies": [
+          "Shopify",
+          "Klaviyo"
+        ],
+        "matchMode": "all",
+        "country": [
+          "GB"
+        ],
+        "dedupeByDomain": true,
+        "outputPreset": "essential",
+        "maxItems": 3
+      },
+      "columns": [
+        "rowKey",
+        "domain",
+        "company",
+        "country",
+        "indexedEmails",
+        "observedEmails",
+        "contactPage",
+        "contactStatus",
+        "checkedAt",
+        "coverageComplete",
+        "sourceRunId",
+        "contactRunId"
+      ]
+    },
+    "competitor-prices": {
+      "title": "Shopify variant prices and observed changes",
+      "actor": "JNpCUgDcPwRUrVdZj",
+      "build": "1.0.16",
+      "input": {
+        "storeUrls": [
+          "https://allbirds.com"
+        ],
+        "maxProducts": 3,
+        "flattenVariants": true,
+        "onlyAvailable": false,
+        "maxConcurrency": 1,
+        "timeout": 30
+      },
+      "columns": [
+        "rowKey",
+        "store",
+        "productId",
+        "variantId",
+        "title",
+        "sku",
+        "price",
+        "comparePrice",
+        "available",
+        "currency",
+        "market",
+        "change",
+        "previousPrice",
+        "sourceRunId"
+      ]
+    },
+    "company-jobs": {
+      "title": "Selected-company jobs without duplicate export rows",
+      "actor": "fp5fUghbnf2ou9DSP",
+      "build": "1.9.6",
+      "input": {
+        "workflow": "auto",
+        "companyIds": [
+          "1441"
+        ],
+        "monitorKey": "replace_with_your_monitor",
+        "maxPages": 1,
+        "maxResults": 5,
+        "outputPreset": "compact",
+        "maxRetries": 0,
+        "maxConcurrency": 1,
+        "timeout": 30,
+        "deepFetchTopN": 0
+      },
+      "columns": [
+        "rowKey",
+        "jobId",
+        "jobTitle",
+        "companyName",
+        "companySearchId",
+        "location",
+        "jobUrl",
+        "firstSeenAt",
+        "postedAtIso",
+        "freshnessVerified",
+        "monitorDelivery",
+        "sourceRunId"
+      ]
+    }
+  },
+  "makeStatus": "source CSV starters; account execution HTTP401; complete destination path requires account connection and acceptance QA",
+  "n8nStatus": "three imports and CSV branches passed real n8n2.43.7 with fictional HTTP fixtures; Google Sheets unverified",
+  "ownerQaExcludedFromDemand": true
+}

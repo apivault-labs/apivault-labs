@@ -1,0 +1,232 @@
+{
+  "name": "ApiVault — Shopify + Klaviyo leads with contact evidence — CSV starter",
+  "flow": [
+    {
+      "id": 1,
+      "module": "apify:runActor",
+      "version": 1,
+      "parameters": {
+        "__IMTCONN__": 0
+      },
+      "mapper": {
+        "actorId": "GgG3Xran5X3zZxpRZ",
+        "runSync": true,
+        "inputBody": "{\"mode\": \"find\", \"technologies\": [\"Shopify\", \"Klaviyo\"], \"matchMode\": \"all\", \"country\": [\"GB\"], \"dedupeByDomain\": true, \"outputPreset\": \"essential\", \"maxItems\": 3}",
+        "timeout": 120,
+        "memory": 1024,
+        "build": "0.15.30"
+      },
+      "metadata": {
+        "designer": {
+          "x": 0,
+          "y": 0
+        },
+        "restore": {
+          "parameters": {
+            "__IMTCONN__": {
+              "label": "Select your Apify connection",
+              "data": {
+                "scoped": "true",
+                "connection": "apify2"
+              }
+            }
+          },
+          "expect": {
+            "actorId": {
+              "mode": "chose",
+              "label": "BuiltWith Alternative — Tech Stack Leads"
+            },
+            "runSync": {
+              "mode": "chose"
+            },
+            "memory": {
+              "mode": "chose",
+              "label": "1024 MB"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "__IMTCONN__",
+            "type": "account:apify2,apify",
+            "label": "Connection",
+            "required": true
+          }
+        ],
+        "expect": [
+          {
+            "name": "actorId",
+            "type": "select",
+            "label": "Actor",
+            "required": true
+          },
+          {
+            "name": "runSync",
+            "type": "boolean",
+            "label": "Run synchronously",
+            "required": true
+          },
+          {
+            "name": "inputBody",
+            "type": "text",
+            "label": "Input JSON"
+          },
+          {
+            "name": "build",
+            "type": "text",
+            "label": "Build"
+          },
+          {
+            "name": "timeout",
+            "type": "uinteger",
+            "label": "Timeout"
+          },
+          {
+            "name": "memory",
+            "type": "select",
+            "label": "Memory",
+            "validate": {
+              "enum": [
+                128,
+                256,
+                512,
+                1024,
+                2048,
+                4096,
+                8192,
+                16384,
+                32768
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "module": "apify:fetchDatasetItems",
+      "version": 1,
+      "parameters": {
+        "__IMTCONN__": 0
+      },
+      "mapper": {
+        "datasetId": "{{1.defaultDatasetId}}",
+        "type": "clean",
+        "format": "csv",
+        "limit": "1000"
+      },
+      "metadata": {
+        "designer": {
+          "x": 300,
+          "y": 0
+        },
+        "restore": {
+          "parameters": {
+            "__IMTCONN__": {
+              "label": "Select your Apify connection",
+              "data": {
+                "scoped": "true",
+                "connection": "apify2"
+              }
+            }
+          },
+          "expect": {
+            "type": {
+              "mode": "chose",
+              "label": "Clean"
+            },
+            "format": {
+              "mode": "chose",
+              "label": "JSON"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "__IMTCONN__",
+            "type": "account:apify2,apify",
+            "label": "Connection",
+            "required": true
+          }
+        ],
+        "expect": [
+          {
+            "name": "datasetId",
+            "type": "text",
+            "label": "Dataset ID",
+            "required": true
+          },
+          {
+            "name": "type",
+            "type": "select",
+            "label": "Data transformation",
+            "required": true,
+            "validate": {
+              "enum": [
+                "clean",
+                "simplified",
+                "none"
+              ]
+            }
+          },
+          {
+            "name": "format",
+            "type": "select",
+            "label": "Format",
+            "required": true,
+            "validate": {
+              "enum": [
+                "json",
+                "csv",
+                "html",
+                "xml",
+                "rss",
+                "xlsx"
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "type": "uinteger",
+            "label": "Limit",
+            "validate": {
+              "min": 1,
+              "max": 100000
+            }
+          },
+          {
+            "name": "offset",
+            "type": "uinteger",
+            "label": "Offset",
+            "validate": {
+              "min": 0
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "instant": false,
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1,
+      "maxErrors": 3,
+      "autoCommit": true,
+      "autoCommitTriggerLast": true,
+      "sequential": true,
+      "slots": null,
+      "confidential": true,
+      "dataloss": false,
+      "dlq": true,
+      "freshVariables": false
+    },
+    "designer": {
+      "orphans": []
+    },
+    "zone": "eu1.make.com",
+    "notes": [
+      "Import and select your Apify connection. Manual Run once only. Last module returns CSV. Source starter; contact join, price comparison and destination upsert are documented separately. Synchronous limit 120s: recover the existing run after timeout, do not rerun blindly."
+    ]
+  }
+}

@@ -1,0 +1,924 @@
+{
+  "name": "ApiVault — Shopify + Klaviyo leads with contact evidence",
+  "active": false,
+  "nodes": [
+    {
+      "id": "run-manually",
+      "name": "Run manually",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {}
+    },
+    {
+      "id": "configure",
+      "name": "Configure",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const config = {\n  \"input\": {\n    \"mode\": \"find\",\n    \"technologies\": [\n      \"Shopify\",\n      \"Klaviyo\"\n    ],\n    \"matchMode\": \"all\",\n    \"country\": [\n      \"GB\"\n    ],\n    \"dedupeByDomain\": true,\n    \"outputPreset\": \"essential\",\n    \"maxItems\": 3\n  },\n  \"resumeRunId\": \"\",\n  \"resumeContactRunId\": \"\",\n  \"target\": \"csv\",\n  \"sheetId\": \"REPLACE_WITH_SPREADSHEET_ID\",\n  \"sheetName\": \"shopify-agencies\",\n  \"previousDatasetId\": \"\",\n  \"market\": \"\",\n  \"currency\": \"\"\n};\nif (!['csv','sheets'].includes(config.target)) throw new Error('Use csv or sheets');\nreturn [{json:config}];"
+      }
+    },
+    {
+      "id": "resume-existing-run",
+      "name": "Resume existing run",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        480,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "Resume existing run",
+              "leftValue": "={{ Boolean($json.resumeRunId) }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "use-saved-run",
+      "name": "Use saved run",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        0
+      ],
+      "parameters": {
+        "jsCode": "return [{json:{data:{id:$('Configure').first().json.resumeRunId}}}];"
+      }
+    },
+    {
+      "id": "start-collection",
+      "name": "Start collection",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        960,
+        0
+      ],
+      "parameters": {
+        "url": "https://api.apify.com/v2/acts/GgG3Xran5X3zZxpRZ/runs?build=0.15.30&timeout=120&memory=1024&maxTotalChargeUsd=0.20",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 45000
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $('Configure').first().json.input }}"
+      },
+      "retryOnFail": false
+    },
+    {
+      "id": "source-read-run",
+      "name": "Source read run",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1200,
+        0
+      ],
+      "parameters": {
+        "url": "={{ 'https://api.apify.com/v2/actor-runs/' + $json.data.id }}",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 45000
+        }
+      },
+      "retryOnFail": false
+    },
+    {
+      "id": "source-running",
+      "name": "Source running",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1440,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "Source running",
+              "leftValue": "={{ ['READY','RUNNING','TIMING-OUT','ABORTING'].includes($json.data.status) }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "source-wait",
+      "name": "Source wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        1680,
+        0
+      ],
+      "parameters": {
+        "amount": 5,
+        "unit": "seconds"
+      }
+    },
+    {
+      "id": "source-require-success",
+      "name": "Source require success",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1920,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const r=$input.first().json.data; if(r.status!=='SUCCEEDED')throw new Error('Run '+r.id+' ended '+r.status+'; inspect the same run and SUMMARY. Do not restart for export recovery.'); return [{json:{data:r}}];"
+      }
+    },
+    {
+      "id": "source-dataset",
+      "name": "Source dataset",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2160,
+        0
+      ],
+      "parameters": {
+        "url": "={{ 'https://api.apify.com/v2/datasets/' + $json.data.defaultDatasetId + '/items?clean=true&limit=1001' }}",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 45000
+        }
+      },
+      "retryOnFail": false,
+      "alwaysOutputData": true
+    },
+    {
+      "id": "source-bounded-rows",
+      "name": "Source bounded rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2400,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const rows=$input.all().map(i=>i.json).filter(r=>Object.keys(r).length); if(rows.length>1000)throw new Error('Export exceeded 1000 rows. Page the saved dataset before delivery.'); return [{json:{rows,runId:$('Source require success').first().json.data.id}}];"
+      }
+    },
+    {
+      "id": "contact-input",
+      "name": "Contact input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2640,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const source=$input.first().json; const domains=[...new Set(source.rows.map(r=>r['Root Domain']).filter(Boolean))]; if(!domains.length)return []; return [{json:{input:{websites:domains,maxWebsites:3,maxPagesPerWebsite:3,timeoutSecs:15,maxConcurrency:2,includeContacts:true,includeNotFound:true,useSitemap:false,proxyConfiguration:{useApifyProxy:false}}}}];"
+      }
+    },
+    {
+      "id": "start-contact-check",
+      "name": "Start contact check",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        2880,
+        0
+      ],
+      "parameters": {
+        "url": "https://api.apify.com/v2/acts/zYICrfT0hubjh58YY/runs?build=0.1.4&timeout=120&memory=1024&maxTotalChargeUsd=0.10",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 45000
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.input }}"
+      },
+      "retryOnFail": false
+    },
+    {
+      "id": "resume-contact-check",
+      "name": "Resume contact check",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3120,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "Resume contact check",
+              "leftValue": "={{ Boolean($('Configure').first().json.resumeContactRunId) }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "use-saved-contact-run",
+      "name": "Use saved contact run",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3360,
+        0
+      ],
+      "parameters": {
+        "jsCode": "return [{json:{data:{id:$('Configure').first().json.resumeContactRunId}}}];"
+      }
+    },
+    {
+      "id": "contact-read-run",
+      "name": "Contact read run",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        3600,
+        0
+      ],
+      "parameters": {
+        "url": "={{ 'https://api.apify.com/v2/actor-runs/' + $json.data.id }}",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 45000
+        }
+      },
+      "retryOnFail": false
+    },
+    {
+      "id": "contact-running",
+      "name": "Contact running",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        3840,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "Contact running",
+              "leftValue": "={{ ['READY','RUNNING','TIMING-OUT','ABORTING'].includes($json.data.status) }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "contact-wait",
+      "name": "Contact wait",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        4080,
+        0
+      ],
+      "parameters": {
+        "amount": 5,
+        "unit": "seconds"
+      }
+    },
+    {
+      "id": "contact-require-success",
+      "name": "Contact require success",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4320,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const r=$input.first().json.data; if(r.status!=='SUCCEEDED')throw new Error('Run '+r.id+' ended '+r.status+'; inspect the same run and SUMMARY. Do not restart for export recovery.'); return [{json:{data:r}}];"
+      }
+    },
+    {
+      "id": "contact-dataset",
+      "name": "Contact dataset",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        4560,
+        0
+      ],
+      "parameters": {
+        "url": "={{ 'https://api.apify.com/v2/datasets/' + $json.data.defaultDatasetId + '/items?clean=true&limit=1001' }}",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "options": {
+          "timeout": 45000
+        }
+      },
+      "retryOnFail": false,
+      "alwaysOutputData": true
+    },
+    {
+      "id": "contact-bounded-rows",
+      "name": "Contact bounded rows",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4800,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const rows=$input.all().map(i=>i.json).filter(r=>Object.keys(r).length); if(rows.length>1000)throw new Error('Export exceeded 1000 rows. Page the saved dataset before delivery.'); return [{json:{rows,runId:$('Contact require success').first().json.data.id}}];"
+      }
+    },
+    {
+      "id": "prepare-export",
+      "name": "Prepare export",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5040,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// Shared by downloadable imports and contract tests. All samples are bounded.\nfunction host(value) { const name=String(value||'').trim().replace(/^https?:\\/\\//i,'').split(/[/?#]/)[0].toLowerCase().replace(/^www\\./,'');return /^[a-z0-9.-]+(?::[0-9]+)?$/.test(name)?name.replace(/:[0-9]+$/,''):''; }\nfunction agencyRows(leads, contacts, sourceRunId, contactRunId) {\n const byDomain=new Map(contacts.map(r=>[host(r.domain||r.website),r]));\n return [...new Map(leads.map(r=>[host(r['Root Domain']),r])).entries()].filter(([d])=>d).map(([domain,r])=>{\n  const c=byDomain.get(domain)||{};\n  return {rowKey:domain,domain,company:r.Company||'',country:r.Country||'',indexedEmails:r.Emails||'',observedEmails:JSON.stringify(c.emails||[]),contactPage:c.contactPageUrl||'',contactStatus:c.status||'not_checked',checkedAt:c.checkedAt||'',coverageComplete:c.coverageComplete===true,sourceRunId,contactRunId};\n });\n}\nfunction priceRows(rows, previous, context) {\n const {runId,store,market='',currency=''}=context;\n const domain=host(store); if(!domain)throw new Error('Choose a valid store URL');\n const old=new Map();\n for(const r of previous)if(r.variantId!=null){if(r.productUrl&&host(r.productUrl)!==domain)throw new Error('Previous dataset belongs to another store');old.set(String(r.variantId),r);}\n const seen=new Set();return rows.filter(r=>r.success===true&&r.variantId!=null).map(r=>{\n  const id=String(r.variantId);if(seen.has(id))throw new Error('Duplicate variant ID');seen.add(id);\n  const p=old.get(id);const validPrice=v=>v!==''&&v!=null&&Number.isFinite(Number(v));\n  // The source omits currency. A user-confirmed, identical market/currency is required.\n  const comparable=!!market&&!!currency&&p&&validPrice(p.price)&&validPrice(r.price);\n  return {rowKey:[domain,market||'UNCONFIRMED',currency||'UNCONFIRMED',id].join('|'),store:domain,productId:String(r.productId||''),variantId:id,title:r.title||'',sku:r.sku||'',price:r.price??'',comparePrice:r.comparePrice??'',available:r.variantAvailable===true,currency,market,change:!p?'first_observed':!comparable?'comparison_skipped':Number(p.price)!==Number(r.price)?'price_changed':p.variantAvailable!==r.variantAvailable?'availability_changed':'unchanged',previousPrice:p?.price??'',sourceRunId:runId};\n }); // No removal inference from missing rows in a limited catalog sample.\n}\nfunction jobRows(rows, sourceRunId) {\n const byId=new Map();for(const r of rows)if(r.success===true&&r.jobId){\n  const rowKey=String(r.jobId);byId.set(rowKey,{rowKey,jobId:rowKey,jobTitle:r.jobTitle||'',companyName:r.companyName||'',companySearchId:r.companySearchId||'',location:r.location||'',jobUrl:r.jobCanonicalUrl||r.jobUrl||'',firstSeenAt:r.firstSeenAt||'',postedAtIso:r.postedAtIso||'',freshnessVerified:r.freshnessVerified===true,monitorDelivery:r.monitorDelivery||'',sourceRunId});\n }return [...byId.values()];\n}\n\nconst source=$('Source bounded rows').first().json; const evidence=$input.first().json; return agencyRows(source.rows,evidence.rows,source.runId,evidence.runId).map(json=>({json}));"
+      }
+    },
+    {
+      "id": "write-google-sheets",
+      "name": "Write Google Sheets",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        5280,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "Write Google Sheets",
+              "leftValue": "={{ $('Configure').first().json.target === 'sheets' }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "upsert-by-stable-key",
+      "name": "Upsert by stable key",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        5520,
+        0
+      ],
+      "parameters": {
+        "resource": "sheet",
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $('Configure').first().json.sheetId }}"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "={{ $('Configure').first().json.sheetName }}"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [
+            "rowKey"
+          ],
+          "schema": [
+            {
+              "id": "rowKey",
+              "displayName": "rowKey",
+              "required": false,
+              "defaultMatch": true,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "domain",
+              "displayName": "domain",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "company",
+              "displayName": "company",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "country",
+              "displayName": "country",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "indexedEmails",
+              "displayName": "indexedEmails",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "observedEmails",
+              "displayName": "observedEmails",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "contactPage",
+              "displayName": "contactPage",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "contactStatus",
+              "displayName": "contactStatus",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "checkedAt",
+              "displayName": "checkedAt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "coverageComplete",
+              "displayName": "coverageComplete",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "sourceRunId",
+              "displayName": "sourceRunId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "contactRunId",
+              "displayName": "contactRunId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ]
+        },
+        "options": {
+          "cellFormat": "RAW"
+        }
+      }
+    },
+    {
+      "id": "download-csv",
+      "name": "Download CSV",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5760,
+        0
+      ],
+      "parameters": {
+        "jsCode": "const rows=$input.all().map(i=>i.json); const columns=[\"rowKey\", \"domain\", \"company\", \"country\", \"indexedEmails\", \"observedEmails\", \"contactPage\", \"contactStatus\", \"checkedAt\", \"coverageComplete\", \"sourceRunId\", \"contactRunId\"]; const cell=v=>{let s=String(v??'');if(/^[=+@\\-\\t\\r]/.test(s))s=\"'\"+s; return '\"'+s.replaceAll('\"','\"\"')+'\"';}; const text='\\uFEFF'+[columns.map(cell).join(','),...rows.map(r=>columns.map(c=>cell(r[c])).join(','))].join('\\r\\n')+'\\r\\n'; return [{json:{rows:rows.length,sourceRunId:rows[0]?.sourceRunId??''},binary:{data:await this.helpers.prepareBinaryData(Buffer.from(text,'utf8'),'shopify-agencies.csv','text/csv')}}];"
+      }
+    },
+    {
+      "id": "read-setup-first",
+      "name": "Read setup first",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        6000,
+        0
+      ],
+      "parameters": {
+        "content": "## Shopify + Klaviyo leads with contact evidence\nRead README.md before Run once. Select your Authorization header credential on every HTTP node. Default: CSV, no schedule. Start is never retried. Save source/contact run IDs. Price currency must be independently confirmed; missing products are never removals. Google Sheets uses rowKey upsert; use a single writer.",
+        "height": 300,
+        "width": 500
+      }
+    }
+  ],
+  "connections": {
+    "Run manually": {
+      "main": [
+        [
+          {
+            "node": "Configure",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure": {
+      "main": [
+        [
+          {
+            "node": "Resume existing run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resume existing run": {
+      "main": [
+        [
+          {
+            "node": "Use saved run",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Start collection",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use saved run": {
+      "main": [
+        [
+          {
+            "node": "Source read run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start collection": {
+      "main": [
+        [
+          {
+            "node": "Source read run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Source read run": {
+      "main": [
+        [
+          {
+            "node": "Source running",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Source running": {
+      "main": [
+        [
+          {
+            "node": "Source wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Source require success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Source wait": {
+      "main": [
+        [
+          {
+            "node": "Source read run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Source require success": {
+      "main": [
+        [
+          {
+            "node": "Source dataset",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Source dataset": {
+      "main": [
+        [
+          {
+            "node": "Source bounded rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Source bounded rows": {
+      "main": [
+        [
+          {
+            "node": "Contact input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact input": {
+      "main": [
+        [
+          {
+            "node": "Resume contact check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resume contact check": {
+      "main": [
+        [
+          {
+            "node": "Use saved contact run",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Start contact check",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Use saved contact run": {
+      "main": [
+        [
+          {
+            "node": "Contact read run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Start contact check": {
+      "main": [
+        [
+          {
+            "node": "Contact read run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact read run": {
+      "main": [
+        [
+          {
+            "node": "Contact running",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact running": {
+      "main": [
+        [
+          {
+            "node": "Contact wait",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Contact require success",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact wait": {
+      "main": [
+        [
+          {
+            "node": "Contact read run",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact require success": {
+      "main": [
+        [
+          {
+            "node": "Contact dataset",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact dataset": {
+      "main": [
+        [
+          {
+            "node": "Contact bounded rows",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Contact bounded rows": {
+      "main": [
+        [
+          {
+            "node": "Prepare export",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare export": {
+      "main": [
+        [
+          {
+            "node": "Write Google Sheets",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write Google Sheets": {
+      "main": [
+        [
+          {
+            "node": "Upsert by stable key",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download CSV",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "executionTimeout": 600,
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all"
+  },
+  "pinData": {}
+}

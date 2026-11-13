@@ -1,0 +1,14 @@
+{
+  "mode": "find",
+  "technologies": [
+    "Shopify",
+    "Klaviyo"
+  ],
+  "matchMode": "all",
+  "country": [
+    "GB"
+  ],
+  "dedupeByDomain": true,
+  "outputPreset": "essential",
+  "maxItems": 3
+}
