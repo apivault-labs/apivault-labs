@@ -16,7 +16,7 @@ ApiVault Labs maintains the Actors in this kit. These are small, editable workfl
 2. Create an HTTP Header Auth credential: name `Authorization`, value `Bearer YOUR_APIFY_TOKEN`. Select it on **every** HTTP Request node. Do not put tokens into URLs, input JSON or exported workflow files. Use a scoped token that can run the chosen Actor and read its run/dataset. Monitoring also needs its named state resources.
 3. Open **Configure**. Review `input`, including country/technologies, store URL or numeric company IDs. Limits start at3 websites/products or5 jobs. Confirm current prices in Apify Console and keep the API charge ceiling. Platform/proxy charges can be separate.
 4. Leave `target: "csv"`. Execute manually. Download the binary file from **Download CSV**. Compare its row count and identifiers with **Prepare export** and the saved Apify dataset. An empty source can stop without a file; inspect the source run and SUMMARY rather than assuming a delivery failure.
-5. For Sheets, create the tab named in Configure and paste the header from the scenario's `columns.csv` into row1. Set `sheetId`, select your Google credential on **Upsert by stable key**, then set `target: "sheets"`. Grant the account access to that spreadsheet. Formatting uses RAW values. Use one writer: Google Sheets upsert is not a database uniqueness constraint under concurrent writers.
+5. For Sheets, import [three-workflows-sheets.xlsx](three-workflows-sheets.xlsx) as a native Google spreadsheet. It has the three exact tab names and header rows, with no example data, formulas or external links. Alternatively, create the tab named in Configure and paste the header from the scenario's `columns.csv` into row 1. Set `sheetId`, select your Google credential on **Upsert by stable key**, then set `target: "sheets"`. Grant the account access to that spreadsheet. Formatting uses RAW values. Use one writer: Google Sheets upsert is not a database uniqueness constraint under concurrent writers.
 6. Replay the **same saved run** with `resumeRunId` before enabling a schedule. For agencies, also set `resumeContactRunId` to replay the same contact pass. Confirm existing keys update rather than append. A CSV file is a snapshot; concatenate files only after deduplicating their stable keys.
 
 Successful/failed execution data can contain contacts. Keep it private and configure retention for your deployment. The workflow retains execution data for recoverability; it adds no telemetry. CSV cells starting with spreadsheet formula prefixes are escaped.
@@ -56,6 +56,18 @@ The destination matches `rowKey = jobId`. It can recover a repeated delivery wit
 This repository distributes imports. It does not claim approval or listing in the n8n/Make template galleries. Native module source exports, Google OAuth delivery and community publication each have separate evidence in `verification.json`.
 
 The owner-account diagnostic returned HTTP 401 / IM001 with `Required scope: scenarios:run`; the Make API token therefore cannot execute the saved QA scenarios. A separate test of the existing Apify connection returned HTTP 424 / SC424; that connection's cause is unresolved and it cannot be edited through the inspected API. This does not invalidate the working Apify token used in GitHub QA. No schedules were activated. These account checks are not evidence of a successful Make export.
+
+## Accept a real Google Sheets destination
+
+Use a private test spreadsheet and the same saved source run IDs. For the agency workflow, keep both `resumeRunId` and `resumeContactRunId`; for prices and jobs, keep `resumeRunId`. This check should make **zero new collection requests**.
+
+1. Before writing, confirm the row 1 headers match the scenario columns and the tab name matches Configure. Record the unique `rowKey` values in **Prepare export** and the source run IDs in a private test note. Do not put contacts in a public issue or CI artifact.
+2. Deliver once and read the actual destination tab. Each prepared key should occur exactly once and its source fields should match. A green node alone is insufficient; inspect the saved rows.
+3. Replay the same saved runs. Confirm the same unique keys and row count, with no extra copies. Check that text, contact URLs and unknown values retain their meanings.
+4. On a disposable test tab, retain a strict subset of rows to represent a partially completed delivery, then replay the same saved runs. Confirm the missing keys are restored and the existing keys are updated once. This checks partial-delivery replay; it does **not** prove recovery from an ambiguous Google write timeout.
+5. If a real write is interrupted, preserve the source run IDs and inspect the destination before replaying. A timeout is not proof of no write. Record whether the original request committed, keep one writer, and reconcile keys after recovery. Automatic replay under concurrent writers or unknown write outcomes is not claimed safe.
+
+Record the actual spreadsheet, execution IDs, before/after counts, duplicate count and source-start count privately. Until this live write and replay have been observed, `googleSheets.tested` remains false in verification.json. The blank XLSX and local n8n fixture checks are preparation, not Google acceptance.
 
 ## Costs, checked 2026-11-13 UTC / November14 Minsk
 
