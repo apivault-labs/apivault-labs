@@ -1,0 +1,101 @@
+{
+  "checkedAt": "2026-11-13",
+  "localDate": "2026-11-14 Europe/Minsk",
+  "actorBuilds": {
+    "technology": {
+      "id": "GgG3Xran5X3zZxpRZ",
+      "buildId": "vi5vxBdg8spWvJheh",
+      "buildNumber": "0.15.30"
+    },
+    "contacts": {
+      "id": "zYICrfT0hubjh58YY",
+      "buildId": "KRr8bo7kpu0O3v7A4",
+      "buildNumber": "0.1.4"
+    },
+    "analyzer": {
+      "id": "9twVh4isboNg2w6bg",
+      "buildId": "dRR6ookObvWFrGLJG",
+      "buildNumber": "1.8.12"
+    },
+    "products": {
+      "id": "JNpCUgDcPwRUrVdZj",
+      "buildId": "uZT4sA1g2ayAuqk0m",
+      "buildNumber": "1.0.16"
+    },
+    "jobs": {
+      "id": "fp5fUghbnf2ou9DSP",
+      "buildId": "n353jbDcXcm64JZBy",
+      "buildNumber": "1.9.6"
+    }
+  },
+  "liveActorQa": {
+    "researchRows": 50,
+    "agencyRows": 3,
+    "contactResultRows": 3,
+    "contactFoundEvents": 1,
+    "productVariantRows": 39,
+    "productsRequested": 3,
+    "currencyPresentRows": 0,
+    "jobsBaselineRows": 5,
+    "jobsRepeatRows": 5,
+    "jobIdOverlap": 0,
+    "sourceEvidence": "research/jobs-repeat-check.json",
+    "ciRuns": [
+      "https://github.com/apivault-labs/actors-apify/actions/runs/43509839557",
+      "https://github.com/apivault-labs/actors-apify/actions/runs/43510877622",
+      "https://github.com/apivault-labs/actors-apify/actions/runs/43512179168"
+    ]
+  },
+  "n8n": {
+    "scenarios": [
+      {
+        "key": "shopify-agencies",
+        "passed": true,
+        "rows": 1,
+        "csvGenerated": true,
+        "googleSheetsWrite": false,
+        "transport": "Real HTTP Request nodes and header credential against local fictional fixture",
+        "engine": "n8n@2.43.7"
+      },
+      {
+        "key": "competitor-prices",
+        "passed": true,
+        "rows": 1,
+        "csvGenerated": true,
+        "googleSheetsWrite": false,
+        "transport": "Real HTTP Request nodes and header credential against local fictional fixture",
+        "engine": "n8n@2.43.7"
+      },
+      {
+        "key": "company-jobs",
+        "passed": true,
+        "rows": 1,
+        "csvGenerated": true,
+        "googleSheetsWrite": false,
+        "transport": "Real HTTP Request nodes and header credential against local fictional fixture",
+        "engine": "n8n@2.43.7"
+      }
+    ],
+    "httpCalls": 13,
+    "paidSourceStarts": 0,
+    "fixtureStarts": 4
+  },
+  "googleSheets": {
+    "tested": false,
+    "reason": "No Google OAuth connection configured for campaign acceptance; require actual write, same-dataset replay and interrupted-write recovery."
+  },
+  "make": {
+    "importContract": "Native apify:runActor and apify:fetchDatasetItems v1 read from saved account scenario",
+    "disabledSavedDatasetQaScenariosCreated": 3,
+    "validReadback": true,
+    "executeHttpStatus": 401,
+    "liveExecutionPassed": false,
+    "googleSheetsConnectionPresent": false,
+    "publicTemplates": "source CSV starters; complete contact join/price diff/Sheets path not accepted"
+  },
+  "community": {
+    "posted": false,
+    "reason": "Forum sign-in not established; API secrets for Apify/Make do not establish a forum login"
+  },
+  "ownerQaExcludedFromDemand": true
+}

@@ -1,0 +1,14 @@
+{
+  "workflow": "auto",
+  "companyIds": [
+    "1441"
+  ],
+  "monitorKey": "replace_with_your_monitor",
+  "maxPages": 1,
+  "maxResults": 5,
+  "outputPreset": "compact",
+  "maxRetries": 0,
+  "maxConcurrency": 1,
+  "timeout": 30,
+  "deepFetchTopN": 0
+}

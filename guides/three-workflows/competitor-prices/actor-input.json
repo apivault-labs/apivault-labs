@@ -1,0 +1,10 @@
+{
+  "storeUrls": [
+    "https://allbirds.com"
+  ],
+  "maxProducts": 3,
+  "flattenVariants": true,
+  "onlyAvailable": false,
+  "maxConcurrency": 1,
+  "timeout": 30
+}

@@ -1,0 +1,27 @@
+{
+  "retrievedAt": "2026-11-13T21:28:02.598148+00:00",
+  "originalRetrievalAt": "2026-11-13T21:21:44Z",
+  "n": 50,
+  "technologyCounts": {
+    "Klaviyo": 16,
+    "Mailchimp": 0,
+    "Omnisend": 0,
+    "HubSpot": 0,
+    "ActiveCampaign": 0,
+    "Google Analytics": 0,
+    "Cloudflare": 1,
+    "Stripe": 1,
+    "PayPal": 35
+  },
+  "categoryNonempty": {
+    "eCommerce Platform": 50,
+    "Marketing Automation Platform": 17,
+    "CRM Platform": 1,
+    "Payment Platforms": 40,
+    "Hosting Provider": 50,
+    "Tech Detected Stack": 0
+  },
+  "currentVerificationTimestampPresent": 0,
+  "method": "Case-insensitive label substring within fixed source categories; observed indexed labels only",
+  "selection": "First 50 unique indexed Shopify GB domains ordered by Root Domain ascending; convenience sample"
+}

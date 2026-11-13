@@ -1,0 +1,31 @@
+{
+  "baselineRows": 5,
+  "repeatRows": 5,
+  "uniqueBaselineIds": 5,
+  "uniqueRepeatIds": 5,
+  "idOverlap": 0,
+  "baselineDeliveryLabels": {
+    "baseline": 5
+  },
+  "repeatDeliveryLabels": {
+    "updates": 5
+  },
+  "statuses": [
+    "SUCCEEDED",
+    "SUCCEEDED"
+  ],
+  "monitorStats": [
+    {
+      "mode": "baseline",
+      "rememberedJobs": 5,
+      "recoveredDeliveries": 0,
+      "scope": "first observed in bounded public search; not publication time or complete inventory"
+    },
+    {
+      "mode": "updates",
+      "rememberedJobs": 10,
+      "recoveredDeliveries": 0,
+      "scope": "first observed in bounded public search; not publication time or complete inventory"
+    }
+  ]
+}

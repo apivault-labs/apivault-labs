@@ -1,0 +1,15 @@
+{
+  "mode": "find",
+  "technologies": [
+    "Shopify"
+  ],
+  "matchMode": "all",
+  "country": [
+    "GB"
+  ],
+  "sortBy": "Root Domain",
+  "sortDesc": false,
+  "dedupeByDomain": true,
+  "outputPreset": "full",
+  "maxItems": 50
+}
