@@ -1,0 +1,96 @@
+{
+  "checkedAt": "2026-11-14T01:16:58.468Z",
+  "sourceSha": "1e05d91b0e2b50a56e8d527381ce3e3b1f4ffbc9",
+  "engine": "n8n@2.43.7",
+  "method": "Published imports in isolated real n8n; Header Auth through a GET-only allowlist forwarding to the real Apify API",
+  "scenarios": [
+    {
+      "key": "shopify-agencies",
+      "passed": true,
+      "publishedTemplateBlob": "b404ade2bb3bd373c34c9928250557ffdba2dddb",
+      "rows": 3,
+      "replaySameBytes": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "rows": 3,
+          "uniqueKeys": 3,
+          "csvRows": 3,
+          "csvSha256": "292f600d37f2013983e7389d197e7530dc8982d728e017e46726e92574067c82",
+          "executedNodeCount": 20,
+          "sourceStarts": 0
+        },
+        {
+          "attempt": 2,
+          "rows": 3,
+          "uniqueKeys": 3,
+          "csvRows": 3,
+          "csvSha256": "292f600d37f2013983e7389d197e7530dc8982d728e017e46726e92574067c82",
+          "executedNodeCount": 20,
+          "sourceStarts": 0
+        }
+      ]
+    },
+    {
+      "key": "competitor-prices",
+      "passed": true,
+      "publishedTemplateBlob": "efb001c15dcae8b57c87ce5088c082b3be4e1b62",
+      "rows": 39,
+      "replaySameBytes": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "rows": 39,
+          "uniqueKeys": 39,
+          "csvRows": 39,
+          "csvSha256": "94b91c71ee5a5cab6916f66d29763d051b76e1d09e46d0686e069a3bc1968bff",
+          "executedNodeCount": 15,
+          "sourceStarts": 0
+        },
+        {
+          "attempt": 2,
+          "rows": 39,
+          "uniqueKeys": 39,
+          "csvRows": 39,
+          "csvSha256": "94b91c71ee5a5cab6916f66d29763d051b76e1d09e46d0686e069a3bc1968bff",
+          "executedNodeCount": 15,
+          "sourceStarts": 0
+        }
+      ]
+    },
+    {
+      "key": "company-jobs",
+      "passed": true,
+      "publishedTemplateBlob": "ca4b94015579a66a3af6353d89a1fe72646df529",
+      "rows": 5,
+      "replaySameBytes": true,
+      "attempts": [
+        {
+          "attempt": 1,
+          "rows": 5,
+          "uniqueKeys": 5,
+          "csvRows": 5,
+          "csvSha256": "720b0608d8723767a850b83fb34c8c7a7ef3b95c242c492d046720371947f51e",
+          "executedNodeCount": 12,
+          "sourceStarts": 0
+        },
+        {
+          "attempt": 2,
+          "rows": 5,
+          "uniqueKeys": 5,
+          "csvRows": 5,
+          "csvSha256": "720b0608d8723767a850b83fb34c8c7a7ef3b95c242c492d046720371947f51e",
+          "executedNodeCount": 12,
+          "sourceStarts": 0
+        }
+      ]
+    }
+  ],
+  "sourceStarts": 0,
+  "googleSheetsWrite": false,
+  "ownerQaExcludedFromDemand": true,
+  "passed": true,
+  "httpCalls": 16,
+  "getOnly": true,
+  "stage": "complete"
+}

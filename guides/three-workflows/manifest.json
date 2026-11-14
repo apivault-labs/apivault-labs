@@ -100,6 +100,6 @@
     }
   },
   "makeStatus": "source CSV starters; execution HTTP401 requires scenarios:run; existing Apify connection test HTTP424 unresolved; complete destination path requires account connection and acceptance QA",
-  "n8nStatus": "three imports and CSV branches passed real n8n2.43.7 with fictional HTTP fixtures; Google Sheets unverified",
+  "n8nStatus": "three saved-run CSV paths passed real n8n2.43.7 with saved Apify data (3 agencies, 39 variants, 5 jobs), identical repeated CSVs and zero new starts; initial collection paths separately checked with fictional HTTP fixtures; Google Sheets unverified",
   "ownerQaExcludedFromDemand": true
 }
