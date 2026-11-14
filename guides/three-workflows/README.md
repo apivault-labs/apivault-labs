@@ -8,9 +8,11 @@ ApiVault Labs maintains the Actors in this kit. These are small, editable workfl
 | Shopify catalog → variant prices / observed changes → CSV / Sheets | [Competitor prices](competitor-prices/n8n.json) | [Source CSV starter](competitor-prices/make.blueprint.json) | One variant in one market/currency |
 | Selected-company jobs → stable IDs → CSV / Sheets | [Company jobs](company-jobs/n8n.json) | [Source CSV starter](company-jobs/make.blueprint.json) | One LinkedIn job ID |
 
-**Status:** n8n engine acceptance is recorded in `verification.json`. Make files are explicitly **source CSV starters**, not complete contact joins, price-diff pipelines or Sheets upserts. Do not advertise them as six fully tested end-to-end integrations. A working source export and a working destination are different checks.
+**Status:** All three saved-run CSV paths passed in n8n 2.43.7 using real saved Apify data: 3 agency rows, 39 variants and 5 jobs. Each export was repeated with identical CSV bytes and zero new collection starts. See [verification.json](verification.json) and the [sanitized receipt](research/n8n-saved-source-check.json). Google Sheets delivery remains unverified. Make files are explicitly **source CSV starters**, not complete contact joins, price-diff pipelines or Sheets upserts. Do not advertise them as six fully tested end-to-end integrations. A working source export and a working destination are different checks.
 
 ## First run in n8n
+
+These imports use your **Apify API token**. Importing and running them manually in the n8n editor does not require an n8n REST API key. A separate Google credential is needed only for the optional Sheets destination.
 
 1. Import the relevant `n8n.json`. Built-in Manual Trigger, Code, HTTP Request and Google Sheets nodes are used; no community package is required. The workflow is inactive.
 2. Create an HTTP Header Auth credential: name `Authorization`, value `Bearer YOUR_APIFY_TOKEN`. Select it on **every** HTTP Request node. Do not put tokens into URLs, input JSON or exported workflow files. Use a scoped token that can run the chosen Actor and read its run/dataset. Monitoring also needs its named state resources.
@@ -82,7 +84,7 @@ Hypothetical primary-event arithmetic:3 technology events cost $0.009;3 found-co
 
 ## Evidence and reproduction
 
-`verification.json` distinguishes live Actor QA, fictional local-engine tests, Make API results and unverified Google delivery. Public research aggregates contain no contacts/domains. Public imports contain no credentials. To regenerate from the maintained private source: `python campaigns/three-workflows/generate.py`; contract checks: `node campaigns/three-workflows/test.cjs`.
+`verification.json` distinguishes live Actor QA, real saved-source n8n CSV acceptance, fictional first-collection/recovery tests, Make API results and unverified Google delivery. Saved-source acceptance used real HTTP Request nodes and Header Auth through a GET-only allowlist forwarding to Apify; the paid start nodes were disabled only in the private QA copies. It verifies source fields, unique keys, CSV headers/values and identical repeated exports; it does not establish Google delivery or a real n8n-initiated first collection. Public research aggregates contain no contacts/domains. Public imports contain no credentials. To regenerate from the maintained private source: `python campaigns/three-workflows/generate.py`; contract checks: `node campaigns/three-workflows/test.cjs`.
 
 Primary docs: [Apify runs](https://docs.apify.com/api/v2/actors-runs-post), [dataset exports](https://docs.apify.com/storage/dataset), [Make Apify modules](https://apps.make.com/apify), [n8n HTTP credentials](https://docs.n8n.io/integrations/builtin/credentials/httprequest/), [n8n Google Sheets](https://docs.n8n.io/integrations/builtin/app-nodes/n8n-nodes-base.googlesheets/).
 

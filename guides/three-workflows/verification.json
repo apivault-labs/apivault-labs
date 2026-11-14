@@ -115,6 +115,27 @@
       "fixtureStarts": 0,
       "assertions": "All three saved-run CSV branches passed; 0 POST requests, 0 new source starts; agency source and contact runs both resumed",
       "data": "Fictional local HTTP fixtures; not Google Sheets delivery"
+    },
+    "liveSavedSourceAcceptance": {
+      "receipt": "research/n8n-saved-source-check.json",
+      "receiptSha256": "4e719321d974792b57dc8866ae9455e65dfe3d21871db0e2b9a48ed74a67dbf6",
+      "checkedAt": "2026-11-14T01:16:58.468Z",
+      "passed": true,
+      "engine": "n8n@2.43.7",
+      "sourceSha": "1e05d91b0e2b50a56e8d527381ce3e3b1f4ffbc9",
+      "rowsByScenario": {
+        "shopify-agencies": 3,
+        "competitor-prices": 39,
+        "company-jobs": 5
+      },
+      "sameBytesReplay": true,
+      "httpCalls": 16,
+      "getOnly": true,
+      "newSourceStarts": 0,
+      "googleSheetsWrite": false,
+      "method": "Published imports in isolated real n8n; Header Auth through a GET-only allowlist forwarding to the real Apify API",
+      "ciRun": "https://github.com/apivault-labs/actors-apify/actions/runs/43539248810",
+      "ciSourceCommit": "aa2ac57dc742f1fef80f57373de313cade5ecebc"
     }
   },
   "googleSheets": {
@@ -162,5 +183,6 @@
     "posted": false,
     "reason": "Google sign-in reached forum registration requiring acceptance of terms; no account was created and no reply was posted. Existing-account sign-in or owner approval of registration is still required."
   },
-  "ownerQaExcludedFromDemand": true
+  "ownerQaExcludedFromDemand": true,
+  "updatedAt": "2026-11-14T01:16:58.468Z"
 }
