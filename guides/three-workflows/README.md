@@ -12,6 +12,8 @@ ApiVault Labs maintains the Actors in this kit. These are small, editable workfl
 
 ## First run in n8n
 
+These imports use your **Apify API token**. Importing and running them manually in the n8n editor does not require an n8n REST API key. A separate Google credential is needed only for the optional Sheets destination.
+
 1. Import the relevant `n8n.json`. Built-in Manual Trigger, Code, HTTP Request and Google Sheets nodes are used; no community package is required. The workflow is inactive.
 2. Create an HTTP Header Auth credential: name `Authorization`, value `Bearer YOUR_APIFY_TOKEN`. Select it on **every** HTTP Request node. Do not put tokens into URLs, input JSON or exported workflow files. Use a scoped token that can run the chosen Actor and read its run/dataset. Monitoring also needs its named state resources.
 3. Open **Configure**. Review `input`, including country/technologies, store URL or numeric company IDs. Limits start at3 websites/products or5 jobs. Confirm current prices in Apify Console and keep the API charge ceiling. Platform/proxy charges can be separate.
